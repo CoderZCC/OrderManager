@@ -10,10 +10,12 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    var dataList: [CostModel]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.k_colorWith(rgb: 216.0)
+        self.view.backgroundColor = kViewColor
         
         // 使用自定义的返回图片
         let navbar = UINavigationBar.appearance()

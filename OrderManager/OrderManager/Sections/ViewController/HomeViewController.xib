@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="OrderManager" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="qyv-Em-i4P" id="puY-el-gXe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avs-Bi-dNf">
+                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlo-fz-d84">
+                            <rect key="frame" x="154.5" y="7" width="65" height="30"/>
+                            <state key="normal" title="2018-7月">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="9CS-r9-BKG"/>
+                        <constraint firstItem="mlo-fz-d84" firstAttribute="centerY" secondItem="avs-Bi-dNf" secondAttribute="centerY" id="A5v-gl-BN7"/>
+                        <constraint firstItem="mlo-fz-d84" firstAttribute="centerX" secondItem="avs-Bi-dNf" secondAttribute="centerX" id="zKq-hs-EQ5"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qyv-Em-i4P">
+                    <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4A-24-NHu">
+                    <rect key="frame" x="155.5" y="542" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="7QC-Zf-a0K"/>
+                        <constraint firstAttribute="width" secondItem="M4A-24-NHu" secondAttribute="height" multiplier="1:1" id="A2F-AG-qNh"/>
+                    </constraints>
+                    <state key="normal" image="add"/>
+                    <connections>
+                        <action selector="addBtnAction" destination="-1" eventType="touchUpInside" id="lHk-dG-0Bo"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="avs-Bi-dNf" secondAttribute="trailing" id="6ud-9m-C5f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qyv-Em-i4P" secondAttribute="bottom" id="7Bn-op-7pg"/>
+                <constraint firstItem="qyv-Em-i4P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="K4y-Sm-VvI"/>
+                <constraint firstItem="M4A-24-NHu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LCm-Tf-cga"/>
+                <constraint firstItem="qyv-Em-i4P" firstAttribute="top" secondItem="avs-Bi-dNf" secondAttribute="bottom" constant="1" id="TKV-lk-48x"/>
+                <constraint firstItem="avs-Bi-dNf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Zyu-PG-3yz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qyv-Em-i4P" secondAttribute="trailing" id="rfs-Ax-OVs"/>
+                <constraint firstItem="avs-Bi-dNf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="utA-Uc-x7o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="M4A-24-NHu" secondAttribute="bottom" constant="60" id="yE9-sO-UI1"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add" width="64" height="64"/>
+    </resources>
+</document>

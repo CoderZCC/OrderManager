@@ -10,6 +10,13 @@
 		F05D894720F5DC8500FB9B5A /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */; };
 		F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894920F5DD9600FB9B5A /* KAlertTools.swift */; };
 		F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */; };
+		F05D895220F5E61300FB9B5A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895120F5E61300FB9B5A /* CostModel.swift */; };
+		F05D895420F5E70100FB9B5A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895320F5E70100FB9B5A /* AddViewModel.swift */; };
+		F05D895720F5EDA300FB9B5A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895520F5EDA300FB9B5A /* DetailViewController.swift */; };
+		F05D895820F5EDA300FB9B5A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D895620F5EDA300FB9B5A /* DetailViewController.xib */; };
+		F05D895B20F5EE1F00FB9B5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895920F5EE1F00FB9B5A /* HomeViewController.swift */; };
+		F05D895C20F5EE1F00FB9B5A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D895A20F5EE1F00FB9B5A /* HomeViewController.xib */; };
+		F05D895E20F5EFBF00FB9B5A /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */; };
 		F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C4520F5CD240086B24A /* AppDelegate.swift */; };
 		F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4C20F5CD250086B24A /* Assets.xcassets */; };
 		F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4E20F5CD250086B24A /* LaunchScreen.storyboard */; };
@@ -25,12 +32,10 @@
 		F0962C7120F5CE5D0086B24A /* ExtensionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C6920F5CE5D0086B24A /* ExtensionTool.swift */; };
 		F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C7320F5CE700086B24A /* kSaveDataTool.swift */; };
 		F0962C7620F5CE700086B24A /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C7420F5CE700086B24A /* CircleImageView.swift */; };
-		F0962C7B20F5CEE10086B24A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C7820F5CEE10086B24A /* HomeViewController.swift */; };
 		F0962C7F20F5CF210086B24A /* HUDViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C7D20F5CF210086B24A /* HUDViewTool.swift */; };
 		F0962C8020F5CF210086B24A /* HUDViewTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0962C7E20F5CF210086B24A /* HUDViewTool.xib */; };
 		F0962C8320F5CFC80086B24A /* DataMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8220F5CFC80086B24A /* DataMacro.swift */; };
 		F0962C8520F5D0E60086B24A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8420F5D0E60086B24A /* HomeViewModel.swift */; };
-		F0962C8720F5D0F10086B24A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8620F5D0F10086B24A /* HomeModel.swift */; };
 		F0962C8A20F5D30A0086B24A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8820F5D30A0086B24A /* AddViewController.swift */; };
 		F0962C8B20F5D30A0086B24A /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0962C8920F5D30A0086B24A /* AddViewController.xib */; };
 		F0962C8D20F5D6CB0086B24A /* FalseNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */; };
@@ -48,6 +53,13 @@
 		F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F05D894920F5DD9600FB9B5A /* KAlertTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAlertTools.swift; sourceTree = "<group>"; };
 		F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAlertTools.xib; sourceTree = "<group>"; };
+		F05D895120F5E61300FB9B5A /* CostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
+		F05D895320F5E70100FB9B5A /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
+		F05D895520F5EDA300FB9B5A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F05D895620F5EDA300FB9B5A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		F05D895920F5EE1F00FB9B5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F05D895A20F5EE1F00FB9B5A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		F0962C4220F5CD240086B24A /* OrderManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0962C4520F5CD240086B24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0962C4C20F5CD250086B24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,12 +77,10 @@
 		F0962C6920F5CE5D0086B24A /* ExtensionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTool.swift; sourceTree = "<group>"; };
 		F0962C7320F5CE700086B24A /* kSaveDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kSaveDataTool.swift; sourceTree = "<group>"; };
 		F0962C7420F5CE700086B24A /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
-		F0962C7820F5CEE10086B24A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F0962C7D20F5CF210086B24A /* HUDViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDViewTool.swift; sourceTree = "<group>"; };
 		F0962C7E20F5CF210086B24A /* HUDViewTool.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HUDViewTool.xib; sourceTree = "<group>"; };
 		F0962C8220F5CFC80086B24A /* DataMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMacro.swift; sourceTree = "<group>"; };
 		F0962C8420F5D0E60086B24A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		F0962C8620F5D0F10086B24A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		F0962C8820F5D30A0086B24A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F0962C8920F5D30A0086B24A /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 		F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FalseNavBarView.swift; sourceTree = "<group>"; };
@@ -187,6 +197,7 @@
 				F0962C6620F5CE5D0086B24A /* UIColor+Ext.swift */,
 				F0962C6720F5CE5D0086B24A /* DispatchQueue+Ext.swift */,
 				F0962C6820F5CE5D0086B24A /* Number+Ext.swift */,
+				F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */,
 			);
 			path = ExtensionTool;
 			sourceTree = "<group>";
@@ -203,7 +214,10 @@
 		F0962C7720F5CEE10086B24A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F0962C7820F5CEE10086B24A /* HomeViewController.swift */,
+				F05D895920F5EE1F00FB9B5A /* HomeViewController.swift */,
+				F05D895A20F5EE1F00FB9B5A /* HomeViewController.xib */,
+				F05D895520F5EDA300FB9B5A /* DetailViewController.swift */,
+				F05D895620F5EDA300FB9B5A /* DetailViewController.xib */,
 				F0962C8820F5D30A0086B24A /* AddViewController.swift */,
 				F0962C8920F5D30A0086B24A /* AddViewController.xib */,
 			);
@@ -214,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F0962C8420F5D0E60086B24A /* HomeViewModel.swift */,
+				F05D895320F5E70100FB9B5A /* AddViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,7 +236,7 @@
 		F0962C7A20F5CEE10086B24A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F0962C8620F5D0F10086B24A /* HomeModel.swift */,
+				F05D895120F5E61300FB9B5A /* CostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,10 +334,12 @@
 				F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */,
 				F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */,
 				F0962C9E20F5D94B0086B24A /* RefreshGifTool.xib in Resources */,
+				F05D895820F5EDA300FB9B5A /* DetailViewController.xib in Resources */,
 				F0962C9820F5D94B0086B24A /* RefreshTool.xib in Resources */,
 				F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */,
 				F0962C8B20F5D30A0086B24A /* AddViewController.xib in Resources */,
 				F0962C8020F5CF210086B24A /* HUDViewTool.xib in Resources */,
+				F05D895C20F5EE1F00FB9B5A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,8 +352,8 @@
 			files = (
 				F0962C9920F5D94B0086B24A /* RefreshFooterTool.swift in Sources */,
 				F0962C8520F5D0E60086B24A /* HomeViewModel.swift in Sources */,
+				F05D895B20F5EE1F00FB9B5A /* HomeViewController.swift in Sources */,
 				F0962C7020F5CE5D0086B24A /* Number+Ext.swift in Sources */,
-				F0962C8720F5D0F10086B24A /* HomeModel.swift in Sources */,
 				F0962C9D20F5D94B0086B24A /* RefreshHeaderTool.swift in Sources */,
 				F05D894720F5DC8500FB9B5A /* UIView+Ext.swift in Sources */,
 				F0962C7F20F5CF210086B24A /* HUDViewTool.swift in Sources */,
@@ -345,12 +362,13 @@
 				F0962C7620F5CE700086B24A /* CircleImageView.swift in Sources */,
 				F0962C6B20F5CE5D0086B24A /* UITextView+Ext.swift in Sources */,
 				F0962C6A20F5CE5D0086B24A /* UIImageView+Ext.swift in Sources */,
+				F05D895E20F5EFBF00FB9B5A /* UITableView+Ext.swift in Sources */,
 				F0962C8A20F5D30A0086B24A /* AddViewController.swift in Sources */,
 				F0962C8320F5CFC80086B24A /* DataMacro.swift in Sources */,
 				F0962C9A20F5D94B0086B24A /* UIScrollView+Ext.swift in Sources */,
-				F0962C7B20F5CEE10086B24A /* HomeViewController.swift in Sources */,
 				F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */,
 				F0962C7120F5CE5D0086B24A /* ExtensionTool.swift in Sources */,
+				F05D895420F5E70100FB9B5A /* AddViewModel.swift in Sources */,
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,
 				F0962C5E20F5CDE30086B24A /* BaseViewController.swift in Sources */,
 				F0962C6F20F5CE5D0086B24A /* DispatchQueue+Ext.swift in Sources */,
@@ -360,7 +378,9 @@
 				F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */,
 				F0962C6E20F5CE5D0086B24A /* UIColor+Ext.swift in Sources */,
 				F0962C6D20F5CE5D0086B24A /* String+Ext.swift in Sources */,
+				F05D895720F5EDA300FB9B5A /* DetailViewController.swift in Sources */,
 				F0962C9B20F5D94B0086B24A /* RefreshGifFooterTool.swift in Sources */,
+				F05D895220F5E61300FB9B5A /* CostModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

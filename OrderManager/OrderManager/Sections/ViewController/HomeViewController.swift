@@ -10,18 +10,38 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.initView()
+        self.initData()
+    }
+    
+    func initView() {
         
         self.title = "OrderManager"
         
-        self.view.addSubview(self.tableView)
-        self.view.addSubview(self.addBtn)
-        
-        self.tableView.k_reloadData()
+        self.tableView.k_hiddeLine()
+        self.tableView.rowHeight = 49.0
+        self.tableView.backgroundColor = kViewColor
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
-
-    @objc func addBtnAction() {
+    
+    func initData() {
+        
+        self.showLoading()
+        HomeViewModel.getOrderList { (arr) in
+            
+            self.hideHUD()
+            self.dataList = arr
+            self.tableView.k_reloadData()
+        }
+    }
+    
+    @IBAction func addBtnAction() {
         
         let addVC = AddViewController()
         self.present(addVC, animated: true, completion: nil)
@@ -30,49 +50,41 @@ class HomeViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    lazy var tableView: UITableView = { [unowned self] in
-        let tableView = UITableView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: kWidth, height: kHeight - kNavBarHeight))
-        tableView.tableFooterView = UIView()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        return tableView
-    }()
     
-    lazy var addBtn: UIButton = { [unowned self] in
-        let btn = UIButton.init(type: .custom)
-        let btnWH: CGFloat = 60.0
-        btn.frame = CGRect.init(x: (kWidth - btnWH) / 2.0, y: kHeight - kBottomSpace - btnWH - 44.0 - kNavBarHeight, width: btnWH, height: btnWH)
-        btn.setImage(#imageLiteral(resourceName: "add"), for: .normal)
-        btn.addTarget(self, action: #selector(addBtnAction), for: .touchUpInside)
-        
-        return btn
-    }()
-
     lazy var viewModel: HomeViewModel = {
         let viewModel = HomeViewModel()
         
         return viewModel
     }()
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let detailVC = DetailViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return self.dataList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        var cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell")
+        if cell == nil {
+            
+            cell = UITableViewCell.init(style: .value1, reuseIdentifier: "OrderCell")
+            cell?.selectionStyle = .none
+        }
+        let model = self.dataList![indexPath.row]
+        cell?.textLabel?.text = model.costTime
+        cell?.detailTextLabel?.text = (model.costNum ?? "0.0") + "元"
+        
+        return cell!
     }
 }
 
+        

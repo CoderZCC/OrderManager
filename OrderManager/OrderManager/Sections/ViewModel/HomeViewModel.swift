@@ -8,6 +8,29 @@
 
 import UIKit
 
-class HomeViewModel: NSObject {
+typealias CallBack = (([CostModel])->Void)?
 
+class HomeViewModel: NSObject {
+    
+    static func getOrderList(callBack: CallBack) {
+        
+        var dataList: [CostModel] = []
+        if let arr = kSaveDataTool.k_getStrArr(from: kCachesPath) {
+            
+            for str: String in arr {
+                
+                let model = CostModel()
+                let conentArr = str.components(separatedBy: ";")
+                
+                model.costTime = conentArr[0]
+                model.costType = conentArr[1]
+                model.costNum = conentArr[2]
+                model.costInfo = conentArr[3]
+                
+                dataList.append(model)
+            }
+        }
+        callBack?(dataList)
+    }
+    
 }

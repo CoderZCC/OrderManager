@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="OrderManager" customModuleProvider="target">
             <connections>
                 <outlet property="costTf" destination="nPz-sO-VrM" id="R4R-iz-vp6"/>
+                <outlet property="costTimeL" destination="dPH-6k-ZIS" id="31f-cX-NQd"/>
                 <outlet property="costTimeView" destination="pMk-L6-xrK" id="fR6-m6-2Op"/>
                 <outlet property="costTypeL" destination="pBR-IV-HWA" id="W8b-iM-tTB"/>
                 <outlet property="costTypeView" destination="YKi-3d-A4u" id="Bny-dW-8J5"/>

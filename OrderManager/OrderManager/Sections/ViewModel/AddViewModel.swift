@@ -1,5 +1,5 @@
 //
-//  HomeModel.swift
+//  AddViewModel.swift
 //  OrderManager
 //
 //  Created by 张崇超 on 2018/7/11.
@@ -8,6 +8,8 @@
 
 import UIKit
 
-class HomeModel: NSObject {
+class AddViewModel: NSObject {
 
+    
+    
 }

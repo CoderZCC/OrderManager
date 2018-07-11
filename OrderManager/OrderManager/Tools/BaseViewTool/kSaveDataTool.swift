@@ -155,7 +155,7 @@ extension kSaveDataTool {
     ///   - path: 文件路径
     /// - Returns: 结果
     @discardableResult
-    static func k_save(str: String, maxCount: Int = 5, to path: String) -> Bool {
+    static func k_save(str: String, maxCount: Int = Int.max, to path: String) -> Bool {
         
         var arr: [String] = []
         if let cachesArr = self.k_getStrArr(from: path) {
