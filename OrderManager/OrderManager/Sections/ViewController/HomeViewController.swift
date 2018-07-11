@@ -13,8 +13,12 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "OrderManager"
+        
         self.view.addSubview(self.tableView)
         self.view.addSubview(self.addBtn)
+        
+        self.tableView.k_reloadData()
     }
 
     @objc func addBtnAction() {

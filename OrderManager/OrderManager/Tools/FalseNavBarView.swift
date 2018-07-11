@@ -8,12 +8,6 @@
 
 import UIKit
 
-let kWidth = UIScreen.main.bounds.size.width
-let kHeight = UIScreen.main.bounds.size.height
-let kNavBarHeight: CGFloat = kHeight > 736.0 ? (88.0) : (64.0)
-let kWindow = UIApplication.shared.keyWindow
-let kRootVC = kWindow?.rootViewController
-
 extension UIViewController {
     
     /// 初始化导航栏

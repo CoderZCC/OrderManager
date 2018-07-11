@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     
-    // 设置导航栏
+    /// 设置导航栏
     func setNavigation(vc: BaseViewController) {
         
         let navbar = UINavigationBar.appearance()

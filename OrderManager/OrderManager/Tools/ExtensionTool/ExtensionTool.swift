@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias k_noArgumentCallBack = (()->Void)?
+
 extension NSObject {
     
     
