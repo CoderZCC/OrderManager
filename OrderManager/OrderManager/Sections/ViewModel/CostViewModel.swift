@@ -10,7 +10,7 @@ import UIKit
 
 typealias CallBack = (([CostModel])->Void)?
 
-class HomeViewModel: NSObject {
+class CostViewModel: NSObject {
         
     static func getOrderList(callBack: CallBack) {
         
@@ -28,4 +28,7 @@ class HomeViewModel: NSObject {
         model.costNum = conentArr[5]
         model.costInfo = conentArr[6]
     }
+    
+    
+    
 }

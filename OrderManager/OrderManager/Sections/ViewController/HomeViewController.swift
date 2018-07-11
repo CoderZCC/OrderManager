@@ -38,7 +38,7 @@ class HomeViewController: BaseViewController {
     
     func initData() {
         
-        HomeViewModel.getOrderList { (arr) in
+        CostViewModel.getOrderList { (arr) in
             
             self.dataList = arr
             self.tableView.k_reloadData()
@@ -59,8 +59,8 @@ class HomeViewController: BaseViewController {
         super.didReceiveMemoryWarning()
     }
     
-    lazy var viewModel: HomeViewModel = {
-        let viewModel = HomeViewModel()
+    lazy var viewModel: CostViewModel = {
+        let viewModel = CostViewModel()
         
         return viewModel
     }()
