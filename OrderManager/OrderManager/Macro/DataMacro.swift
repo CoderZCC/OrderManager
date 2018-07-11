@@ -14,3 +14,5 @@ let kNavBarHeight: CGFloat = kHeight > 736.0 ? (88.0) : (64.0)
 let kWindow = UIApplication.shared.keyWindow
 let kRootVC = kWindow?.rootViewController
 let kBottomSpace: CGFloat = kHeight > 736.0 ? (34.0) : (0.0)
+
+let kNavbarColor: UIColor = UIColor.k_colorWith(r: 214.0, g: 34.0, b: 34.0)

@@ -28,6 +28,9 @@
 		F0962C8320F5CFC80086B24A /* DataMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8220F5CFC80086B24A /* DataMacro.swift */; };
 		F0962C8520F5D0E60086B24A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8420F5D0E60086B24A /* HomeViewModel.swift */; };
 		F0962C8720F5D0F10086B24A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8620F5D0F10086B24A /* HomeModel.swift */; };
+		F0962C8A20F5D30A0086B24A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8820F5D30A0086B24A /* AddViewController.swift */; };
+		F0962C8B20F5D30A0086B24A /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0962C8920F5D30A0086B24A /* AddViewController.xib */; };
+		F0962C8D20F5D6CB0086B24A /* FalseNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		F0962C8220F5CFC80086B24A /* DataMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMacro.swift; sourceTree = "<group>"; };
 		F0962C8420F5D0E60086B24A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F0962C8620F5D0F10086B24A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		F0962C8820F5D30A0086B24A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		F0962C8920F5D30A0086B24A /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
+		F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FalseNavBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 		F0962C5920F5CD780086B24A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */,
 				F0962C7C20F5CF210086B24A /* LoadingTool */,
 				F0962C7220F5CE700086B24A /* BaseViewTool */,
 				F0962C6120F5CE5D0086B24A /* ExtensionTool */,
@@ -163,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				F0962C7820F5CEE10086B24A /* HomeViewController.swift */,
+				F0962C8820F5D30A0086B24A /* AddViewController.swift */,
+				F0962C8920F5D30A0086B24A /* AddViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -260,6 +269,7 @@
 			files = (
 				F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */,
 				F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */,
+				F0962C8B20F5D30A0086B24A /* AddViewController.xib in Resources */,
 				F0962C8020F5CF210086B24A /* HUDViewTool.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +289,7 @@
 				F0962C7620F5CE700086B24A /* CircleImageView.swift in Sources */,
 				F0962C6B20F5CE5D0086B24A /* UITextView+Ext.swift in Sources */,
 				F0962C6A20F5CE5D0086B24A /* UIImageView+Ext.swift in Sources */,
+				F0962C8A20F5D30A0086B24A /* AddViewController.swift in Sources */,
 				F0962C8320F5CFC80086B24A /* DataMacro.swift in Sources */,
 				F0962C7B20F5CEE10086B24A /* HomeViewController.swift in Sources */,
 				F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */,
@@ -286,6 +297,7 @@
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,
 				F0962C5E20F5CDE30086B24A /* BaseViewController.swift in Sources */,
 				F0962C6F20F5CE5D0086B24A /* DispatchQueue+Ext.swift in Sources */,
+				F0962C8D20F5D6CB0086B24A /* FalseNavBarView.swift in Sources */,
 				F0962C6C20F5CE5D0086B24A /* Date+Ext.swift in Sources */,
 				F0962C6E20F5CE5D0086B24A /* UIColor+Ext.swift in Sources */,
 				F0962C6D20F5CE5D0086B24A /* String+Ext.swift in Sources */,

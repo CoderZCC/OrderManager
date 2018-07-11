@@ -14,6 +14,22 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.k_colorWith(rgb: 216.0)
+        
+        // 使用自定义的返回图片
+        let navbar = UINavigationBar.appearance()
+        navbar.backIndicatorImage = #imageLiteral(resourceName: "back")
+        navbar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "back")
+        // 移除返回按钮上的文字
+        let backItem = UIBarButtonItem.init()
+        backItem.title = ""
+        self.navigationItem.backBarButtonItem = backItem
+        
+        /*
+         //使用系统的返回按钮图片
+         let backItem = UIBarButtonItem.init()
+         backItem.title = ""
+         self.navigationItem.backBarButtonItem = backItem
+         */
     }
 
     override func didReceiveMemoryWarning() {
