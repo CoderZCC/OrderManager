@@ -26,6 +26,8 @@
 		F0962C7F20F5CF210086B24A /* HUDViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C7D20F5CF210086B24A /* HUDViewTool.swift */; };
 		F0962C8020F5CF210086B24A /* HUDViewTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0962C7E20F5CF210086B24A /* HUDViewTool.xib */; };
 		F0962C8320F5CFC80086B24A /* DataMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8220F5CFC80086B24A /* DataMacro.swift */; };
+		F0962C8520F5D0E60086B24A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8420F5D0E60086B24A /* HomeViewModel.swift */; };
+		F0962C8720F5D0F10086B24A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C8620F5D0F10086B24A /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		F0962C7D20F5CF210086B24A /* HUDViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDViewTool.swift; sourceTree = "<group>"; };
 		F0962C7E20F5CF210086B24A /* HUDViewTool.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HUDViewTool.xib; sourceTree = "<group>"; };
 		F0962C8220F5CFC80086B24A /* DataMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMacro.swift; sourceTree = "<group>"; };
+		F0962C8420F5D0E60086B24A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0962C8620F5D0F10086B24A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 		F0962C7920F5CEE10086B24A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F0962C8420F5D0E60086B24A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 		F0962C7A20F5CEE10086B24A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0962C8620F5D0F10086B24A /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0962C8520F5D0E60086B24A /* HomeViewModel.swift in Sources */,
 				F0962C7020F5CE5D0086B24A /* Number+Ext.swift in Sources */,
+				F0962C8720F5D0F10086B24A /* HomeModel.swift in Sources */,
 				F0962C7F20F5CF210086B24A /* HUDViewTool.swift in Sources */,
 				F0962C5C20F5CDD50086B24A /* BaseNavigationController.swift in Sources */,
 				F0962C7620F5CE700086B24A /* CircleImageView.swift in Sources */,
