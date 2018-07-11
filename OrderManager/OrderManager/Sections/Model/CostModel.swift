@@ -16,9 +16,9 @@ class CostModel: NSObject {
     var costMonth: String = "\(Date().k_YMDHMS().month!)"
     /// 日
     var costDay: String = "\(Date().k_YMDHMS().day!)"
-    /// 消费一天
-    var sameDayArr: [CostModel] = []
-    
+    /// 年月日
+    var costYMD: String = Date().k_toDateStr("yyyy MM-dd")
+  
     /// 消费时间
     var costTime: String = Date().k_toDateStr("yyyy MM-dd HH:mm")
     /// 消费类型
@@ -34,11 +34,12 @@ class CostModel: NSObject {
         self.costYear = dataArr[0]
         self.costMonth = dataArr[1]
         self.costDay = dataArr[2]
-        
-        self.costTime = dataArr[3]
-        self.costType = dataArr[4]
-        self.costNum = dataArr[5]
-        self.costInfo = dataArr[6]
+        self.costYMD = dataArr[3]
+
+        self.costTime = dataArr[4]
+        self.costType = dataArr[5]
+        self.costNum = dataArr[6]
+        self.costInfo = dataArr[7]
     }
 
 }

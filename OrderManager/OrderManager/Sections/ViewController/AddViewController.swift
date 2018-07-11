@@ -101,7 +101,7 @@ class AddViewController: BaseViewController {
             return
         }
 
-        var saveStr: String = "\(self.model.costYear);\(self.model.costMonth);\(self.model.costDay);\(self.costTimeL.text!);"
+        var saveStr: String = "\(self.model.costYear);\(self.model.costMonth);\(self.model.costDay);\(self.model.costYMD);\(self.costTimeL.text!);"
         saveStr += "\(costType);\(costNum);\(self.otherInfoTv.text ?? "无备注信息")"
         
         if kSaveDataTool.k_save(str: saveStr, to: kCachesPath) {

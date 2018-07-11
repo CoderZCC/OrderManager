@@ -19,9 +19,16 @@ class CostViewModel: NSObject {
             
             let model = CostModel.init(dataArr: str.components(separatedBy: ";"))
             
-            
             dataList.append(model)
         }
+        
+        
+        
+        
+        
+        
+        
+        
         
         callBack?(dataList)
     }
