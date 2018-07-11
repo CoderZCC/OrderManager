@@ -77,6 +77,7 @@ class RefreshGifHeaderTool: UIView {
         
         let tool = RefreshGifHeaderTool.loadHeaderView()
         tool.frame = CGRect.init(x: 0.0, y: -kHeaderHeight - 10.0, width: scrollView.frame.width, height: kHeaderHeight)
+        tool.backgroundColor = scrollView.backgroundColor
         tool.scrollView = scrollView
         tool.originalEdgeInset = scrollView.contentInset
         tool.callBack = callBack

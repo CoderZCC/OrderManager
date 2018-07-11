@@ -66,8 +66,7 @@ class RefreshHeaderTool: UIView {
         
         let tool = RefreshHeaderTool.loadHeaderView()
         tool.frame = CGRect.init(x: 0.0, y: -kHeaderHeight, width: scrollView.frame.width, height: kHeaderHeight)
-        tool.layoutIfNeeded()
-        
+        tool.backgroundColor = scrollView.backgroundColor
         tool.scrollView = scrollView
         tool.originalEdgeInset = scrollView.contentInset
         tool.callBack = callBack

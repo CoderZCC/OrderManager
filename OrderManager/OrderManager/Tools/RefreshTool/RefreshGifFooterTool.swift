@@ -56,6 +56,7 @@ class RefreshGifFooterTool: UIView {
         
         let tool = RefreshGifFooterTool.loadFooterView()
         tool.frame = CGRect.init(x: 0.0, y: scrollView.frame.height, width: scrollView.frame.width, height: kFooterHeight)
+        tool.backgroundColor = scrollView.backgroundColor
         tool.scrollView = scrollView
         tool.callBack = callBack
         tool.originalEdgeInset = scrollView.contentInset
