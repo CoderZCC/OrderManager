@@ -10,6 +10,9 @@ import UIKit
 
 class AddViewController: BaseViewController {
 
+    /// 保存成功的回调
+    var saveSuccessCallBack: (()->Void)?
+    
     /// 消费时间
     @IBOutlet weak var costTimeView: UIView!
     @IBOutlet weak var costTimeL: UILabel!
@@ -23,7 +26,21 @@ class AddViewController: BaseViewController {
     /// 完成按钮
     @IBOutlet weak var finishBtn: UIButton!
     /// 数据模型
-    private let model: CostModel = CostModel()
+    private var model: CostModel = CostModel()
+    /// 顶部高度约束
+    @IBOutlet weak var navHeightCons: NSLayoutConstraint!
+    /// 标题文字
+    @IBOutlet weak var navTitleL: UILabel!
+    /// 是否是展示详情
+    private var isDetail: Bool = false
+    
+    convenience init(model: CostModel) {
+        self.init(nibName: "AddViewController", bundle: nil)
+        
+        self.isDetail = true
+        self.model = model
+        self.title = "消费详情"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +49,21 @@ class AddViewController: BaseViewController {
     }
     
     func initView() {
+        
+        self.finishBtn.isHidden = self.isDetail
+        self.view.isUserInteractionEnabled = !self.isDetail
+        if self.isDetail {
+            
+            self.navHeightCons.constant = 44.0
+            
+            self.costTf.text = self.model.costNum
+            self.costTimeL.text = self.model.costTime
+            self.costTypeL.text = self.model.costType
+            self.otherInfoTv.text = self.model.costInfo
+            if self.model.costInfo.isEmpty {
+                self.otherInfoTv.text = "无备注信息"
+            }
+        }
         
         self.otherInfoTv.k_placeholder = "输入备注信息(150字)"
         self.otherInfoTv.tintColor = UIColor.darkGray
@@ -74,29 +106,14 @@ class AddViewController: BaseViewController {
             self.showText("请输入消费金额")
             return
         }
-        self.model.costType = costType
-        self.model.costNum = costNum
         
-        let saveStr: String = self.model.costTime + ";" + costType + ";" + costNum + ";" + self.model.costInfo
-        let isOk = kSaveDataTool.k_save(str: saveStr, to: kCachesPath)
-        if isOk {
-            
-            self.showText("保存成功")
-            
-        } else {
-            
-            self.showText("保存失败")
-        }
+        self.showText("保存成功")
+        self.saveSuccessCallBack?()
+        self.cancleBtnAction()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    lazy var viewModel: AddViewModel = {
-        let viewModel = AddViewModel()
-        
-        return viewModel
-    }()
-    
+
 }

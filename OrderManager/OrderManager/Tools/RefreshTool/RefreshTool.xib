@@ -13,9 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RefreshHeaderTool" customModule="上下拉刷新" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RefreshHeaderTool" customModule="OrderManager" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下拉可以刷新" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIU-2G-Dhe">
                     <rect key="frame" x="139.5" y="2.5" width="74" height="14.5"/>
@@ -62,9 +62,9 @@
             </connections>
             <point key="canvasLocation" x="22.5" y="204"/>
         </view>
-        <view contentMode="scaleToFill" id="tcC-q0-uTv" customClass="RefreshFooterTool" customModule="上下拉刷新" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="tcC-q0-uTv" customClass="RefreshFooterTool" customModule="OrderManager" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="353" height="41"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击加载更多" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VB-yn-nfw">
                     <rect key="frame" x="139.5" y="13.5" width="74" height="14.5"/>

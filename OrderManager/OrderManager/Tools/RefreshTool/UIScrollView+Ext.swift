@@ -24,7 +24,7 @@ extension UIScrollView {
     
     //MARK: -添加Gif头部刷新控件
     /// 添加Gif头部刷新控件
-    func addGifHeaderRefresh(callBack: (()->Void)?) {
+    func k_addGifHeaderRefresh(callBack: (()->Void)?) {
         
         let header = RefreshGifHeaderTool.refreshWithHeader(scrollView: self, callBack: callBack)
         
@@ -35,7 +35,7 @@ extension UIScrollView {
     }
     //MARK: -添加普通头部刷新控件
     /// 添加普通头部刷新控件
-    func addHeaderRefresh(callBack: (()->Void)?) {
+    func k_addHeaderRefresh(callBack: (()->Void)?) {
         
         let header = RefreshHeaderTool.refreshWithHeader(scrollView: self, callBack: callBack)
         
@@ -47,7 +47,7 @@ extension UIScrollView {
     
     //MARK: -开始刷新
     /// 开始刷新
-    func headerBeginRefreshing() {
+    func k_headerBeginRefreshing() {
         
         let header = objc_getAssociatedObject(self, &kScrollViewHeaderViewKey)
         if let header = header as? RefreshGifHeaderTool {
@@ -58,7 +58,7 @@ extension UIScrollView {
     }
     //MARK: -结束刷新
     /// 结束刷新
-    func headerEndRefreshing() {
+    func k_headerEndRefreshing() {
         
         let header = objc_getAssociatedObject(self, &kScrollViewHeaderViewKey)
         if let header = header as? RefreshGifHeaderTool {
@@ -72,7 +72,7 @@ extension UIScrollView {
     
     //MARK: -添加Gif尾部刷新控件
     /// 添加Gif尾部刷新控件
-    func addGifFooterRefresh(callBack: (()->Void)?) {
+    func k_addGifFooterRefresh(callBack: (()->Void)?) {
         
         let footer = RefreshGifFooterTool.refreshWithFooter(scrollView: self, callBack: callBack)
         
@@ -84,7 +84,7 @@ extension UIScrollView {
     }
     //MARK: -添加普通尾部刷新控件
     /// 添加普通尾部刷新控件
-    func addFooterRefresh(callBack: (()->Void)?) {
+    func k_addFooterRefresh(callBack: (()->Void)?) {
         
         let footer = RefreshFooterTool.refreshWithFooter(scrollView: self, callBack: callBack)
         
@@ -97,7 +97,7 @@ extension UIScrollView {
     
     //MARK: -展示无数据
     /// 展示无数据
-    func footerEndRefrshWithNoData() {
+    func k_footerEndRefrshWithNoData() {
      
         let footer = objc_getAssociatedObject(self, &kScrollViewFooterViewKey)
         if let footer = footer as? RefreshGifFooterTool {
@@ -108,7 +108,7 @@ extension UIScrollView {
     }
     //MARK: -重设无数据样式,进入待刷新状态
     /// 重设无数据样式,进入待刷新状态
-    func footerResetNoDataState() {
+    func k_footerResetNoDataState() {
         
         let footer = objc_getAssociatedObject(self, &kScrollViewFooterViewKey)
         if let footer = footer as? RefreshGifFooterTool {
@@ -120,7 +120,7 @@ extension UIScrollView {
     
     // ================== 占位图 ==================
     /// 占位文字
-    var placholderText: String? {
+    var k_placholderText: String? {
         get {
             return objc_getAssociatedObject(self, &UIScrollViewPlacholderTextKey
                 ) as? String
@@ -130,7 +130,7 @@ extension UIScrollView {
         }
     }
     /// 占位图
-    var placholderImg: String? {
+    var k_placholderImg: String? {
         get {
             return objc_getAssociatedObject(self, &UIScrollViewPlacholderImgKey
                 ) as? String
@@ -156,11 +156,11 @@ extension UIScrollView {
             count = col.numberOfItems(inSection: 0)
         }
         // 结束头部刷新
-        self.headerEndRefreshing()
+        self.k_headerEndRefreshing()
         // 结束尾部刷新
         let footer = objc_getAssociatedObject(self, &kScrollViewFooterViewKey) as? RefreshGifFooterTool
         if let footer = footer, footer.footerState != .noData {
-            self.footerResetNoDataState()
+            self.k_footerResetNoDataState()
         }
         
         if count == 0 {
@@ -169,8 +169,8 @@ extension UIScrollView {
             let view = PlaceHolderView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height))
             view.clickCallBack = callBack
             view.tag = 101
-            view.textL.text = self.placholderText ?? "暂无数据哦~"
-            view.imgV.image = UIImage.init(named: self.placholderImg ?? "noData")
+            view.textL.text = self.k_placholderText ?? "暂无数据哦~"
+            view.imgV.image = UIImage.init(named: self.k_placholderImg ?? "noData")
             self.addSubview(view)
             
         } else {

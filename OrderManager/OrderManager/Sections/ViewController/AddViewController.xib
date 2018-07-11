@@ -18,6 +18,8 @@
                 <outlet property="costTypeL" destination="pBR-IV-HWA" id="W8b-iM-tTB"/>
                 <outlet property="costTypeView" destination="YKi-3d-A4u" id="Bny-dW-8J5"/>
                 <outlet property="finishBtn" destination="ED1-mO-vE1" id="NM8-W0-xuk"/>
+                <outlet property="navHeightCons" destination="mSI-WC-9tO" id="EBx-JE-TbV"/>
+                <outlet property="navTitleL" destination="7Sb-I4-7q5" id="RQA-Yw-aFT"/>
                 <outlet property="otherInfoTv" destination="Q1t-XB-hm7" id="I1z-V9-DWa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef5-il-uwh" userLabel="假的导航栏">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef5-il-uwh" userLabel="假的导航栏">
                     <rect key="frame" x="0.0" y="-24" width="375" height="88"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新增" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sb-I4-7q5">

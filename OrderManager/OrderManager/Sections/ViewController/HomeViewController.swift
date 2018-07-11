@@ -16,7 +16,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         self.initView()
-        self.initData()
+        self.tableView.k_headerBeginRefreshing()
     }
     
     func initView() {
@@ -28,14 +28,18 @@ class HomeViewController: BaseViewController {
         self.tableView.backgroundColor = kViewColor
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.tableView.k_addHeaderRefresh { [unowned self] in
+            
+            self.dataList?.removeAll()
+            self.initData()
+        }
     }
     
     func initData() {
         
-        self.showLoading()
         HomeViewModel.getOrderList { (arr) in
             
-            self.hideHUD()
             self.dataList = arr
             self.tableView.k_reloadData()
         }
@@ -44,6 +48,10 @@ class HomeViewController: BaseViewController {
     @IBAction func addBtnAction() {
         
         let addVC = AddViewController()
+        addVC.saveSuccessCallBack = { [unowned self] in
+            
+            self.tableView.k_headerBeginRefreshing()
+        }
         self.present(addVC, animated: true, completion: nil)
     }
     
@@ -61,8 +69,10 @@ class HomeViewController: BaseViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let detailVC = DetailViewController()
+
+        let model = self.dataList![indexPath.row]
+
+        let detailVC = AddViewController.init(model: model)
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

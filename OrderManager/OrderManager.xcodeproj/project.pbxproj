@@ -11,9 +11,6 @@
 		F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894920F5DD9600FB9B5A /* KAlertTools.swift */; };
 		F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */; };
 		F05D895220F5E61300FB9B5A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895120F5E61300FB9B5A /* CostModel.swift */; };
-		F05D895420F5E70100FB9B5A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895320F5E70100FB9B5A /* AddViewModel.swift */; };
-		F05D895720F5EDA300FB9B5A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895520F5EDA300FB9B5A /* DetailViewController.swift */; };
-		F05D895820F5EDA300FB9B5A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D895620F5EDA300FB9B5A /* DetailViewController.xib */; };
 		F05D895B20F5EE1F00FB9B5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895920F5EE1F00FB9B5A /* HomeViewController.swift */; };
 		F05D895C20F5EE1F00FB9B5A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D895A20F5EE1F00FB9B5A /* HomeViewController.xib */; };
 		F05D895E20F5EFBF00FB9B5A /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */; };
@@ -54,9 +51,6 @@
 		F05D894920F5DD9600FB9B5A /* KAlertTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAlertTools.swift; sourceTree = "<group>"; };
 		F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAlertTools.xib; sourceTree = "<group>"; };
 		F05D895120F5E61300FB9B5A /* CostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
-		F05D895320F5E70100FB9B5A /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
-		F05D895520F5EDA300FB9B5A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		F05D895620F5EDA300FB9B5A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		F05D895920F5EE1F00FB9B5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F05D895A20F5EE1F00FB9B5A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
@@ -216,8 +210,6 @@
 			children = (
 				F05D895920F5EE1F00FB9B5A /* HomeViewController.swift */,
 				F05D895A20F5EE1F00FB9B5A /* HomeViewController.xib */,
-				F05D895520F5EDA300FB9B5A /* DetailViewController.swift */,
-				F05D895620F5EDA300FB9B5A /* DetailViewController.xib */,
 				F0962C8820F5D30A0086B24A /* AddViewController.swift */,
 				F0962C8920F5D30A0086B24A /* AddViewController.xib */,
 			);
@@ -228,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				F0962C8420F5D0E60086B24A /* HomeViewModel.swift */,
-				F05D895320F5E70100FB9B5A /* AddViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,13 +252,13 @@
 		F0962C8E20F5D94B0086B24A /* RefreshTool */ = {
 			isa = PBXGroup;
 			children = (
-				F0962C8F20F5D94B0086B24A /* RefreshGifHeaderTool.swift */,
-				F0962C9020F5D94B0086B24A /* RefreshTool.xib */,
-				F0962C9120F5D94B0086B24A /* RefreshFooterTool.swift */,
 				F0962C9220F5D94B0086B24A /* UIScrollView+Ext.swift */,
-				F0962C9320F5D94B0086B24A /* RefreshGifFooterTool.swift */,
 				F0962C9420F5D94B0086B24A /* RefreshCommon.swift */,
 				F0962C9520F5D94B0086B24A /* RefreshHeaderTool.swift */,
+				F0962C9120F5D94B0086B24A /* RefreshFooterTool.swift */,
+				F0962C9020F5D94B0086B24A /* RefreshTool.xib */,
+				F0962C8F20F5D94B0086B24A /* RefreshGifHeaderTool.swift */,
+				F0962C9320F5D94B0086B24A /* RefreshGifFooterTool.swift */,
 				F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */,
 			);
 			path = RefreshTool;
@@ -334,7 +325,6 @@
 				F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */,
 				F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */,
 				F0962C9E20F5D94B0086B24A /* RefreshGifTool.xib in Resources */,
-				F05D895820F5EDA300FB9B5A /* DetailViewController.xib in Resources */,
 				F0962C9820F5D94B0086B24A /* RefreshTool.xib in Resources */,
 				F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */,
 				F0962C8B20F5D30A0086B24A /* AddViewController.xib in Resources */,
@@ -368,7 +358,6 @@
 				F0962C9A20F5D94B0086B24A /* UIScrollView+Ext.swift in Sources */,
 				F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */,
 				F0962C7120F5CE5D0086B24A /* ExtensionTool.swift in Sources */,
-				F05D895420F5E70100FB9B5A /* AddViewModel.swift in Sources */,
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,
 				F0962C5E20F5CDE30086B24A /* BaseViewController.swift in Sources */,
 				F0962C6F20F5CE5D0086B24A /* DispatchQueue+Ext.swift in Sources */,
@@ -378,7 +367,6 @@
 				F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */,
 				F0962C6E20F5CE5D0086B24A /* UIColor+Ext.swift in Sources */,
 				F0962C6D20F5CE5D0086B24A /* String+Ext.swift in Sources */,
-				F05D895720F5EDA300FB9B5A /* DetailViewController.swift in Sources */,
 				F0962C9B20F5D94B0086B24A /* RefreshGifFooterTool.swift in Sources */,
 				F05D895220F5E61300FB9B5A /* CostModel.swift in Sources */,
 			);
