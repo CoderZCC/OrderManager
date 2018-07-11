@@ -14,21 +14,16 @@ class CostViewModel: NSObject {
         
     static func getOrderList(callBack: CallBack) {
         
-        callBack?([])
-    }
-    
-    static func setModel(model: CostModel, conentArr: [String]) {
+        var dataList: [CostModel] = []
+        for str in kSaveDataTool.k_getStrArr(from: kCachesPath) ?? [] {
+            
+            let model = CostModel.init(dataArr: str.components(separatedBy: ";"))
+            
+            
+            dataList.append(model)
+        }
         
-        model.costYear = conentArr[0]
-        model.costMonth = conentArr[1]
-        model.costDay = conentArr[2]
-
-        model.costTime = conentArr[3]
-        model.costType = conentArr[4]
-        model.costNum = conentArr[5]
-        model.costInfo = conentArr[6]
+        callBack?(dataList)
     }
-    
-    
-    
+
 }

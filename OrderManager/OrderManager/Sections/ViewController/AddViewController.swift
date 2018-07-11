@@ -73,12 +73,6 @@ class AddViewController: BaseViewController {
         self.finishBtn.k_setCornerRadius(4.0)
         
         self.costTimeL.text = self.model.costTime
-        self.costTimeView.k_addTarget {
-            
-            self.view.endEditing(true)
-            
-            print("costTimeView")
-        }
         self.costTypeView.k_addTarget { [unowned self] in
             
             self.view.endEditing(true)
@@ -106,10 +100,20 @@ class AddViewController: BaseViewController {
             self.showText("请输入消费金额")
             return
         }
+
+        var saveStr: String = "\(self.model.costYear);\(self.model.costMonth);\(self.model.costDay);\(self.costTimeL.text!);"
+        saveStr += "\(costType);\(costNum);\(self.otherInfoTv.text ?? "无备注信息")"
         
-        self.showText("保存成功")
-        self.saveSuccessCallBack?()
-        self.cancleBtnAction()
+        if kSaveDataTool.k_save(str: saveStr, to: kCachesPath) {
+
+            self.showText("保存成功")
+            self.saveSuccessCallBack?()
+            self.cancleBtnAction()
+
+        } else {
+
+            self.showText("保存失败")
+        }
     }
     
     override func didReceiveMemoryWarning() {

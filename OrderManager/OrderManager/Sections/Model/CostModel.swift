@@ -27,4 +27,18 @@ class CostModel: NSObject {
     var costNum: String?
     /// 消费备注
     var costInfo: String = ""
+    
+    convenience init(dataArr: [String]) {
+        self.init()
+        
+        self.costYear = dataArr[0]
+        self.costMonth = dataArr[1]
+        self.costDay = dataArr[2]
+        
+        self.costTime = dataArr[3]
+        self.costType = dataArr[4]
+        self.costNum = dataArr[5]
+        self.costInfo = dataArr[6]
+    }
+
 }
