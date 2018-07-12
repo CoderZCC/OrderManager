@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootVC
         self.setNavigation(vc: homeVC)
         
+        self.registerAppNote()
+        
         return true
     }
 }

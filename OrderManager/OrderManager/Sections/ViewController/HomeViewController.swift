@@ -63,6 +63,8 @@ class HomeViewController: BaseViewController {
     /// 日期选择
     @IBAction func selectedAction() {
         
+        //self.k_sendLocalNote(title: "测试", content: "啊啊啊", dataDic: ["a":"a"])
+        
         SpecialPickerView.showPickView(currentTime: self.topBtnText) { (str) in
             
             if self.topBtnText != str {
