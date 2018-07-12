@@ -30,6 +30,9 @@
                             <state key="normal" title="2018-07">
                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
+                            <connections>
+                                <action selector="selectedAction" destination="-1" eventType="touchUpInside" id="OUC-wc-gCZ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

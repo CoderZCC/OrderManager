@@ -84,6 +84,15 @@ class AddViewController: BaseViewController {
                 self.costTypeL.text = kCostTypeStr[index]
             })
         }
+        // 日期选择
+        self.costTimeView.k_addTarget { [unowned self] in
+            
+            self.view.endEditing(true)
+            DatePickerTool.showDatePickView(showModel: UIDatePickerMode.dateAndTime) { [unowned self] (timeStr) in
+                
+                self.costTimeL.text = timeStr
+            }
+        }
     }
     
     //MARK: 点击事件

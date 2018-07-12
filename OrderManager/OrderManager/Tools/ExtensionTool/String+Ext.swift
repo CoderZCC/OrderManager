@@ -201,7 +201,7 @@ extension String {
     /// - Returns: Int
     func k_toInt() -> Int {
         if let num = Int(self) {
-            return Indnumex
+            return num
         }
         return 0
     }

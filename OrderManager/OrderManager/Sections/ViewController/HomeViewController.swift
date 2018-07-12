@@ -52,6 +52,12 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: 点击事件
+    /// 日期选择
+    @IBAction func selectedAction() {
+        
+       
+    }
+    
     /// 拖动手势
     @objc func panAction(pan: UIPanGestureRecognizer) {
         
