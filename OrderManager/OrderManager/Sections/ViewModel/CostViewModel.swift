@@ -24,14 +24,15 @@ class CostViewModel: NSObject {
     /// 数据源
     var dataList: [String: [CostModel]] = [:]
     /// 所有的key
-    lazy var allKeys: [String] = {
+    var allKeys: [String] {
         var arr: [String] = []
         for key in self.dataList.keys {
             
             arr.append(key)
         }
-        return arr
-    }()
+        return arr.sorted()
+    }
+    
     /// 获取key
     ///
     /// - Parameter index: 组下标
@@ -85,15 +86,18 @@ class CostViewModel: NSObject {
         var sectionDicArr: [String: [CostModel]] = [:]
         for model in allDateArr {
             
-            if let arr = sectionDicArr[model.costYMD] {
+            if let arr = sectionDicArr[model.costMD] {
                 
-                sectionDicArr[model.costYMD] = (arr + [model])
+                print("新增")
+                sectionDicArr[model.costMD] = (arr + [model])
                 
             } else {
                 
-                sectionDicArr[model.costYMD] = [model]
+                print("创建")
+                sectionDicArr[model.costMD] = [model]
             }
         }
+        print(sectionDicArr)
         self.dataList = sectionDicArr
 
         callBack?()
@@ -105,7 +109,8 @@ class CostViewModel: NSObject {
     func saveOrder(callBack: CallBack) {
         
         var saveStr: String = "\(self.costModel.costType!);\(self.costModel.costNum!);\(self.costModel.costInfo);"
-        saveStr += "\(self.costModel.costYMD);\(self.costModel.costYM);\(self.costModel.costTime);" + "\(self.costModel.address)"
+        
+        saveStr += "\(self.costModel.costMD);\(self.costModel.costYM);\(self.costModel.costTime);" + "\(self.costModel.address)"
         
         if kSaveDataTool.k_save(str: saveStr, to: kCachesPath) {
             

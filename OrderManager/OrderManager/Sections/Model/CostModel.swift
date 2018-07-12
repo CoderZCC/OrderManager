@@ -10,10 +10,16 @@ import UIKit
 
 class CostModel: NSObject {
 
-    /// 消费时间 年月日
-    var costYMD: String = kNowDate.k_toDateStr("MM-dd")
+    /// 消费时间 月日
+    //var costMD: String = kNowDate.k_toDateStr("MM-dd")
+    lazy var costMD: String = {
+        return self.costTime.k_subText(from: 5, to: 9)
+    }()
     /// 消费时间 年月
-    var costYM: String = kNowDate.k_toDateStr("yyyy-MM")
+    //var costYM: String = kNowDate.k_toDateStr("yyyy-MM")
+    lazy var costYM: String = {
+        return self.costTime.k_subText(to: 3) + "-" + self.costTime.k_subText(from: 5, to: 6)
+    }()
     /// 消费时间 年月日时分
     var costTime: String = kNowDate.k_toDateStr("yyyy MM-dd HH:mm")
     /// 消费类型
@@ -34,7 +40,7 @@ class CostModel: NSObject {
         self.costNum = dataArr[1]
         self.costInfo = dataArr[2]
         
-        self.costYMD = dataArr[3]
+        self.costMD = dataArr[3]
         self.costYM = dataArr[4]
         self.costTime = dataArr[5]
         self.address = dataArr[6]
