@@ -14,8 +14,6 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     /// 日期选择按钮
     @IBOutlet weak var selectedTBtn: UIButton!
-    /// 加号按钮的大小
-    private let btnWH: CGFloat = 65.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,22 +63,24 @@ class HomeViewController: BaseViewController {
 
         case .ended, .cancelled:
             
-            if locationPoint.y - self.btnWH / 2.0 <= 0.0 {
+            if locationPoint.y - kAddBtnWH / 2.0 <= 0.0 {
                 
-                self.addBtn.center = CGPoint.init(x: locationPoint.x, y: self.btnWH / 2.0)
+                self.addBtn.center = CGPoint.init(x: locationPoint.x, y: kAddBtnWH / 2.0)
                 
-            } else if locationPoint.y + self.btnWH / 2.0 >= self.view.frame.height {
+            } else if locationPoint.y + kAddBtnWH / 2.0 >= self.view.frame.height {
                 
-                self.addBtn.center = CGPoint.init(x: locationPoint.x, y: self.view.frame.height - self.btnWH / 2.0)
+                self.addBtn.center = CGPoint.init(x: locationPoint.x, y: self.view.frame.height - kAddBtnWH / 2.0)
                 
-            } else if locationPoint.x - self.btnWH / 2.0 <= 0.0 {
+            } else if locationPoint.x - kAddBtnWH / 2.0 <= 0.0 {
                 
-                self.addBtn.center = CGPoint.init(x: self.btnWH / 2.0, y: locationPoint.y)
+                self.addBtn.center = CGPoint.init(x: kAddBtnWH / 2.0, y: locationPoint.y)
                 
-            } else if locationPoint.x + self.btnWH / 2.0 >= kWidth {
+            } else if locationPoint.x + kAddBtnWH / 2.0 >= kWidth {
                 
-                self.addBtn.center = CGPoint.init(x: kWidth - self.btnWH / 2.0, y: locationPoint.y)
+                self.addBtn.center = CGPoint.init(x: kWidth - kAddBtnWH / 2.0, y: locationPoint.y)
             }
+            let str = locationPoint.x.k_toIntString() + ";" + locationPoint.y.k_toIntString()
+            kSaveDataTool.k_addValueToUserdefault(key: kAddBtnLocationKey, value: str)
             
         default:
             break
@@ -100,8 +100,9 @@ class HomeViewController: BaseViewController {
     
     lazy var addBtn: UIButton = { [unowned self] in
         let btn = UIButton.init(type: .custom)
-        btn.frame = CGRect.init(x: 0.0, y: kHeight - self.btnWH * 3.0, width: self.btnWH, height: self.btnWH)
+        btn.frame = CGRect.init(origin: CGPoint.zero, size: CGSize(width: kAddBtnWH, height: kAddBtnWH))
         btn.setImage(#imageLiteral(resourceName: "add"), for: .normal)
+        btn.center = self.viewModel.addBtnLocation
         
         btn.k_addTarget({ [unowned self] in
             

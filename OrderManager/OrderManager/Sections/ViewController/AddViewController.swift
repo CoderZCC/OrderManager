@@ -75,7 +75,7 @@ class AddViewController: BaseViewController {
         self.otherInfoTv.k_setCornerRadius(4.0)
         self.finishBtn.k_setCornerRadius(4.0)
         
-        self.costTimeL.text = kNowDate.k_toDateStr("yyyy MM-dd HH:mm")
+        self.costTimeL.text = self.viewModel.costModel.costTime
         self.costTypeView.k_addTarget { [unowned self] in
             
             self.view.endEditing(true)

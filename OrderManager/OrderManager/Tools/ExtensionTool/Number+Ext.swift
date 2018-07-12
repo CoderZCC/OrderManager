@@ -20,3 +20,17 @@ extension Int {
         return Int(arc4random() % UInt32(to < 0 ? (0) : (to)))
     }
 }
+
+extension CGFloat {
+    
+    func k_toString() -> String {
+        
+        return String.init(format: "%.2f", self)
+    }
+    
+    func k_toIntString() -> String {
+        
+        return String.init(format: "%ld", Int(self))
+    }
+    
+}

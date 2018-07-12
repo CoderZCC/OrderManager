@@ -13,7 +13,7 @@ typealias CallBack = (()->Void)?
 class CostViewModel: NSObject {
     
     /// 数据模型
-    var costModel: CostModel!
+    var costModel: CostModel = CostModel()
     /// 数据源
     var dataList: [String: [CostModel]] = [:]
     /// 所有的key
@@ -43,6 +43,16 @@ class CostViewModel: NSObject {
         let modelArr = self.dataList[key]
         
         return modelArr ?? []
+    }
+    
+    /// 加号按钮的位置
+    var addBtnLocation: CGPoint {
+        if let str = kSaveDataTool.k_checkValueFromUserdefault(key: kAddBtnLocationKey) {
+            
+            let arr = str.components(separatedBy: ";")
+            return CGPoint.init(x: Int(arr.first!)!, y: Int(arr.last!)!)
+        }
+        return CGPoint.init(x: 0.0, y: kHeight - kAddBtnWH * 4.0)
     }
     
     /// 获取订单列表

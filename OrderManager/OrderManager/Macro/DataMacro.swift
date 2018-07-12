@@ -28,6 +28,11 @@ let kCachesPath: String = String.k_documentsPath + "costDetail.plist"
 /// 现在的时间
 let kNowDate: Date = Date()
 
+/// 加号按钮的大小
+let kAddBtnWH: CGFloat = 65.0
+/// 保存到本地点位置
+let kAddBtnLocationKey: String = "kAddBtnLocationKey"
+
 let k_Font12: UIFont = UIFont.systemFont(ofSize: 12.0)
 let k_Font14: UIFont = UIFont.systemFont(ofSize: 14.0)
 let k_Font16: UIFont = UIFont.systemFont(ofSize: 16.0)

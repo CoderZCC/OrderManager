@@ -22,7 +22,6 @@ class CostModel: NSObject {
     var costNum: String?
     /// 消费备注
     var costInfo: String = "暂无备注信息"
-
     /// 是否展开
     var isOpen: Bool = false
     
