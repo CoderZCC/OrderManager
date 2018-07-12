@@ -119,7 +119,7 @@ extension SpecialPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        self.viewModel.selectedContent(component: component, row: row)
+        self.viewModel.selectedContent(pickView: pickerView, component: component, row: row)
     }
 }
 
@@ -171,7 +171,7 @@ class SpecialViewModel: NSObject {
     ///   - component: 第一列
     ///   - row: 第二列
     /// - Returns: 字符串
-    func selectedContent(component: Int, row: Int) {
+    func selectedContent(pickView: UIPickerView, component: Int, row: Int) {
         
         var year: String!
         var month: String!
@@ -182,7 +182,13 @@ class SpecialViewModel: NSObject {
         if month == nil {
             month = self.monthArr[0]
         }
-        self.selectedStr = year! + "-" + month!
+        
+        // 是否大于最大值
+        let maxYear = kNowDate.k_YMDHMS().year!
+        let maxMonth = kNowDate.k_YMDHMS().month!
+ 
+        self.selectedStr = String.init(format: "%.2ld", min(maxYear, year.k_toInt())) + "-" + String.init(format: "%.2ld", min(maxMonth, month.k_toInt()))
+        self.scrollTo(pickView: pickView, time: self.selectedStr)
     }
     
     /// 滚动到指定时间
