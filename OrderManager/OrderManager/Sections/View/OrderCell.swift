@@ -10,6 +10,7 @@ import UIKit
 
 class OrderCell: UITableViewCell {
 
+    /// 数据模型
     var model: CostModel! {
         
         willSet {
@@ -20,12 +21,13 @@ class OrderCell: UITableViewCell {
             self.costTypeL.text = "消费类型:" + newValue.costType!
         }
     }
-    
+    /// 日期
     @IBOutlet weak var timeL: UILabel!
+    /// 圆角View
     @IBOutlet weak var showView: UIView!
-    
+    /// 消费类型
     @IBOutlet weak var costTypeL: UILabel!
-    
+    /// 消费金额
     @IBOutlet weak var costNumL: UILabel!
     
     override func awakeFromNib() {
@@ -36,7 +38,5 @@ class OrderCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-    }
-    
+    }    
 }

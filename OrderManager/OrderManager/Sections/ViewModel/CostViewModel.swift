@@ -12,6 +12,8 @@ typealias CallBack = (()->Void)?
 
 class CostViewModel: NSObject {
     
+    /// 数据模型
+    var costModel: CostModel!
     /// 数据源
     var dataList: [String: [CostModel]] = [:]
     /// 所有的key
@@ -43,6 +45,11 @@ class CostViewModel: NSObject {
         return modelArr ?? []
     }
     
+    /// 获取订单列表
+    ///
+    /// - Parameters:
+    ///   - searchT: 时间
+    ///   - callBack: 回调
     func getOrderList(searchT: String, callBack: CallBack) {
         
         self.dataList.removeAll()
@@ -75,10 +82,13 @@ class CostViewModel: NSObject {
         callBack?()
     }
 
-    func saveOrder(costModel: CostModel, callBack: CallBack) {
+    /// 保存订单
+    ///
+    /// - Parameter callBack: 完成的回调
+    func saveOrder(callBack: CallBack) {
         
-        var saveStr: String = "\(costModel.costType!);\(costModel.costNum!);\(costModel.costInfo);"
-        saveStr += "\(costModel.costYMD);\(costModel.costYM);\(costModel.costTime)"
+        var saveStr: String = "\(self.costModel.costType!);\(self.costModel.costNum!);\(self.costModel.costInfo);"
+        saveStr += "\(self.costModel.costYMD);\(self.costModel.costYM);\(self.costModel.costTime)"
         
         if kSaveDataTool.k_save(str: saveStr, to: kCachesPath) {
             

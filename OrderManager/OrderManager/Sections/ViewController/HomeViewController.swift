@@ -10,9 +10,13 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    /// 表视图
     @IBOutlet weak var tableView: UITableView!
+    /// 日期选择按钮
     @IBOutlet weak var selectedTBtn: UIButton!
-    
+    /// 加号按钮的大小
+    private let btnWH: CGFloat = 65.0
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +28,7 @@ class HomeViewController: BaseViewController {
         
         self.title = "OrderManager"
         
+        self.view.addSubview(self.addBtn)
         self.tableView.sectionHeaderHeight = 35.0
         self.tableView.sectionFooterHeight = 0.01
         self.tableView.k_hiddeLine()
@@ -48,24 +53,70 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    @IBAction func addBtnAction() {
+    //MARK: 点击事件
+    /// 拖动手势
+    @objc func panAction(pan: UIPanGestureRecognizer) {
         
-        let addVC = AddViewController()
-        addVC.saveSuccessCallBack = { [unowned self] in
+        let locationPoint = pan.location(in: self.view)
+        switch pan.state {
+        case .changed:
             
-            self.tableView.k_headerBeginRefreshing()
+            self.addBtn.center = locationPoint
+
+        case .ended, .cancelled:
+            
+            if locationPoint.y - self.btnWH / 2.0 <= 0.0 {
+                
+                self.addBtn.center = CGPoint.init(x: locationPoint.x, y: self.btnWH / 2.0)
+                
+            } else if locationPoint.y + self.btnWH / 2.0 >= self.view.frame.height {
+                
+                self.addBtn.center = CGPoint.init(x: locationPoint.x, y: self.view.frame.height - self.btnWH / 2.0)
+                
+            } else if locationPoint.x - self.btnWH / 2.0 <= 0.0 {
+                
+                self.addBtn.center = CGPoint.init(x: self.btnWH / 2.0, y: locationPoint.y)
+                
+            } else if locationPoint.x + self.btnWH / 2.0 >= kWidth {
+                
+                self.addBtn.center = CGPoint.init(x: kWidth - self.btnWH / 2.0, y: locationPoint.y)
+            }
+            
+        default:
+            break
         }
-        self.present(addVC, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    //MARK: 懒加载
     lazy var viewModel: CostViewModel = {
         let viewModel = CostViewModel()
         
         return viewModel
+    }()
+    
+    lazy var addBtn: UIButton = { [unowned self] in
+        let btn = UIButton.init(type: .custom)
+        btn.frame = CGRect.init(x: 0.0, y: kHeight - self.btnWH * 3.0, width: self.btnWH, height: self.btnWH)
+        btn.setImage(#imageLiteral(resourceName: "add"), for: .normal)
+        
+        btn.k_addTarget({ [unowned self] in
+            
+            let addVC = AddViewController()
+            addVC.saveSuccessCallBack = { [unowned self] in
+                
+                self.tableView.k_headerBeginRefreshing()
+            }
+            self.present(addVC, animated: true, completion: nil)
+        })
+        
+        let pan = UIPanGestureRecognizer.init(target: self, action: #selector(panAction))
+        btn.addGestureRecognizer(pan)
+        
+        return btn
     }()
 }
 

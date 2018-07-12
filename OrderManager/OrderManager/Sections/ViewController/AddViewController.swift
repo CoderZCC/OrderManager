@@ -25,8 +25,6 @@ class AddViewController: BaseViewController {
     @IBOutlet weak var otherInfoTv: UITextView!
     /// 完成按钮
     @IBOutlet weak var finishBtn: UIButton!
-    /// 数据模型
-    private var model: CostModel = CostModel()
     /// 顶部高度约束
     @IBOutlet weak var navHeightCons: NSLayoutConstraint!
     /// 标题文字
@@ -38,7 +36,7 @@ class AddViewController: BaseViewController {
         self.init(nibName: "AddViewController", bundle: nil)
         
         self.isDetail = true
-        self.model = model
+        self.viewModel.costModel = model
         self.title = "消费详情"
     }
     
@@ -51,16 +49,19 @@ class AddViewController: BaseViewController {
     func initView() {
         
         self.finishBtn.isHidden = self.isDetail
-        self.view.isUserInteractionEnabled = !self.isDetail
         if self.isDetail {
             
+            self.costTypeView.isUserInteractionEnabled = false
+            self.costTf.isUserInteractionEnabled = false
+            self.otherInfoTv.isUserInteractionEnabled = false
+
             self.navHeightCons.constant = 44.0
             
-            self.costTf.text = self.model.costNum
-            self.costTimeL.text = self.model.costTime
-            self.costTypeL.text = self.model.costType
-            self.otherInfoTv.text = self.model.costInfo
-            if self.model.costInfo.isEmpty {
+            self.costTf.text = self.viewModel.costModel.costNum
+            self.costTimeL.text = self.viewModel.costModel.costTime
+            self.costTypeL.text = self.viewModel.costModel.costType
+            self.otherInfoTv.text = self.viewModel.costModel.costInfo
+            if self.viewModel.costModel.costInfo.isEmpty {
                 self.otherInfoTv.text = "无备注信息"
             }
         }
@@ -74,7 +75,7 @@ class AddViewController: BaseViewController {
         self.otherInfoTv.k_setCornerRadius(4.0)
         self.finishBtn.k_setCornerRadius(4.0)
         
-        self.costTimeL.text = self.model.costTime
+        self.costTimeL.text = kNowDate.k_toDateStr("yyyy MM-dd HH:mm")
         self.costTypeView.k_addTarget { [unowned self] in
             
             self.view.endEditing(true)
@@ -85,11 +86,14 @@ class AddViewController: BaseViewController {
         }
     }
     
+    //MARK: 点击事件
+    /// 取消点击事件
     @IBAction func cancleBtnAction() {
         
         self.dismiss(animated: true, completion: nil)
     }
     
+    /// 完成点击事件
     @IBAction func finishBtnAction() {
         
         guard let costType = self.costTypeL.text else {
@@ -102,11 +106,13 @@ class AddViewController: BaseViewController {
             self.showText("请输入消费金额")
             return
         }
-        self.model.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
-        self.model.costNum = costNum
-        self.model.costType = costType
+        self.view.endEditing(true)
         
-        self.viewModel.saveOrder(costModel: self.model) {
+        self.viewModel.costModel.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
+        self.viewModel.costModel.costNum = costNum
+        self.viewModel.costModel.costType = costType
+        
+        self.viewModel.saveOrder() {
             
             self.showText("保存成功")
             self.saveSuccessCallBack?()
@@ -117,8 +123,8 @@ class AddViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
+    //MARK: 懒加载
     lazy var viewModel: CostViewModel = {
         let model = CostViewModel()
         return model

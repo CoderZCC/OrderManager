@@ -61,6 +61,25 @@ extension UIView {
         (objc_getAssociatedObject(self, &k_UIViewClickActionKey) as! k_noArgumentCallBack)?()
     }
     
+    //MARK: 单击移除键盘
+    /// 单击移除键盘
+    func k_tapDismissKeyboard() {
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapDismissAction))
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: OperationQueue.main) { (note) in
+            
+            self.addGestureRecognizer(tap)
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardDidHide, object: nil, queue: OperationQueue.main) { (note) in
+            
+            self.removeGestureRecognizer(tap)
+        }
+    }
+    @objc func tapDismissAction() {
+        
+        self.endEditing(true)
+    }
+    
 }
 
 

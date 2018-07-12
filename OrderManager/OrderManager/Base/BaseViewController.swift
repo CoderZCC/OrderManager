@@ -13,7 +13,6 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // 使用自定义的返回图片
         let navbar = UINavigationBar.appearance()
         navbar.backIndicatorImage = #imageLiteral(resourceName: "back")
@@ -31,6 +30,7 @@ class BaseViewController: UIViewController {
          */
 
         self.view.insertSubview(self.bgImgV, at: 0)
+        self.view.k_tapDismissKeyboard()
     }
 
     lazy var bgImgV: UIImageView = {

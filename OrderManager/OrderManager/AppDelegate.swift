@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let homeVC = HomeViewController()
         let mainVC = BaseNavigationController.init(rootViewController: homeVC)
-        
         let leftVC = BaseViewController()
 
         let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kWidth * 0.8)

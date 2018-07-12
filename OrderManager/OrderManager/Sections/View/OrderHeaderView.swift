@@ -28,12 +28,10 @@ class OrderHeaderView: UIView {
         super.awakeFromNib()
     }
     
+    /// 箭头动画
     func showAnimaton(isOpen: Bool) {
         
-        UIView.animate(withDuration: 0.3) {
-            
-            self.arrowImgV.transform = isOpen ? (CGAffineTransform.identity) : (CGAffineTransform.init(rotationAngle: CGFloat.pi))
-        }        
+        self.arrowImgV.transform = isOpen ? (CGAffineTransform.identity) : (CGAffineTransform.init(rotationAngle: CGFloat.pi))
     }
 
 }
