@@ -24,3 +24,10 @@ let kCostTypeStr: [String] = ["早饭", "午饭", "晚饭", "网购", "话费", 
 let kCostTypeID: [Int: String] = [0: "早饭", 1: "午饭", 2: "晚饭", 3: "网购", 4: "话费", 5: "其他"]
 /// 缓存目录
 let kCachesPath: String = String.k_documentsPath + "costDetail.plist"
+
+/// 现在的时间
+let kNowDate: Date = Date()
+
+let k_Font12: UIFont = UIFont.systemFont(ofSize: 12.0)
+let k_Font14: UIFont = UIFont.systemFont(ofSize: 14.0)
+let k_Font16: UIFont = UIFont.systemFont(ofSize: 16.0)

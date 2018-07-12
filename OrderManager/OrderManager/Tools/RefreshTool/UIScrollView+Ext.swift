@@ -142,18 +142,27 @@ extension UIScrollView {
     /// 刷新数据 展示无数据占位图
     func k_reloadData(callBack: (()->Void)? = nil) {
         
-        var count: Int = 0
+        var sectionCount: Int = 0
+        var rowCount: Int = 0
         if self.isKind(of: UITableView.self) {
 
             let tab = self as! UITableView
             tab.reloadData()
-            count = tab.numberOfRows(inSection: 0)
+            
+            sectionCount = tab.numberOfSections
+            if sectionCount > 0 {
+                rowCount = tab.numberOfRows(inSection: 0)
+            }
             
         } else if self.isKind(of: UICollectionView.self) {
             
             let col = self as! UICollectionView
             col.reloadData()
-            count = col.numberOfItems(inSection: 0)
+            
+            sectionCount = col.numberOfSections
+            if sectionCount > 0 {
+                rowCount = col.numberOfItems(inSection: 0)
+            }
         }
         // 结束头部刷新
         self.k_headerEndRefreshing()
@@ -162,8 +171,16 @@ extension UIScrollView {
         if let footer = footer, footer.footerState != .noData {
             self.k_footerResetNoDataState()
         }
-        
-        if count == 0 {
+        if sectionCount != 0 {
+            
+            // 有数据了
+            if let view = self.viewWithTag(101) {
+                
+                view.removeFromSuperview()
+            }
+            return
+        }
+        if rowCount == 0 {
             
             // 无数据
             let view = PlaceHolderView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height))

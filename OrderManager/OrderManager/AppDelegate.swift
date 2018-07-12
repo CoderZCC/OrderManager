@@ -20,7 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let homeVC = HomeViewController()
-        let rootVC = BaseNavigationController.init(rootViewController: homeVC)
+        let mainVC = BaseNavigationController.init(rootViewController: homeVC)
+        
+        let leftVC = BaseViewController()
+
+        let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kWidth * 0.8)
+
         window?.rootViewController = rootVC
         self.setNavigation(vc: homeVC)
         

@@ -51,6 +51,7 @@ extension UIView {
         
         objc_setAssociatedObject(self, &k_UIViewClickActionKey, clickAction, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
+        self.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(k_tapAction))
         self.addGestureRecognizer(tap)
     }

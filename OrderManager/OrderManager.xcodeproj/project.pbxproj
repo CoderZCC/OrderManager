@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F056DB2B20F70781006B8E3E /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F056DB2920F70781006B8E3E /* OrderCell.xib */; };
+		F056DB2C20F70781006B8E3E /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB2A20F70781006B8E3E /* OrderCell.swift */; };
+		F056DB2E20F707B5006B8E3E /* OrderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB2D20F707B5006B8E3E /* OrderHeaderView.swift */; };
+		F056DB3020F707C4006B8E3E /* OrderHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F056DB2F20F707C4006B8E3E /* OrderHeaderView.xib */; };
+		F056DB3220F71E3A006B8E3E /* SliderDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB3120F71E3A006B8E3E /* SliderDrawerViewController.swift */; };
 		F05D894720F5DC8500FB9B5A /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */; };
 		F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894920F5DD9600FB9B5A /* KAlertTools.swift */; };
 		F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */; };
@@ -47,6 +52,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F056DB2920F70781006B8E3E /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		F056DB2A20F70781006B8E3E /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		F056DB2D20F707B5006B8E3E /* OrderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderView.swift; sourceTree = "<group>"; };
+		F056DB2F20F707C4006B8E3E /* OrderHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHeaderView.xib; sourceTree = "<group>"; };
+		F056DB3120F71E3A006B8E3E /* SliderDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDrawerViewController.swift; sourceTree = "<group>"; };
 		F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F05D894920F5DD9600FB9B5A /* KAlertTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAlertTools.swift; sourceTree = "<group>"; };
 		F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAlertTools.xib; sourceTree = "<group>"; };
@@ -99,6 +109,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F056DB2820F70781006B8E3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F056DB2A20F70781006B8E3E /* OrderCell.swift */,
+				F056DB2920F70781006B8E3E /* OrderCell.xib */,
+				F056DB2D20F707B5006B8E3E /* OrderHeaderView.swift */,
+				F056DB2F20F707C4006B8E3E /* OrderHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F05D894820F5DD9600FB9B5A /* KAlertTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +171,7 @@
 		F0962C5820F5CD6E0086B24A /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				F056DB2820F70781006B8E3E /* View */,
 				F0962C7A20F5CEE10086B24A /* Model */,
 				F0962C7720F5CEE10086B24A /* ViewController */,
 				F0962C7920F5CEE10086B24A /* ViewModel */,
@@ -199,6 +221,7 @@
 		F0962C7220F5CE700086B24A /* BaseViewTool */ = {
 			isa = PBXGroup;
 			children = (
+				F056DB3120F71E3A006B8E3E /* SliderDrawerViewController.swift */,
 				F0962C7320F5CE700086B24A /* kSaveDataTool.swift */,
 				F0962C7420F5CE700086B24A /* CircleImageView.swift */,
 			);
@@ -330,6 +353,8 @@
 				F0962C8B20F5D30A0086B24A /* AddViewController.xib in Resources */,
 				F0962C8020F5CF210086B24A /* HUDViewTool.xib in Resources */,
 				F05D895C20F5EE1F00FB9B5A /* HomeViewController.xib in Resources */,
+				F056DB3020F707C4006B8E3E /* OrderHeaderView.xib in Resources */,
+				F056DB2B20F70781006B8E3E /* OrderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +369,7 @@
 				F0962C8520F5D0E60086B24A /* CostViewModel.swift in Sources */,
 				F05D895B20F5EE1F00FB9B5A /* HomeViewController.swift in Sources */,
 				F0962C7020F5CE5D0086B24A /* Number+Ext.swift in Sources */,
+				F056DB3220F71E3A006B8E3E /* SliderDrawerViewController.swift in Sources */,
 				F0962C9D20F5D94B0086B24A /* RefreshHeaderTool.swift in Sources */,
 				F05D894720F5DC8500FB9B5A /* UIView+Ext.swift in Sources */,
 				F0962C7F20F5CF210086B24A /* HUDViewTool.swift in Sources */,
@@ -362,6 +388,7 @@
 				F0962C5E20F5CDE30086B24A /* BaseViewController.swift in Sources */,
 				F0962C6F20F5CE5D0086B24A /* DispatchQueue+Ext.swift in Sources */,
 				F0962C8D20F5D6CB0086B24A /* FalseNavBarView.swift in Sources */,
+				F056DB2C20F70781006B8E3E /* OrderCell.swift in Sources */,
 				F0962C9C20F5D94B0086B24A /* RefreshCommon.swift in Sources */,
 				F0962C6C20F5CE5D0086B24A /* Date+Ext.swift in Sources */,
 				F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */,
@@ -369,6 +396,7 @@
 				F0962C6D20F5CE5D0086B24A /* String+Ext.swift in Sources */,
 				F0962C9B20F5D94B0086B24A /* RefreshGifFooterTool.swift in Sources */,
 				F05D895220F5E61300FB9B5A /* CostModel.swift in Sources */,
+				F056DB2E20F707B5006B8E3E /* OrderHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

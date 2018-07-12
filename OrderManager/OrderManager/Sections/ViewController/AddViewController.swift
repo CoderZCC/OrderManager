@@ -65,8 +65,10 @@ class AddViewController: BaseViewController {
             }
         }
         
+        self.otherInfoTv.k_placeholderColor = UIColor.k_colorWith(r: 223.0, g: 221.0, b: 220.0)
+        self.costTf.k_placeholderColor = self.otherInfoTv.k_placeholderColor
         self.otherInfoTv.k_placeholder = "输入备注信息(150字)"
-        self.otherInfoTv.tintColor = UIColor.darkGray
+        self.otherInfoTv.tintColor = UIColor.white
         self.otherInfoTv.k_limitTextLength = 150
         
         self.otherInfoTv.k_setCornerRadius(4.0)
@@ -100,19 +102,15 @@ class AddViewController: BaseViewController {
             self.showText("请输入消费金额")
             return
         }
-
-        var saveStr: String = "\(self.model.costYear);\(self.model.costMonth);\(self.model.costDay);\(self.model.costYMD);\(self.costTimeL.text!);"
-        saveStr += "\(costType);\(costNum);\(self.otherInfoTv.text ?? "无备注信息")"
+        self.model.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
+        self.model.costNum = costNum
+        self.model.costType = costType
         
-        if kSaveDataTool.k_save(str: saveStr, to: kCachesPath) {
-
+        self.viewModel.saveOrder(costModel: self.model) {
+            
             self.showText("保存成功")
             self.saveSuccessCallBack?()
             self.cancleBtnAction()
-
-        } else {
-
-            self.showText("保存失败")
         }
     }
     
@@ -120,4 +118,9 @@ class AddViewController: BaseViewController {
         super.didReceiveMemoryWarning()
     }
 
+    
+    lazy var viewModel: CostViewModel = {
+        let model = CostViewModel()
+        return model
+    }()
 }

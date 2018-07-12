@@ -10,36 +10,32 @@ import UIKit
 
 class CostModel: NSObject {
 
-    /// 年
-    var costYear: String = "\(Date().k_YMDHMS().year!)"
-    /// 月
-    var costMonth: String = "\(Date().k_YMDHMS().month!)"
-    /// 日
-    var costDay: String = "\(Date().k_YMDHMS().day!)"
-    /// 年月日
-    var costYMD: String = Date().k_toDateStr("yyyy MM-dd")
-  
-    /// 消费时间
-    var costTime: String = Date().k_toDateStr("yyyy MM-dd HH:mm")
+    /// 消费时间 年月日
+    var costYMD: String = kNowDate.k_toDateStr("MM-dd")
+    /// 消费时间 年月
+    var costYM: String = kNowDate.k_toDateStr("yyyy-MM")
+    /// 消费时间 年月日时分
+    var costTime: String = kNowDate.k_toDateStr("yyyy MM-dd HH:mm")
     /// 消费类型
     var costType: String?
     /// 消费金额
     var costNum: String?
     /// 消费备注
-    var costInfo: String = ""
+    var costInfo: String = "暂无备注信息"
+
+    /// 是否展开
+    var isOpen: Bool = false
     
     convenience init(dataArr: [String]) {
         self.init()
         
-        self.costYear = dataArr[0]
-        self.costMonth = dataArr[1]
-        self.costDay = dataArr[2]
+        self.costType = dataArr[0]
+        self.costNum = dataArr[1]
+        self.costInfo = dataArr[2]
+        
         self.costYMD = dataArr[3]
-
-        self.costTime = dataArr[4]
-        self.costType = dataArr[5]
-        self.costNum = dataArr[6]
-        self.costInfo = dataArr[7]
+        self.costYM = dataArr[4]
+        self.costTime = dataArr[5]
     }
 
 }

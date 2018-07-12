@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc extension UIResponder {
+@objc extension NSObject {
     
     //MARK: -加载框 带文字
     func showProgress(progress: CGFloat, text: String) {

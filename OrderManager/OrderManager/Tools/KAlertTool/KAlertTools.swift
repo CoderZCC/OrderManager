@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIResponder {
+extension NSObject {
     
     /// 底部弹窗
     ///
@@ -19,6 +19,18 @@ extension UIResponder {
     func k_showSheets(title: String?, subTitles: [String]?, callBack: @escaping(Int) -> Void) {
         
         kAlertSheetTools.showAlertSheet(title: title, subTitleArr: subTitles, clickAction: callBack)
+    }
+    
+    /// 弹窗提示
+    ///
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - subtitle: 子标题
+    ///   - leftAction: 点击回调
+    ///   - reightAction: 点击回调
+    func k_showAlert(title: String?, subtitle: String?, leftAction: @escaping ()->Void, reightAction: @escaping ()->Void) {
+        
+        KAlertTools.showAlertView(title: title, subTitle: subtitle, leftBtnAction: leftAction, rightBtnAction: reightAction)
     }
 }
 

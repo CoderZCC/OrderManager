@@ -9,13 +9,10 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
-    var dataList: [CostModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = kViewColor
         
         // 使用自定义的返回图片
         let navbar = UINavigationBar.appearance()
@@ -32,8 +29,24 @@ class BaseViewController: UIViewController {
          backItem.title = ""
          self.navigationItem.backBarButtonItem = backItem
          */
+
+        self.view.insertSubview(self.bgImgV, at: 0)
     }
 
+    lazy var bgImgV: UIImageView = {
+        let imgV = UIImageView.init(frame: UIScreen.main.bounds)
+        imgV.contentMode = .scaleAspectFill
+        imgV.image = #imageLiteral(resourceName: "bg")
+        
+        let blur = UIBlurEffect.init(style: UIBlurEffectStyle.dark)
+        let maskView = UIVisualEffectView.init(effect: blur)
+        maskView.alpha = 1.0
+        maskView.frame = imgV.bounds
+        imgV.addSubview(maskView)
+        
+        return imgV
+    }()
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

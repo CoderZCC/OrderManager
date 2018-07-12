@@ -165,7 +165,7 @@ extension String {
         if selfCom.hour! != nowCom.hour! {
             
             // 时不相等
-            return selfDate.k_toDateStr("HH:mm")
+            return selfDate.k_toDateStr("今天 HH:mm")
         }
         if selfCom.minute! != nowCom.minute! {
             
