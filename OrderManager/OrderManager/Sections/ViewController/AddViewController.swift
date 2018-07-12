@@ -21,6 +21,10 @@ class AddViewController: BaseViewController {
     @IBOutlet weak var costTypeL: UILabel!
     /// 消费金额
     @IBOutlet weak var costTf: UITextField!
+    /// 未知区域
+    @IBOutlet weak var areaL: UILabel!
+    /// 未知区域文字高度
+    @IBOutlet weak var areaHeightCons: NSLayoutConstraint!
     /// 备注
     @IBOutlet weak var otherInfoTv: UITextView!
     /// 完成按钮
@@ -60,9 +64,18 @@ class AddViewController: BaseViewController {
             self.costTf.text = self.viewModel.costModel.costNum
             self.costTimeL.text = self.viewModel.costModel.costTime
             self.costTypeL.text = self.viewModel.costModel.costType
+            self.areaL.text = self.viewModel.costModel.address
             self.otherInfoTv.text = self.viewModel.costModel.costInfo
             if self.viewModel.costModel.costInfo.isEmpty {
                 self.otherInfoTv.text = "无备注信息"
+            }
+        } else {
+            
+            // 获取定位
+            self.viewModel.startLocation { [unowned self] (address) in
+                
+                self.areaL.text = address
+                self.areaHeightCons.constant = self.viewModel.areaHeight
             }
         }
         
@@ -105,12 +118,12 @@ class AddViewController: BaseViewController {
     /// 完成点击事件
     @IBAction func finishBtnAction() {
         
-        guard let costType = self.costTypeL.text else {
+        if self.costTypeL.text! == "请选择" {
             
             self.showText("请选择消费类型")
             return
         }
-        guard let costNum = self.costTf.text else {
+        if self.costTf.text!.isEmpty {
             
             self.showText("请输入消费金额")
             return
@@ -118,8 +131,10 @@ class AddViewController: BaseViewController {
         self.view.endEditing(true)
         
         self.viewModel.costModel.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
-        self.viewModel.costModel.costNum = costNum
-        self.viewModel.costModel.costType = costType
+        self.viewModel.costModel.costNum = self.costTf.text!
+        self.viewModel.costModel.costType = self.costTypeL.text!
+        self.viewModel.costModel.address = self.areaL.text!
+        self.viewModel.costModel.costTime = self.costTimeL.text!
         
         self.viewModel.saveOrder() {
             

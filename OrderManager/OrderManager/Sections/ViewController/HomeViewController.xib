@@ -28,14 +28,14 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlo-fz-d84">
                             <rect key="frame" x="0.0" y="6" width="375" height="32"/>
                             <state key="normal" title="2018-07" image="selected">
-                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="selectedAction" destination="-1" eventType="touchUpInside" id="OUC-wc-gCZ"/>
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="9CS-r9-BKG"/>
                         <constraint firstItem="mlo-fz-d84" firstAttribute="centerY" secondItem="avs-Bi-dNf" secondAttribute="centerY" id="A5v-gl-BN7"/>
