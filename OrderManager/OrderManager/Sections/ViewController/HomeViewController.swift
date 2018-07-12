@@ -14,7 +14,12 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     /// 日期选择按钮
     @IBOutlet weak var selectedTBtn: UIButton!
-
+    /// 日期按钮文字
+    var topBtnText: String {
+        
+        return self.selectedTBtn.titleLabel!.text!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +30,9 @@ class HomeViewController: BaseViewController {
     func initView() {
         
         self.title = "OrderManager"
+        
+        let btnTitle = kNowDate.k_toDateStr("yyyy-MM")
+        self.selectedTBtn.k_set(image: #imageLiteral(resourceName: "selected"), title: btnTitle, titlePosition: UIViewContentMode.left, additionalSpacing: 4.0, state: .normal)
         
         self.view.addSubview(self.addBtn)
         self.tableView.sectionHeaderHeight = 35.0
@@ -44,7 +52,7 @@ class HomeViewController: BaseViewController {
     
     func initData() {
         
-        self.viewModel.getOrderList(searchT: self.selectedTBtn.titleLabel!.text!) { [unowned self] in
+        self.viewModel.getOrderList(searchT: self.topBtnText) { [unowned self] in
             
             self.tableView.k_headerEndRefreshing()
             self.tableView.k_reloadData()
@@ -55,7 +63,14 @@ class HomeViewController: BaseViewController {
     /// 日期选择
     @IBAction func selectedAction() {
         
-       
+        SpecialPickerView.showPickView(currentTime: self.topBtnText) { (str) in
+            
+            if self.topBtnText != str {
+                
+                self.selectedTBtn.setTitle(str, for: .normal)
+                self.tableView.k_headerBeginRefreshing()
+            }
+        }
     }
     
     /// 拖动手势

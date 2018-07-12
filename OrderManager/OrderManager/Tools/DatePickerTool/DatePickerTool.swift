@@ -61,7 +61,7 @@ class DatePickerTool: UIView {
     private var callback: ((String)->Void)?
 
     class func loadXibView() -> DatePickerTool {
-        let tool = Bundle.main.loadNibNamed("DatePickerTool", owner: nil, options: nil)?.last as! DatePickerTool
+        let tool = Bundle.main.loadNibNamed("MyPickerTool", owner: nil, options: nil)?.first as! DatePickerTool
         tool.frame = UIScreen.main.bounds
         
         return tool

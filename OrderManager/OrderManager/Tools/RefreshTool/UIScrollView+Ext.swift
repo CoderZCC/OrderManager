@@ -183,12 +183,21 @@ extension UIScrollView {
         if rowCount == 0 {
             
             // 无数据
-            let view = PlaceHolderView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height))
-            view.clickCallBack = callBack
-            view.tag = 101
+            var view: PlaceHolderView!
+            if let beforeView: PlaceHolderView = self.viewWithTag(101) as? PlaceHolderView {
+                
+                view = beforeView
+                
+            } else {
+                
+                view = PlaceHolderView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: self.bounds.width, height: self.bounds.height))
+                view.clickCallBack = callBack
+                view.tag = 101
+                
+                self.addSubview(view)
+            }
             view.textL.text = self.k_placholderText ?? "暂无数据哦~"
             view.imgV.image = UIImage.init(named: self.k_placholderImg ?? "noData")
-            self.addSubview(view)
             
         } else {
             
