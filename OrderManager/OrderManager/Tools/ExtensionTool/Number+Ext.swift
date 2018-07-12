@@ -23,11 +23,17 @@ extension Int {
 
 extension CGFloat {
     
+    /// 转为字符串 保留两位小数
+    ///
+    /// - Returns: "2.00"
     func k_toString() -> String {
         
         return String.init(format: "%.2f", self)
     }
     
+    /// 转为整数字符串
+    ///
+    /// - Returns: "1"
     func k_toIntString() -> String {
         
         return String.init(format: "%ld", Int(self))

@@ -196,4 +196,14 @@ extension String {
         return NSHomeDirectory() + "/tmp/"
     }
     
+    /// 转为Int
+    ///
+    /// - Returns: Int
+    func k_toInt() -> Int {
+        if let num = Int(self) {
+            return Indnumex
+        }
+        return 0
+    }
+    
 }
