@@ -78,13 +78,13 @@ class AddViewController: BaseViewController {
         }
         
         // UI设置
-        self.otherInfoTv.k_placeholderColor = UIColor.k_colorWith(r: 223.0, g: 221.0, b: 220.0)
-        self.costTf.k_placeholderColor = self.otherInfoTv.k_placeholderColor
+        self.otherInfoTv.k_placeholderColor = kPlaceholderTextcolor
+        self.costTf.k_placeholderColor = kPlaceholderTextcolor
         self.otherInfoTv.k_placeholder = "输入备注信息(150字)"
         self.otherInfoTv.tintColor = UIColor.white
         self.otherInfoTv.k_limitTextLength = 150
-        self.otherInfoTv.k_setCornerRadius(4.0)
-        self.finishBtn.k_setCornerRadius(4.0)
+        self.otherInfoTv.k_setCornerRadius(kCornerRadius)
+        self.finishBtn.k_setCornerRadius(kCornerRadius)
         
         self.costTimeL.text = self.viewModel.costModel.costTime
         

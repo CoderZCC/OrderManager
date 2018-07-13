@@ -36,6 +36,12 @@ let kFont12: UIFont = UIFont.systemFont(ofSize: 12.0)
 let kFont14: UIFont = UIFont.systemFont(ofSize: 14.0)
 let kFont16: UIFont = UIFont.systemFont(ofSize: 16.0)
 
+/// 占位文字颜色
+let kPlaceholderTextcolor: UIColor = UIColor.k_colorWith(r: 223.0, g: 221.0, b: 220.0)
+
+/// 圆角
+let kCornerRadius: CGFloat = 4.0
+
 /// BmobID
 let kBombID: String = "cd82cc6cef17ff9fe619b2fe68a07222"
 

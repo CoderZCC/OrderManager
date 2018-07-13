@@ -37,6 +37,7 @@ class BaseViewController: UIViewController {
         let imgV = UIImageView.init(frame: UIScreen.main.bounds)
         imgV.contentMode = .scaleAspectFill
         imgV.image = #imageLiteral(resourceName: "bg")
+        imgV.clipsToBounds = true
         
         let blur = UIBlurEffect.init(style: UIBlurEffectStyle.dark)
         let maskView = UIVisualEffectView.init(effect: blur)

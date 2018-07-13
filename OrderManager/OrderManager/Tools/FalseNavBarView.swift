@@ -11,10 +11,10 @@ import UIKit
 extension UIViewController {
     
     /// 初始化导航栏
-    func initNavBar(color: UIColor, alpha: CGFloat, leftBtnStyle: Any) {
+    func initNavBar(color: UIColor, alpha: CGFloat, leftBtnStyle: Any? = nil) {
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        let tool = FalseNavBarView.initNavBar(color: color, alpha: alpha, leftBtnStyle: leftBtnStyle, title: self.title)
+        let tool = FalseNavBarView.initNavBar(color: color, alpha: alpha, leftBtnStyle: leftBtnStyle ?? UIButton(), title: self.title)
         
         // 添加右滑返回手势
         let pan = UIPanGestureRecognizer.init(target: self, action: #selector(kScrolToBackAction))

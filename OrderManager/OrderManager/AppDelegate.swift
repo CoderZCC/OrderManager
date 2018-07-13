@@ -19,15 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         
-        let homeVC = HomeViewController()
-        let mainVC = BaseNavigationController.init(rootViewController: homeVC)
-        let leftVC = BaseViewController()
+//        let homeVC = HomeViewController()
+//        let mainVC = BaseNavigationController(rootViewController: homeVC)
+//        let leftVC = BaseViewController()
+//
+//        let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kWidth * 0.8)
+//
+//        window?.rootViewController = rootVC
+//        self.setNavigation(vc: homeVC)
 
-        let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kWidth * 0.8)
-
+        let loginVC = StartViewController()
+        let rootVC = BaseNavigationController(rootViewController: loginVC)
         window?.rootViewController = rootVC
-        self.setNavigation(vc: homeVC)
-        
+        self.setNavigation(vc: loginVC)
+
         self.registerAppNote()
         self.registerBmob()
         
