@@ -51,9 +51,11 @@ class CostViewModel: NSObject {
     func getValueModel(_ index: Int) -> [CostModel] {
         
         let key = self.getKeyStr(index)
-        let modelArr = self.dataList[key]
-        
-        return modelArr?.reversed() ?? []
+        let modelArr = self.dataList[key] ?? []
+        modelArr.sort { (model1: CostModel, model2: CostModel) -> Bool in
+            return model1.costTime > model2.costTime
+        }
+        return modelArr
     }
     
     /// 加号按钮的位置
