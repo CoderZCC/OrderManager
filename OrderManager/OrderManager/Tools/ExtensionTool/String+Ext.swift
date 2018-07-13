@@ -85,10 +85,10 @@ extension String {
     ///   eg: dateStr: 2018 0908 11:20:23
     ///       formatter: yyyy MMdd HH:mm:ss
     /// - Returns: date
-    func k_toDate(dateStr: String, formatter: String) -> Date {
+    func k_toDate(formatter: String) -> Date {
         let fat = DateFormatter.init()
         fat.dateFormat = formatter
-        var date = fat.date(from: dateStr)
+        var date = fat.date(from: self)
         // 会少8个小时
         date != nil ? (date!.addTimeInterval(60.0 * 60.0 * 8.0)) : (print("时间格式不对应:k_toDate"))
         
@@ -121,8 +121,8 @@ extension String {
     /// - Returns: 结果 0: 相等; 1: otherTime大; 2: otherTime小
     func k_compareToStr(_ otherTime: String, formatter: String) -> Int {
         let resultDic: [ComparisonResult: Int] = [.orderedSame: 0, .orderedAscending: 1, .orderedDescending: 2]
-        let t1 = self.k_toDate(dateStr: self, formatter: formatter)
-        let t2 = self.k_toDate(dateStr: otherTime, formatter: formatter)
+        let t1 = self.k_toDate(formatter: formatter)
+        let t2 = otherTime.k_toDate(formatter: formatter)
         let result: ComparisonResult = t1.compare(t2)
         
         return resultDic[result]!

@@ -16,8 +16,8 @@ class OrderCell: UITableViewCell {
         willSet {
             
             self.timeL.text = newValue.costTime.k_dealTimeToShow(formatter: "yyyy MM-dd HH:mm")
+            self.costNumL.text = newValue.costNum!
             
-            self.costNumL.text = newValue.costNum
             self.costTypeL.text = "消费类型:" + newValue.costType!
         }
     }
