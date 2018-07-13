@@ -38,6 +38,8 @@ class DatePickerTool: UIView {
         tool.pickerView.datePickerMode = showModel
         tool.pickerView.minimumDate = minimumDate
         tool.pickerView.maximumDate = maximumDate
+        tool.pickerView.locale = Locale.current
+        
         tool.callback = callback
         
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .allowAnimatedContent, animations: {
