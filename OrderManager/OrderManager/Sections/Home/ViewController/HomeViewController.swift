@@ -70,7 +70,6 @@ class HomeViewController: BaseViewController {
     //MARK: 点击事件
     @objc func totalAction() {
 
-        PopMenuView.showMenuView()
 //        let totalVC = CostTotalViewController()
 //        self.navigationController?.pushViewController(totalVC, animated: true)
     }
