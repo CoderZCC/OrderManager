@@ -18,6 +18,9 @@
 		F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894920F5DD9600FB9B5A /* KAlertTools.swift */; };
 		F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */; };
 		F05D895E20F5EFBF00FB9B5A /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */; };
+		F08BC15620F889060016266B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC15420F889060016266B /* RegisterViewController.swift */; };
+		F08BC15720F889060016266B /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08BC15520F889060016266B /* RegisterViewController.xib */; };
+		F08BC15920F8893B0016266B /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC15820F8893B0016266B /* RegisterViewModel.swift */; };
 		F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C4520F5CD240086B24A /* AppDelegate.swift */; };
 		F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4C20F5CD250086B24A /* Assets.xcassets */; };
 		F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4E20F5CD250086B24A /* LaunchScreen.storyboard */; };
@@ -79,6 +82,9 @@
 		F05D894920F5DD9600FB9B5A /* KAlertTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAlertTools.swift; sourceTree = "<group>"; };
 		F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAlertTools.xib; sourceTree = "<group>"; };
 		F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		F08BC15420F889060016266B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		F08BC15520F889060016266B /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		F08BC15820F8893B0016266B /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		F0962C4220F5CD240086B24A /* OrderManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0962C4520F5CD240086B24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0962C4C20F5CD250086B24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -381,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				F0AAC5BD20F87A310057039A /* LoginViewModel.swift */,
+				F08BC15820F8893B0016266B /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -407,6 +414,8 @@
 				F0AAC5B820F875A00057039A /* StartViewController.xib */,
 				F0AAC5B320F870020057039A /* LoginViewController.swift */,
 				F0AAC5B420F870020057039A /* LoginViewController.xib */,
+				F08BC15420F889060016266B /* RegisterViewController.swift */,
+				F08BC15520F889060016266B /* RegisterViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -480,6 +489,7 @@
 				F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */,
 				F0AAC5A020F83B550057039A /* OrderHeaderView.xib in Resources */,
 				F0AAC5B620F870020057039A /* LoginViewController.xib in Resources */,
+				F08BC15720F889060016266B /* RegisterViewController.xib in Resources */,
 				F0AAC5A420F83B550057039A /* HomeViewController.xib in Resources */,
 				F056DB3920F73603006B8E3E /* MyPickerTool.xib in Resources */,
 				F0AAC5BA20F875A00057039A /* StartViewController.xib in Resources */,
@@ -531,6 +541,7 @@
 				F0962C6A20F5CE5D0086B24A /* UIImageView+Ext.swift in Sources */,
 				F05D895E20F5EFBF00FB9B5A /* UITableView+Ext.swift in Sources */,
 				F0962C8320F5CFC80086B24A /* DataMacro.swift in Sources */,
+				F08BC15920F8893B0016266B /* RegisterViewModel.swift in Sources */,
 				F0962C9A20F5D94B0086B24A /* UIScrollView+Ext.swift in Sources */,
 				F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */,
 				F0962C7120F5CE5D0086B24A /* ExtensionTool.swift in Sources */,
@@ -538,6 +549,7 @@
 				F0AAC5BE20F87A310057039A /* LoginViewModel.swift in Sources */,
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,
 				F0AAC59E20F83B550057039A /* CostModel.swift in Sources */,
+				F08BC15620F889060016266B /* RegisterViewController.swift in Sources */,
 				F0962C5E20F5CDE30086B24A /* BaseViewController.swift in Sources */,
 				F0AAC5A620F83B550057039A /* HomeViewController.swift in Sources */,
 				F0AAC5B520F870020057039A /* LoginViewController.swift in Sources */,

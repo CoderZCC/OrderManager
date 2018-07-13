@@ -19,20 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         
-//        let homeVC = HomeViewController()
-//        let mainVC = BaseNavigationController(rootViewController: homeVC)
-//        let leftVC = BaseViewController()
-//
-//        let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kWidth * 0.8)
-//
-//        window?.rootViewController = rootVC
-//        self.setNavigation(vc: homeVC)
-
-        let loginVC = StartViewController()
-        let rootVC = BaseNavigationController(rootViewController: loginVC)
-        window?.rootViewController = rootVC
-        self.setNavigation(vc: loginVC)
-
+        self.loginResult(isSuccess: LoginModel.isLogin)
+        
         self.registerAppNote()
         self.registerBmob()
         
@@ -40,6 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func loginResult(isSuccess: Bool) {
+        
+        if !isSuccess {
+            
+            let loginVC = StartViewController()
+            let rootVC = BaseNavigationController(rootViewController: loginVC)
+            window?.rootViewController = rootVC
+            self.setNavigation(vc: loginVC)
+            return
+        }
+        let homeVC = HomeViewController()
+        let mainVC = BaseNavigationController(rootViewController: homeVC)
+        let leftVC = BaseViewController()
+        
+        let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kWidth * 0.8)
+        
+        kWindow?.rootViewController = rootVC
+        self.setNavigation(vc: homeVC)
+    }
+    
 }
 
 extension AppDelegate {

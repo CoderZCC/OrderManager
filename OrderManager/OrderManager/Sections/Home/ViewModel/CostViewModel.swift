@@ -9,10 +9,8 @@
 import UIKit
 import CoreLocation
 
-typealias CallBack = (()->Void)?
-
 class CostViewModel: NSObject {
-    
+        
     /// 是否需要更新
     var isChangevalue: Bool = false
     /// 是否需要展开第一个

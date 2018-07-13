@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  OrderManager
 //
 //  Created by 张崇超 on 2018/7/13.
@@ -8,38 +8,39 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController {
+class RegisterViewController: BaseViewController {
 
     /// 账号
     @IBOutlet weak var accountTf: UITextField!
     /// 密码
     @IBOutlet weak var passwordTf: UITextField!
-    /// 登录按钮
-    @IBOutlet weak var loginBtn: UIButton!
+    /// 注册按钮
+    @IBOutlet weak var registerBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.initView()        
+        self.initView()
     }
-    
+
     func initView() {
         
-        self.loginBtn.k_setCornerRadius(kCornerRadius)
+        self.registerBtn.k_setCornerRadius(kCornerRadius)
         self.accountTf.k_placeholderColor = kPlaceholderTextcolor
         self.passwordTf.k_placeholderColor = kPlaceholderTextcolor
         
-        self.loginBtn.isEnabled = false
-        self.viewModel.loginBtnEnabledBacK = { [unowned self] isEnabled in
+        self.registerBtn.isEnabled = false
+        
+        self.viewModel.registerBtnEnabledBacK = { [unowned self] isEnabled in
             
-            self.loginBtn.isEnabled = isEnabled
+            self.registerBtn.isEnabled = isEnabled
         }
     }
     
-    /// 登录按钮点击事件
-    @IBAction func loginBtnAction(_ sender: UIButton) {
+    /// 注册事件
+    @IBAction func registerAction() {
         
-        self.viewModel.login {
+        self.viewModel.register {
             
             kAppDelegate.loginResult(isSuccess: true)
         }
@@ -51,13 +52,12 @@ class LoginViewController: BaseViewController {
     
     deinit {
         
-        self.viewModel.loginBtnEnabledBacK = nil
+        self.viewModel.registerBtnEnabledBacK = nil
     }
     
-    lazy var viewModel: LoginViewModel = { [unowned self] in
-        let model = LoginViewModel.init(accountTf: self.accountTf)
+    lazy var viewModel: RegisterViewModel = { [unowned self] in
+        let model = RegisterViewModel.init(accountTf: self.accountTf)
         
         return model
     }()
-
 }

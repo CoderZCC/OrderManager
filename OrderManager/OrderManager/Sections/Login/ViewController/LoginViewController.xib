@@ -121,7 +121,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv4-N5-0ph">
-                    <rect key="frame" x="15" y="435" width="345" height="40"/>
+                    <rect key="frame" x="25" y="435" width="325" height="40"/>
                     <color key="backgroundColor" red="0.82352941180000006" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Rfe-tf-epb"/>
@@ -142,7 +142,7 @@
                 <constraint firstItem="Jv4-N5-0ph" firstAttribute="top" secondItem="JNn-pL-877" secondAttribute="bottom" constant="180" id="1aB-OF-QEd"/>
                 <constraint firstItem="Jv4-N5-0ph" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7oH-bT-ZZf"/>
                 <constraint firstItem="bwD-RJ-Fwa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ApC-8k-Vo2"/>
-                <constraint firstItem="Jv4-N5-0ph" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="DvW-Z1-buX"/>
+                <constraint firstItem="Jv4-N5-0ph" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="DvW-Z1-buX"/>
                 <constraint firstItem="JNn-pL-877" firstAttribute="top" secondItem="bwD-RJ-Fwa" secondAttribute="bottom" constant="30" id="EeO-F4-4Nl"/>
                 <constraint firstItem="JNn-pL-877" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kjh-oD-Q4C"/>
                 <constraint firstItem="bwD-RJ-Fwa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="O4G-gL-fI9"/>

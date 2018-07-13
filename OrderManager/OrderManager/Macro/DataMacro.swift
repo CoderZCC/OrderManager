@@ -14,6 +14,7 @@ let kNavBarHeight: CGFloat = kHeight > 736.0 ? (88.0) : (64.0)
 let kWindow = UIApplication.shared.keyWindow
 let kRootVC = kWindow?.rootViewController
 let kBottomSpace: CGFloat = kHeight > 736.0 ? (34.0) : (0.0)
+let kAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
 /// 导航栏颜色
 let kNavbarColor: UIColor = UIColor.k_colorWith(r: 214.0, g: 34.0, b: 34.0)
@@ -44,4 +45,10 @@ let kCornerRadius: CGFloat = 4.0
 
 /// BmobID
 let kBombID: String = "cd82cc6cef17ff9fe619b2fe68a07222"
+
+/// 回调
+typealias CallBack = (()->Void)?
+
+/// 账号对应的key
+let kAccountkey: String = "kAccountkey"
 

@@ -32,7 +32,7 @@ class StartViewController: BaseViewController {
     
     @IBAction func regitserAction() {
         
-        let loginVC = LoginViewController()
+        let loginVC = RegisterViewController()
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     

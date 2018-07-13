@@ -167,7 +167,7 @@ class AddViewController: BaseViewController {
             self.viewModel.costModel.costNum = self.costTf.text!
         }
         // 备注信息是否改变
-        if self.viewModel.costModel.costInfo != "暂无备注信息" {
+        if self.viewModel.costModel.costInfo != self.otherInfoTv.text {
             self.viewModel.isChangevalue = true
             self.viewModel.costModel.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
         }
@@ -177,6 +177,7 @@ class AddViewController: BaseViewController {
                 
                 self.saveSuccessCallBack?()
                 self.finishBtn.isHidden = true
+                self.setUserInteraction(isEnable: false)
                 self.navigationItem.rightBarButtonItem?.isEnabled = true
             }
             
