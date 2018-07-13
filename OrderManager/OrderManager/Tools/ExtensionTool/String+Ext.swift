@@ -206,4 +206,12 @@ extension String {
         return 0
     }
     
+    /// 转为CGFloat
+    ///
+    /// - Returns: CGFloat
+    func k_toCGFloat() -> CGFloat {
+        
+        return CGFloat(Double(self) ?? 0.0)
+    }
+    
 }

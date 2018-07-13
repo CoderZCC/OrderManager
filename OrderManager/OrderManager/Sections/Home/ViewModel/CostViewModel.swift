@@ -160,8 +160,35 @@ class CostViewModel: NSObject {
     
 }
 
+extension CostViewModel {
+    
+    /// 获取当天的消费金额
+    ///
+    /// - Returns: [String : CGFloat]
+    var allCosts: [String : CGFloat] {
+        
+        var dic: [String : CGFloat] = [:]
+        let allNum = self.dataList.count
+        for index in 0..<allNum {
+            
+            let key = self.getKeyStr(index)
+            var keyValue: CGFloat = 0.00
+            for model in self.dataList[key] ?? [] {
+                
+                keyValue += model.costNum!.k_toCGFloat()
+            }
+            dic[key] = keyValue
+        }
+        return dic
+    }
+}
+
+/// 定位相关
 extension CostViewModel: CLLocationManagerDelegate {
     
+    /// 开始定位
+    ///
+    /// - Parameter locationCallBack: 回调
     func startLocation(locationCallBack:((String)->Void)?) {
         
         self.locationCallBack = locationCallBack

@@ -31,8 +31,15 @@ class HomeViewController: BaseViewController {
         
         self.title = "我的账单"
         
+        /// 2018-07
         let btnTitle = kNowDate.k_toDateStr("yyyy-MM")
         self.selectedTBtn.k_set(image: #imageLiteral(resourceName: "selected"), title: btnTitle, titlePosition: UIViewContentMode.left, additionalSpacing: 4.0, state: .normal)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.k_addTarget(image: #imageLiteral(resourceName: "list"), clickCallBack: {
+            
+            (kRootVC as! SliderDrawerViewController).showLeftVC()
+        })
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), style: .plain, target: self, action: #selector(totalAction))
         
         self.view.addSubview(self.addBtn)
         self.tableView.sectionHeaderHeight = 35.0
@@ -48,11 +55,6 @@ class HomeViewController: BaseViewController {
             
             self.initData()
         }
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.k_addTarget(image: #imageLiteral(resourceName: "list"), clickCallBack: {
-            
-            (kRootVC as! SliderDrawerViewController).showLeftVC()
-        })
     }
     
     func initData() {
@@ -66,6 +68,12 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: 点击事件
+    @objc func totalAction() {
+        
+        let totalVC = CostTotalViewController()
+        self.navigationController?.pushViewController(totalVC, animated: true)
+    }
+    
     /// 日期选择
     @IBAction func selectedAction() {
         
@@ -186,7 +194,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let text = self.viewModel.getKeyStr(section)
-        let headView = OrderHeaderView.loadXibView(text: text, height: tableView.sectionHeaderHeight)
+        let headView = OrderHeaderView.loadXibView(viewModel: self.viewModel, text: text, height: tableView.sectionHeaderHeight)
         
         let modelArr = self.viewModel.getValueModel(section)
         headView.showAnimaton(isOpen: modelArr.first!.isOpen)

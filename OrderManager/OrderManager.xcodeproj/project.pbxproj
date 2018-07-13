@@ -25,6 +25,8 @@
 		F08BC16220F891480016266B /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08BC16020F891480016266B /* LeftViewController.xib */; };
 		F08BC16420F8998A0016266B /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC16320F8998A0016266B /* VideoPlayer.swift */; };
 		F08BC16620F89A2D0016266B /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F08BC16520F89A2C0016266B /* 1.mp4 */; };
+		F08BC17220F8A5970016266B /* CostTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC17020F8A5970016266B /* CostTotalViewController.swift */; };
+		F08BC17320F8A5970016266B /* CostTotalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08BC17120F8A5970016266B /* CostTotalViewController.xib */; };
 		F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C4520F5CD240086B24A /* AppDelegate.swift */; };
 		F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4C20F5CD250086B24A /* Assets.xcassets */; };
 		F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4E20F5CD250086B24A /* LaunchScreen.storyboard */; };
@@ -93,6 +95,8 @@
 		F08BC16020F891480016266B /* LeftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
 		F08BC16320F8998A0016266B /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		F08BC16520F89A2C0016266B /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		F08BC17020F8A5970016266B /* CostTotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTotalViewController.swift; sourceTree = "<group>"; };
+		F08BC17120F8A5970016266B /* CostTotalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostTotalViewController.xib; sourceTree = "<group>"; };
 		F0962C4220F5CD240086B24A /* OrderManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0962C4520F5CD240086B24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0962C4C20F5CD250086B24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -234,6 +238,47 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F08BC16B20F8A5890016266B /* Total */ = {
+			isa = PBXGroup;
+			children = (
+				F08BC16C20F8A5890016266B /* ViewModel */,
+				F08BC16D20F8A5890016266B /* Model */,
+				F08BC16E20F8A5890016266B /* View */,
+				F08BC16F20F8A5890016266B /* ViewController */,
+			);
+			path = Total;
+			sourceTree = "<group>";
+		};
+		F08BC16C20F8A5890016266B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F08BC16D20F8A5890016266B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F08BC16E20F8A5890016266B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F08BC16F20F8A5890016266B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F08BC17020F8A5970016266B /* CostTotalViewController.swift */,
+				F08BC17120F8A5970016266B /* CostTotalViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		F0962C3920F5CD240086B24A = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +324,7 @@
 		F0962C5820F5CD6E0086B24A /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				F08BC16B20F8A5890016266B /* Total */,
 				F08BC15A20F891360016266B /* Left */,
 				F0AAC5AE20F86FE80057039A /* Login */,
 				F0AAC58E20F83B550057039A /* Home */,
@@ -535,6 +581,7 @@
 				F0AAC5A520F83B550057039A /* AddViewController.xib in Resources */,
 				F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */,
 				F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */,
+				F08BC17320F8A5970016266B /* CostTotalViewController.xib in Resources */,
 				F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */,
 				F0962C9E20F5D94B0086B24A /* RefreshGifTool.xib in Resources */,
 				F08BC16620F89A2D0016266B /* 1.mp4 in Resources */,
@@ -615,6 +662,7 @@
 				F08BC16120F891480016266B /* LeftViewController.swift in Sources */,
 				F0AAC5AD20F846C00057039A /* UIBarButtonItem+Ext.swift in Sources */,
 				F0962C6C20F5CE5D0086B24A /* Date+Ext.swift in Sources */,
+				F08BC17220F8A5970016266B /* CostTotalViewController.swift in Sources */,
 				F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */,
 				F0962C6E20F5CE5D0086B24A /* UIColor+Ext.swift in Sources */,
 				F0AAC5BC20F879860057039A /* UIViewController+Ext.swift in Sources */,

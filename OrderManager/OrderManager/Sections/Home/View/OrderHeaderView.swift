@@ -14,13 +14,16 @@ class OrderHeaderView: UIView {
     @IBOutlet weak var timeL: UILabel!
     /// 箭头
     @IBOutlet weak var arrowImgV: UIImageView!
+    /// 消费金额
+    @IBOutlet weak var costL: UILabel!
     
     /// 创建Xib
-    class func loadXibView(text: String, height: CGFloat) -> OrderHeaderView {
+    class func loadXibView(viewModel: CostViewModel, text: String, height: CGFloat) -> OrderHeaderView {
         let tool = Bundle.main.loadNibNamed("OrderHeaderView", owner: nil, options: nil)?.last as! OrderHeaderView
         tool.frame = CGRect.init(x: 0.0, y: 0.0, width: kWidth, height: height)
         tool.timeL.text = text
-        
+        tool.costL.text = "(" + viewModel.allCosts[text]!.k_toString() + "元" + ")"
+
         return tool
     }
     
