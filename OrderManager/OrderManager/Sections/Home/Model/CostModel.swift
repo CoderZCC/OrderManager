@@ -10,6 +10,8 @@ import UIKit
 
 class CostModel: NSObject {
 
+    /// 主键
+    var objectId: String = ""
     /// 消费时间 月日
     lazy var costMD: String = {
         return self.costTime.k_subText(from: 5, to: 9)
@@ -20,7 +22,7 @@ class CostModel: NSObject {
     }()
     /// 消费时间 年月日时分
     var costTime: String = kNowDate.k_toDateStr("yyyy MM-dd HH:mm")
-    /// 消费类型
+    /// 消费类型 0-5
     var costType: String?
     /// 消费金额
     var costNum: String?

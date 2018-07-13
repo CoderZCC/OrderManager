@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setNavigation(vc: homeVC)
         
         self.registerAppNote()
+        self.registerBmob()
         
         return true
     }
@@ -48,5 +49,13 @@ extension AppDelegate {
         navbar.isTranslucent = false
         // 设置导航栏上按钮的颜色
         navbar.tintColor = UIColor.white
+    }
+}
+
+extension AppDelegate {
+    
+    func registerBmob() {
+        
+        Bmob.register(withAppKey: kBombID)
     }
 }

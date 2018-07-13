@@ -55,20 +55,18 @@ class AddViewController: BaseViewController {
         self.finishBtn.isHidden = self.isDetail
         if self.isDetail {
             
-            self.costTypeView.isUserInteractionEnabled = false
-            self.costTf.isUserInteractionEnabled = false
-            self.otherInfoTv.isUserInteractionEnabled = false
-
             self.navHeightCons.constant = 44.0
+            self.setDataShow()
+            self.setUserInteraction(isEnable: false)
             
-            self.costTf.text = self.viewModel.costModel.costNum
-            self.costTimeL.text = self.viewModel.costModel.costTime
-            self.costTypeL.text = self.viewModel.costModel.costType
-            self.areaL.text = self.viewModel.costModel.address
-            self.otherInfoTv.text = self.viewModel.costModel.costInfo
-            if self.viewModel.costModel.costInfo.isEmpty {
-                self.otherInfoTv.text = "无备注信息"
-            }
+            // 设置导航栏右侧按钮
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.k_addTarget(title: "修改", clickCallBack: {
+                
+                self.setUserInteraction(isEnable: true)
+                self.finishBtn.isHidden = false
+                self.navigationItem.rightBarButtonItem?.isEnabled = false
+            })
+            
         } else {
             
             // 获取定位
@@ -79,33 +77,56 @@ class AddViewController: BaseViewController {
             }
         }
         
+        // UI设置
         self.otherInfoTv.k_placeholderColor = UIColor.k_colorWith(r: 223.0, g: 221.0, b: 220.0)
         self.costTf.k_placeholderColor = self.otherInfoTv.k_placeholderColor
         self.otherInfoTv.k_placeholder = "输入备注信息(150字)"
         self.otherInfoTv.tintColor = UIColor.white
         self.otherInfoTv.k_limitTextLength = 150
-        
         self.otherInfoTv.k_setCornerRadius(4.0)
         self.finishBtn.k_setCornerRadius(4.0)
         
         self.costTimeL.text = self.viewModel.costModel.costTime
-        self.costTypeView.k_addTarget { [unowned self] in
-            
-            self.view.endEditing(true)
-            self.k_showSheets(title: "消费类型", subTitles: kCostTypeStr, callBack: { [unowned self] (index) in
-                
-                self.costTypeL.text = kCostTypeStr[index]
-            })
-        }
+        
         // 日期选择
         self.costTimeView.k_addTarget { [unowned self] in
             
+            if !self.costTf.isUserInteractionEnabled { return }
             self.view.endEditing(true)
             DatePickerTool.showDatePickView(showModel: UIDatePickerMode.dateAndTime) { [unowned self] (timeStr) in
                 
                 self.costTimeL.text = timeStr
             }
         }
+        // 消费类型选择
+        self.costTypeView.k_addTarget { [unowned self] in
+            
+            if !self.costTf.isUserInteractionEnabled { return }
+            self.view.endEditing(true)
+            self.k_showSheets(title: "消费类型", subTitles: kCostTypeStr, callBack: { [unowned self] (index) in
+                
+                self.costTypeL.text = kCostTypeStr[index]
+            })
+        }
+    }
+    
+    /// 设置是否可用
+    func setUserInteraction(isEnable: Bool) {
+        
+        self.costTimeView.isUserInteractionEnabled = isEnable
+        self.costTypeView.isUserInteractionEnabled = isEnable
+        self.costTf.isUserInteractionEnabled = isEnable
+        self.otherInfoTv.isUserInteractionEnabled = isEnable
+    }
+    
+    /// 展示数据
+    func setDataShow() {
+        
+        self.costTf.text = self.viewModel.costModel.costNum
+        self.costTimeL.text = self.viewModel.costModel.costTime
+        self.costTypeL.text = self.viewModel.costModel.costType
+        self.areaL.text = self.viewModel.costModel.address
+        self.otherInfoTv.text = self.viewModel.costModel.costInfo
     }
     
     //MARK: 点击事件
@@ -117,7 +138,7 @@ class AddViewController: BaseViewController {
     
     /// 完成点击事件
     @IBAction func finishBtnAction() {
-        
+    
         if self.costTypeL.text! == "请选择" {
             
             self.showText("请选择消费类型")
@@ -136,11 +157,22 @@ class AddViewController: BaseViewController {
         self.viewModel.costModel.address = self.areaL.text!
         self.viewModel.costModel.costTime = self.costTimeL.text!
         
-        self.viewModel.saveOrder() {
+        if self.isDetail {
             
-            self.showText("保存成功")
-            self.saveSuccessCallBack?()
-            self.cancleBtnAction()
+            self.viewModel.updateOrder(costModel: self.viewModel.costModel) {
+                
+                self.saveSuccessCallBack?()
+                self.finishBtn.isHidden = true
+                self.navigationItem.rightBarButtonItem?.isEnabled = true
+            }
+            
+        } else {
+            
+            self.viewModel.saveOrder() {
+                
+                self.saveSuccessCallBack?()
+                self.cancleBtnAction()
+            }
         }
     }
     

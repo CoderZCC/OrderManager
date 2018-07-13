@@ -13,6 +13,9 @@ typealias CallBack = (()->Void)?
 
 class CostViewModel: NSObject {
     
+    /// 是否需要展开第一个
+    var isNeedOpenFirst: Bool = true
+    
     /// 定位回调
     var locationCallBack:((String)->Void)?
     private let locationManager = CLLocationManager.init()
@@ -71,34 +74,28 @@ class CostViewModel: NSObject {
     func getOrderList(searchT: String, callBack: CallBack) {
         
         self.dataList.removeAll()
-        
-        var allDateArr: [CostModel] = []
-        for str in kSaveDataTool.k_getStrArr(from: kCachesPath) ?? [] {
+        ServicerTool.getCostMsg(queryYM: searchT, success: { (modelArr) in
             
-            let model = CostModel.init(dataArr: str.components(separatedBy: ";"))
-            if model.costYM == searchT && !allDateArr.contains(model) {
-                
-                allDateArr.append(model)
+            // 以日分组
+            var sectionDicArr: [String: [CostModel]] = [:]
+            for model in modelArr {
+    
+                if let arr = sectionDicArr[model.costMD] {
+    
+                    sectionDicArr[model.costMD] = (arr + [model])
+    
+                } else {
+    
+                    sectionDicArr[model.costMD] = [model]
+                }
             }
-        }
-        
-        // 以日分组
-        var sectionDicArr: [String: [CostModel]] = [:]
-        for model in allDateArr {
+            self.dataList = sectionDicArr
+            callBack?()
             
-            if let arr = sectionDicArr[model.costMD] {
-                
-                sectionDicArr[model.costMD] = (arr + [model])
-                
-            } else {
-                
-                sectionDicArr[model.costMD] = [model]
-            }
+        }) {
+            
+            self.showText("查询列表失败")
         }
-        print(sectionDicArr)
-        self.dataList = sectionDicArr
-
-        callBack?()
     }
 
     /// 保存订单
@@ -106,19 +103,37 @@ class CostViewModel: NSObject {
     /// - Parameter callBack: 完成的回调
     func saveOrder(callBack: CallBack) {
         
-        var saveStr: String = "\(self.costModel.costType!);\(self.costModel.costNum!);\(self.costModel.costInfo);"
-        
-        saveStr += "\(self.costModel.costMD);\(self.costModel.costYM);\(self.costModel.costTime);" + "\(self.costModel.address)"
-        
-        if kSaveDataTool.k_save(str: saveStr, to: kCachesPath) {
+        self.showLoading("保存数据中")
+        ServicerTool.addCostMsg(costModel: self.costModel, success: {
             
+            self.showText("保存成功")
             callBack?()
-            
-        } else {
+
+        }) {
             
             self.showText("保存失败")
         }
     }
+    
+    /// 更新消费数据
+    ///
+    /// - Parameters:
+    ///   - costModel: 数据模型
+    ///   - callBack: 回调
+    func updateOrder(costModel: CostModel, callBack: CallBack) {
+        
+        self.showLoading("更新数据中")
+        ServicerTool.updateCostMsg(costModel: costModel, success: {
+            
+            self.showText("更新成功")
+            callBack?()
+            
+        }) {
+            
+            self.showText("更新失败")
+        }
+    }
+    
 }
 
 extension CostViewModel: CLLocationManagerDelegate {
@@ -138,19 +153,13 @@ extension CostViewModel: CLLocationManagerDelegate {
         
         if let location = locations.last {
             
-            let latitude = location.coordinate.latitude
-            let longitude = location.coordinate.longitude
-
-            print(latitude,longitude)
-            
             self.locationManager.stopUpdatingLocation()
             
             self.clGeocoder.reverseGeocodeLocation(location) { (marks, error) in
                 
-                if error != nil {return}
+                var callbackStr: String = "未知区域"
                 if let result = marks {
                     
-                    var callbackStr: String!
                     let firstPL: CLPlacemark = result.first!
                     if let address = firstPL.addressDictionary!["FormattedAddressLines"] as? [Any] {
                         
@@ -160,13 +169,12 @@ extension CostViewModel: CLLocationManagerDelegate {
                         
                         callbackStr = firstPL.name ?? "未知区域"
                     }
-                    
-                    // 计算高度
-                    let size = callbackStr.k_textSize(size: CGSize.init(width: kWidth * 3.0 / 2.0, height: kHeight), font: k_Font14)
-                    self.areaHeight = min(18.0, size.height)
-                    
-                    self.locationCallBack?(callbackStr)
                 }
+                // 计算高度
+                let size = callbackStr.k_textSize(size: CGSize.init(width: kWidth * 3.0 / 2.0, height: kHeight), font: kFont14)
+                self.areaHeight = min(18.0, size.height)
+                
+                self.locationCallBack?(callbackStr)
             }
         }
     }

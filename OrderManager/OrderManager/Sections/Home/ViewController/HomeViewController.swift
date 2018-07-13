@@ -54,6 +54,7 @@ class HomeViewController: BaseViewController {
         
         self.viewModel.getOrderList(searchT: self.topBtnText) { [unowned self] in
             
+            self.viewModel.isNeedOpenFirst = true
             self.tableView.k_headerEndRefreshing()
             self.tableView.k_reloadData()
         }
@@ -152,6 +153,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let model = modelArr[indexPath.row]
      
         let detailVC = AddViewController.init(model: model)
+        detailVC.saveSuccessCallBack = {
+            
+            self.tableView.k_headerBeginRefreshing()
+        }
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
@@ -165,6 +170,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let modelArr = self.viewModel.getValueModel(section)
         let model = modelArr.first!
         
+        if section == 0 && self.viewModel.isNeedOpenFirst {
+            
+            self.viewModel.isNeedOpenFirst = false
+            model.isOpen = true
+        }
         return model.isOpen ? (modelArr.count) : (0)
     }
     
