@@ -21,6 +21,8 @@
 		F08BC15620F889060016266B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC15420F889060016266B /* RegisterViewController.swift */; };
 		F08BC15720F889060016266B /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08BC15520F889060016266B /* RegisterViewController.xib */; };
 		F08BC15920F8893B0016266B /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC15820F8893B0016266B /* RegisterViewModel.swift */; };
+		F08BC16120F891480016266B /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC15F20F891480016266B /* LeftViewController.swift */; };
+		F08BC16220F891480016266B /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08BC16020F891480016266B /* LeftViewController.xib */; };
 		F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C4520F5CD240086B24A /* AppDelegate.swift */; };
 		F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4C20F5CD250086B24A /* Assets.xcassets */; };
 		F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4E20F5CD250086B24A /* LaunchScreen.storyboard */; };
@@ -85,6 +87,8 @@
 		F08BC15420F889060016266B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F08BC15520F889060016266B /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		F08BC15820F8893B0016266B /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		F08BC15F20F891480016266B /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		F08BC16020F891480016266B /* LeftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
 		F0962C4220F5CD240086B24A /* OrderManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0962C4520F5CD240086B24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0962C4C20F5CD250086B24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +189,47 @@
 			path = KAlertTool;
 			sourceTree = "<group>";
 		};
+		F08BC15A20F891360016266B /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				F08BC15B20F891360016266B /* ViewModel */,
+				F08BC15C20F891360016266B /* Model */,
+				F08BC15D20F891360016266B /* View */,
+				F08BC15E20F891360016266B /* ViewController */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		F08BC15B20F891360016266B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F08BC15C20F891360016266B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F08BC15D20F891360016266B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F08BC15E20F891360016266B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F08BC15F20F891480016266B /* LeftViewController.swift */,
+				F08BC16020F891480016266B /* LeftViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		F0962C3920F5CD240086B24A = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +275,7 @@
 		F0962C5820F5CD6E0086B24A /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				F08BC15A20F891360016266B /* Left */,
 				F0AAC5AE20F86FE80057039A /* Login */,
 				F0AAC58E20F83B550057039A /* Home */,
 			);
@@ -487,6 +533,7 @@
 				F0962C9E20F5D94B0086B24A /* RefreshGifTool.xib in Resources */,
 				F0962C9820F5D94B0086B24A /* RefreshTool.xib in Resources */,
 				F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */,
+				F08BC16220F891480016266B /* LeftViewController.xib in Resources */,
 				F0AAC5A020F83B550057039A /* OrderHeaderView.xib in Resources */,
 				F0AAC5B620F870020057039A /* LoginViewController.xib in Resources */,
 				F08BC15720F889060016266B /* RegisterViewController.xib in Resources */,
@@ -558,6 +605,7 @@
 				F0962C8D20F5D6CB0086B24A /* FalseNavBarView.swift in Sources */,
 				F0962C9C20F5D94B0086B24A /* RefreshCommon.swift in Sources */,
 				F0AAC5A220F83B550057039A /* OrderHeaderView.swift in Sources */,
+				F08BC16120F891480016266B /* LeftViewController.swift in Sources */,
 				F0AAC5AD20F846C00057039A /* UIBarButtonItem+Ext.swift in Sources */,
 				F0962C6C20F5CE5D0086B24A /* Date+Ext.swift in Sources */,
 				F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */,

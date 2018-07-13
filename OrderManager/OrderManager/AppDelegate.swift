@@ -41,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let homeVC = HomeViewController()
         let mainVC = BaseNavigationController(rootViewController: homeVC)
-        let leftVC = BaseViewController()
+        let leftVC = LeftViewController()
         
-        let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kWidth * 0.8)
+        let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kSliderMaxWidth)
         
         kWindow?.rootViewController = rootVC
         self.setNavigation(vc: homeVC)
