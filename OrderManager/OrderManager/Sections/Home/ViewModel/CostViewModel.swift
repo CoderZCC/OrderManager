@@ -33,7 +33,7 @@ class CostViewModel: NSObject {
             
             arr.append(key)
         }
-        return arr.sorted()
+        return arr.sorted().reversed()
     }
     
     /// 获取key
@@ -53,7 +53,7 @@ class CostViewModel: NSObject {
         let key = self.getKeyStr(index)
         let modelArr = self.dataList[key]
         
-        return modelArr ?? []
+        return modelArr?.reversed() ?? []
     }
     
     /// 加号按钮的位置
