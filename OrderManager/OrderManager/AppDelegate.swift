@@ -29,7 +29,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    /// 切换根试图
+    ///
+    /// - Parameter isSuccess: true/false
     func loginResult(isSuccess: Bool) {
+        
+        // 转场动画
+        let transition = CATransition.init()
+        transition.type = "rippleEffect"
+        transition.duration = 0.5
+        kWindow?.layer.add(transition, forKey: "transition")
         
         if !isSuccess {
             
