@@ -39,7 +39,7 @@ class HomeViewController: BaseViewController {
             
             (kRootVC as! SliderDrawerViewController).showLeftVC()
         })
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), clickCallBack: {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), clickCallBack: {
             
             self.showText("敬请期待")
 //            let totalVC = CostTotalViewController()
