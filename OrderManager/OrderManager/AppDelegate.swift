@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerAppNote()
         self.registerBmob()
         
+        UIApplication.shared.isStatusBarHidden = false
+        
         return true
     }
 }

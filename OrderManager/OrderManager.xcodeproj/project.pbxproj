@@ -192,8 +192,8 @@
 				F0962C5720F5CD690086B24A /* Base */,
 				F0962C5820F5CD6E0086B24A /* Sections */,
 				F0962C5120F5CD250086B24A /* Info.plist */,
-				F0962C5A20F5CD8E0086B24A /* Others */,
 				F0962C5920F5CD780086B24A /* Tools */,
+				F0962C5A20F5CD8E0086B24A /* Others */,
 			);
 			path = OrderManager;
 			sourceTree = "<group>";

@@ -29,7 +29,7 @@ class HomeViewController: BaseViewController {
     
     func initView() {
         
-        self.title = "OrderManager"
+        self.title = "我的账单"
         
         let btnTitle = kNowDate.k_toDateStr("yyyy-MM")
         self.selectedTBtn.k_set(image: #imageLiteral(resourceName: "selected"), title: btnTitle, titlePosition: UIViewContentMode.left, additionalSpacing: 4.0, state: .normal)

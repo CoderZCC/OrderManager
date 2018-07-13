@@ -13,6 +13,8 @@ typealias CallBack = (()->Void)?
 
 class CostViewModel: NSObject {
     
+    /// 是否需要更新
+    var isChangevalue: Bool = false
     /// 是否需要展开第一个
     var isNeedOpenFirst: Bool = true
     
@@ -122,6 +124,11 @@ class CostViewModel: NSObject {
     ///   - callBack: 回调
     func updateOrder(callBack: CallBack) {
         
+        if !self.isChangevalue  {
+            
+            callBack?()
+            return
+        }
         self.showLoading("更新数据中")
         ServicerTool.updateCostMsg(costModel: self.costModel, success: {
             

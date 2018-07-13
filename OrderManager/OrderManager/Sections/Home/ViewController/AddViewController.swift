@@ -95,7 +95,10 @@ class AddViewController: BaseViewController {
             self.view.endEditing(true)
             DatePickerTool.showDatePickView(showModel: UIDatePickerMode.dateAndTime) { [unowned self] (timeStr) in
                 
-                self.costTimeL.text = timeStr
+                if self.costTimeL.text! != timeStr {
+                    self.viewModel.isChangevalue = true
+                    self.costTimeL.text = timeStr
+                }
             }
         }
         // 消费类型选择
@@ -105,7 +108,10 @@ class AddViewController: BaseViewController {
             self.view.endEditing(true)
             self.k_showSheets(title: "消费类型", subTitles: kCostTypeStr, callBack: { [unowned self] (index) in
                 
-                self.costTypeL.text = kCostTypeStr[index]
+                if self.costTypeL.text! != kCostTypeStr[index] {
+                    self.viewModel.isChangevalue = true
+                    self.costTypeL.text = kCostTypeStr[index]
+                }
             })
         }
     }
@@ -151,12 +157,20 @@ class AddViewController: BaseViewController {
         }
         self.view.endEditing(true)
         
-        self.viewModel.costModel.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
-        self.viewModel.costModel.costNum = self.costTf.text!
         self.viewModel.costModel.costType = self.costTypeL.text!
         self.viewModel.costModel.address = self.areaL.text!
         self.viewModel.costModel.costTime = self.costTimeL.text!
         
+        // 金额是否改变
+        if self.viewModel.costModel.costNum != self.costTf.text! {
+            self.viewModel.isChangevalue = true
+            self.viewModel.costModel.costNum = self.costTf.text!
+        }
+        // 备注信息是否改变
+        if self.viewModel.costModel.costInfo != "暂无备注信息" {
+            self.viewModel.isChangevalue = true
+            self.viewModel.costModel.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
+        }
         if self.isDetail {
             
             self.viewModel.updateOrder() {
