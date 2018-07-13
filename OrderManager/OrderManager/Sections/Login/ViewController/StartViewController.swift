@@ -40,6 +40,7 @@ class StartViewController: BaseViewController {
     /// 设置播放器
     func setUpPlayer() {
         
+        self.videoPlayer.volume = 0.0
         self.videoPlayer.isRunPlay = true
         self.view.layer.addSublayer(self.videoPlayer.playerLayer)
         self.view.bringSubview(toFront: self.registerBtn)
