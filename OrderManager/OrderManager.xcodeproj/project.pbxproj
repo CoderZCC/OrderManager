@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B04B4409F976E08CED793A23 /* Pods_OrderManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C26604BAEA5C65572C7D1A5C /* Pods_OrderManager.framework */; };
 		F056DB2B20F70781006B8E3E /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F056DB2920F70781006B8E3E /* OrderCell.xib */; };
 		F056DB2C20F70781006B8E3E /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB2A20F70781006B8E3E /* OrderCell.swift */; };
 		F056DB2E20F707B5006B8E3E /* OrderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB2D20F707B5006B8E3E /* OrderHeaderView.swift */; };
@@ -57,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AAFDBFFB250B7C43C5FD306A /* Pods-OrderManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderManager/Pods-OrderManager.release.xcconfig"; sourceTree = "<group>"; };
+		C26604BAEA5C65572C7D1A5C /* Pods_OrderManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F056DB2920F70781006B8E3E /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		F056DB2A20F70781006B8E3E /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		F056DB2D20F707B5006B8E3E /* OrderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeaderView.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		F0962C9420F5D94B0086B24A /* RefreshCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshCommon.swift; sourceTree = "<group>"; };
 		F0962C9520F5D94B0086B24A /* RefreshHeaderTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshHeaderTool.swift; sourceTree = "<group>"; };
 		F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshGifTool.xib; sourceTree = "<group>"; };
+		F69730D83436876766B92E43 /* Pods-OrderManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderManager/Pods-OrderManager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +117,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04B4409F976E08CED793A23 /* Pods_OrderManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96B8E3A9D4919CB248E22EE8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F69730D83436876766B92E43 /* Pods-OrderManager.debug.xcconfig */,
+				AAFDBFFB250B7C43C5FD306A /* Pods-OrderManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C64E9A7A90D066A795E194F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C26604BAEA5C65572C7D1A5C /* Pods_OrderManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F056DB2820F70781006B8E3E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +176,8 @@
 			children = (
 				F0962C4420F5CD240086B24A /* OrderManager */,
 				F0962C4320F5CD240086B24A /* Products */,
+				96B8E3A9D4919CB248E22EE8 /* Pods */,
+				C64E9A7A90D066A795E194F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -317,6 +341,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0962C5420F5CD250086B24A /* Build configuration list for PBXNativeTarget "OrderManager" */;
 			buildPhases = (
+				689C7014095E5E8FE0E317A1 /* [CP] Check Pods Manifest.lock */,
 				F0962C3E20F5CD240086B24A /* Sources */,
 				F0962C3F20F5CD240086B24A /* Frameworks */,
 				F0962C4020F5CD240086B24A /* Resources */,
@@ -383,6 +408,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		689C7014095E5E8FE0E317A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0962C3E20F5CD240086B24A /* Sources */ = {
@@ -558,16 +604,14 @@
 		};
 		F0962C5520F5CD250086B24A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F69730D83436876766B92E43 /* Pods-OrderManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3J38YFUTH;
 				INFOPLIST_FILE = OrderManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zcc.OrderManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -577,16 +621,14 @@
 		};
 		F0962C5620F5CD250086B24A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAFDBFFB250B7C43C5FD306A /* Pods-OrderManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z3J38YFUTH;
 				INFOPLIST_FILE = OrderManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zcc.OrderManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
