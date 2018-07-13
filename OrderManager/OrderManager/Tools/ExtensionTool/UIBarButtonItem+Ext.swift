@@ -12,6 +12,18 @@ var kUIBarItemActionKey: Int = 0
 
 extension UIBarButtonItem {
     
+    /// 点击回调
+    var k_barItemCallBack: (()->Void)? {
+        
+        set {
+            
+            objc_setAssociatedObject(self, &kUIBarItemActionKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            
+            return objc_getAssociatedObject(self, &kUIBarItemActionKey) as! (()->Void)?
+        }
+    }
     /// 添加点击事件回调
     ///
     /// - Parameters:
@@ -19,32 +31,26 @@ extension UIBarButtonItem {
     ///   - style: 类型 默认 plain
     ///   - clickCallBack: 点击回调
     /// - Returns: UIBarButtonItem
-    static func k_addTarget(image: UIImage?, style: UIBarButtonItemStyle = .plain, clickCallBack: (()->Void)?) -> UIBarButtonItem {
+    convenience init(image: UIImage?, style: UIBarButtonItemStyle = .plain, clickCallBack: (()->Void)?) {
         
-        objc_setAssociatedObject(self, &kUIBarItemActionKey, clickCallBack, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        
-        let barItem = UIBarButtonItem.init(image: image, style: style, target: self, action: #selector(UIBarButtonItem.k_barItemAction))
-        
-        return barItem
+        self.init(image: image, style: style, target: nil, action: #selector(k_clickAction))
+        self.k_barItemCallBack = clickCallBack
     }
     /// 添加点击事件回调
     ///
     /// - Parameters:
-    ///   - title: 标题
+    ///   - title: 文字
     ///   - style: 类型 默认 plain
     ///   - clickCallBack: 点击回调
     /// - Returns: UIBarButtonItem
-    static func k_addTarget(title: String, style: UIBarButtonItemStyle = .plain, clickCallBack: (()->Void)?) -> UIBarButtonItem {
+    convenience init(title: String?, style: UIBarButtonItemStyle = .plain, clickCallBack: (()->Void)?) {
         
-        objc_setAssociatedObject(self, &kUIBarItemActionKey, clickCallBack, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        
-        let barItem = UIBarButtonItem.init(title: title, style: style, target: self, action: #selector(UIBarButtonItem.k_barItemAction))
-        
-        return barItem
+        self.init(title: title, style: style, target: nil, action: #selector(k_clickAction))
+        self.k_barItemCallBack = clickCallBack
     }
-    @objc static func k_barItemAction() {
+    /// 点击事件
+    @objc func k_clickAction() {
         
-        let callBack = objc_getAssociatedObject(self, &kUIBarItemActionKey) as! (()->Void)?
-        callBack?()
+        self.k_barItemCallBack?()
     }
 }

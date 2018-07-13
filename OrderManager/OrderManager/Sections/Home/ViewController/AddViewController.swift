@@ -60,7 +60,7 @@ class AddViewController: BaseViewController {
             self.setUserInteraction(isEnable: false)
             
             // 设置导航栏右侧按钮
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.k_addTarget(title: "修改", clickCallBack: {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "修改", clickCallBack: {
                 
                 self.setUserInteraction(isEnable: true)
                 self.finishBtn.isHidden = false

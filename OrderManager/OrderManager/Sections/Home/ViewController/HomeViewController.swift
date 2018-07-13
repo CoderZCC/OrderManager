@@ -35,11 +35,16 @@ class HomeViewController: BaseViewController {
         let btnTitle = kNowDate.k_toDateStr("yyyy-MM")
         self.selectedTBtn.k_set(image: #imageLiteral(resourceName: "selected"), title: btnTitle, titlePosition: UIViewContentMode.left, additionalSpacing: 4.0, state: .normal)
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.k_addTarget(image: #imageLiteral(resourceName: "list"), clickCallBack: {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "list"), clickCallBack: {
             
             (kRootVC as! SliderDrawerViewController).showLeftVC()
         })
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), style: .plain, target: self, action: #selector(totalAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), clickCallBack: {
+            
+            self.showText("敬请期待")
+//            let totalVC = CostTotalViewController()
+//            self.navigationController?.pushViewController(totalVC, animated: true)
+        })
         
         self.view.addSubview(self.addBtn)
         self.tableView.sectionHeaderHeight = 35.0
@@ -68,12 +73,6 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: 点击事件
-    @objc func totalAction() {
-
-//        let totalVC = CostTotalViewController()
-//        self.navigationController?.pushViewController(totalVC, animated: true)
-    }
-    
     /// 日期选择
     @IBAction func selectedAction() {
         
