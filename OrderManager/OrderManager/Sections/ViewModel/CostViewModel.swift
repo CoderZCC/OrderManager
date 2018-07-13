@@ -88,12 +88,10 @@ class CostViewModel: NSObject {
             
             if let arr = sectionDicArr[model.costMD] {
                 
-                print("新增")
                 sectionDicArr[model.costMD] = (arr + [model])
                 
             } else {
                 
-                print("创建")
                 sectionDicArr[model.costMD] = [model]
             }
         }

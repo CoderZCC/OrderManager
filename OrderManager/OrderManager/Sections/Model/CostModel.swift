@@ -11,12 +11,10 @@ import UIKit
 class CostModel: NSObject {
 
     /// 消费时间 月日
-    //var costMD: String = kNowDate.k_toDateStr("MM-dd")
     lazy var costMD: String = {
         return self.costTime.k_subText(from: 5, to: 9)
     }()
     /// 消费时间 年月
-    //var costYM: String = kNowDate.k_toDateStr("yyyy-MM")
     lazy var costYM: String = {
         return self.costTime.k_subText(to: 3) + "-" + self.costTime.k_subText(from: 5, to: 6)
     }()
