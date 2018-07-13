@@ -48,6 +48,11 @@ class HomeViewController: BaseViewController {
             
             self.initData()
         }
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.k_addTarget(image: #imageLiteral(resourceName: "list"), clickCallBack: {
+            
+            kRootVC.showLeftVC()
+        })
     }
     
     func initData() {
