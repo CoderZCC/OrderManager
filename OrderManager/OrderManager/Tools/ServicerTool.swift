@@ -17,6 +17,7 @@ typealias FailBlock = (()->Void)?
 
 class ServicerTool: NSObject {
 
+    //MARK: 添加消费数据
     /// 添加消费数据
     ///
     /// - Parameters:
@@ -34,6 +35,7 @@ class ServicerTool: NSObject {
         }
     }
     
+    //MARK: 查询消费数据
     /// 查询消费数据
     ///
     /// - Parameters:
@@ -78,6 +80,7 @@ class ServicerTool: NSObject {
         }
     }
     
+    //MARK: 更新消费数据
     /// 更新消费数据
     ///
     /// - Parameters:
@@ -98,6 +101,31 @@ class ServicerTool: NSObject {
                     
                     isOK ? (success?()) : (fail?())
                 })
+            }
+        }
+    }
+    
+    //MARK: 删除消费数据
+    /// 删除消费数据
+    ///
+    /// - Parameters:
+    ///   - costModel: 数据模型
+    ///   - success: 成功
+    ///   - fail: 失败
+    class func deleteOrder(costModel: CostModel, success: SuccessNoDataBlock, fail: FailBlock) {
+        
+        let queryList = BmobQuery.init(className: kCostListName)!
+        queryList.getObjectInBackground(withId: costModel.objectId) { (object, error) in
+            
+            if let obj = object {
+                
+                obj.deleteInBackground({ (isOK, error) in
+                    
+                    isOK ? (success?()) : (fail?())
+                })
+            } else {
+                
+                fail?()
             }
         }
     }

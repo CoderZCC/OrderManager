@@ -89,7 +89,7 @@ class AddViewController: BaseViewController {
         self.costTimeL.text = self.viewModel.costModel.costTime
         
         // 日期选择
-        self.costTimeView.k_addTarget { [unowned self] in
+        self.costTimeView.k_addTarget { [unowned self] tap in
             
             if !self.costTf.isUserInteractionEnabled { return }
             self.view.endEditing(true)
@@ -99,7 +99,7 @@ class AddViewController: BaseViewController {
             }
         }
         // 消费类型选择
-        self.costTypeView.k_addTarget { [unowned self] in
+        self.costTypeView.k_addTarget { [unowned self] tap in
             
             if !self.costTf.isUserInteractionEnabled { return }
             self.view.endEditing(true)
@@ -159,7 +159,7 @@ class AddViewController: BaseViewController {
         
         if self.isDetail {
             
-            self.viewModel.updateOrder(costModel: self.viewModel.costModel) {
+            self.viewModel.updateOrder() {
                 
                 self.saveSuccessCallBack?()
                 self.finishBtn.isHidden = true

@@ -331,10 +331,10 @@
 		F0AAC59320F83B550057039A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F0AAC59420F83B550057039A /* OrderCell.xib */,
-				F0AAC59520F83B550057039A /* OrderHeaderView.xib */,
 				F0AAC59620F83B550057039A /* OrderCell.swift */,
+				F0AAC59420F83B550057039A /* OrderCell.xib */,
 				F0AAC59720F83B550057039A /* OrderHeaderView.swift */,
+				F0AAC59520F83B550057039A /* OrderHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

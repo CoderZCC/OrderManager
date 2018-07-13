@@ -128,7 +128,7 @@ class HomeViewController: BaseViewController {
         btn.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         btn.center = self.viewModel.addBtnLocation
         
-        btn.k_addTarget({ [unowned self] in
+        btn.k_addTarget({ [unowned self] tap in
             
             let addVC = AddViewController()
             addVC.saveSuccessCallBack = { [unowned self] in
@@ -186,7 +186,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let modelArr = self.viewModel.getValueModel(section)
         headView.showAnimaton(isOpen: modelArr.first!.isOpen)
         
-        headView.k_addTarget {
+        headView.k_addTarget { tap in
 
             DispatchQueue.main.async {
                 
@@ -201,7 +201,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as! OrderCell
-        cell.model = self.viewModel.getValueModel(indexPath.section)[indexPath.row]
+        
+        let costModel = self.viewModel.getValueModel(indexPath.section)[indexPath.row]
+        cell.model = costModel
+
+        cell.showView.k_addLongPressTarget { [unowned self] tap in
+            
+            if tap.state == .began {
+                
+                self.k_showAlert(title: "确定要删除此条记录吗?", rightAction: {
+                    
+                    self.viewModel.deleteOrder(costModel: costModel, callBack: {
+                        
+                        self.tableView.k_headerBeginRefreshing()
+                    })
+                })
+            }
+        }
         
         return cell
     }

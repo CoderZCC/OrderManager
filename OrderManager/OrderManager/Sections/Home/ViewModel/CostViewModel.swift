@@ -120,10 +120,10 @@ class CostViewModel: NSObject {
     /// - Parameters:
     ///   - costModel: 数据模型
     ///   - callBack: 回调
-    func updateOrder(costModel: CostModel, callBack: CallBack) {
+    func updateOrder(callBack: CallBack) {
         
         self.showLoading("更新数据中")
-        ServicerTool.updateCostMsg(costModel: costModel, success: {
+        ServicerTool.updateCostMsg(costModel: self.costModel, success: {
             
             self.showText("更新成功")
             callBack?()
@@ -131,6 +131,25 @@ class CostViewModel: NSObject {
         }) {
             
             self.showText("更新失败")
+        }
+    }
+    
+    /// 删除消费数据
+    ///
+    /// - Parameters:
+    ///   - costModel: 数据模型
+    ///   - callBack: 回调
+    func deleteOrder(costModel: CostModel, callBack: CallBack) {
+        
+        self.showLoading("删除数据中")
+        ServicerTool.deleteOrder(costModel: costModel, success: {
+            
+            self.hideHUD()
+            callBack?()
+            
+        }) {
+            
+            self.showText("删除失败")
         }
     }
     

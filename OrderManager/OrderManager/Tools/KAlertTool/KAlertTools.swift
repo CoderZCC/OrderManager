@@ -28,9 +28,12 @@ extension NSObject {
     ///   - subtitle: 子标题
     ///   - leftAction: 点击回调
     ///   - reightAction: 点击回调
-    func k_showAlert(title: String?, subtitle: String?, leftAction: @escaping ()->Void, reightAction: @escaping ()->Void) {
+    func k_showAlert(title: String?, leftAction: (()->Void)? = nil, rightAction: @escaping ()->Void) {
         
-        KAlertTools.showAlertView(title: title, subTitle: subtitle, leftBtnAction: leftAction, rightBtnAction: reightAction)
+        KAlertTools.showAlertView(title: "提示", subTitle: title, leftBtn: "取消", rightBtn: "确定", leftBtnAction: nil) {
+            
+            rightAction()
+        }
     }
 }
 
@@ -112,8 +115,8 @@ class KAlertTools: UIView {
     }
     
     ///警告框
-    class func showAlertView(title:String? , subTitle:String? , leftBtn:String? = "取消", rightBtn:String? = "确定",leftBtnAction:@escaping ()->Void ,rightBtnAction:@escaping () ->Void)
-    {
+    class func showAlertView(title:String?, subTitle: String? , leftBtn: String? = "取消", rightBtn: String? = "确定", leftBtnAction:(()->Void)? = nil, rightBtnAction:(()->Void)?) {
+       
         let tool = KAlertTools.sharedManager
         if tool.isRunning {
             
@@ -145,8 +148,8 @@ class KAlertTools: UIView {
             tool.rightBtn.setTitle(rightBtn, for: UIControlState.normal)
         }
         
-        tool.rightAction = rightBtnAction
-        tool.leftAction = leftBtnAction
+        tool.rightAction = rightBtnAction ?? {}
+        tool.leftAction = leftBtnAction ?? {}
 
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
             

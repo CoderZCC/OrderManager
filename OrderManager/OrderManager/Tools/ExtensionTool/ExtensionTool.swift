@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 
 typealias k_noArgumentCallBack = (()->Void)?
+typealias k_gestureCallBack = ((UIGestureRecognizer)->Void)?
 
 extension NSObject {
     
