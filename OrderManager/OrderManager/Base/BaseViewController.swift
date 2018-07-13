@@ -33,7 +33,7 @@ class BaseViewController: UIViewController {
         self.view.k_tapDismissKeyboard()
     }
 
-    lazy var bgImgV: UIImageView = {
+    private lazy var bgImgV: UIImageView = {
         let imgV = UIImageView.init(frame: UIScreen.main.bounds)
         imgV.contentMode = .scaleAspectFill
         imgV.image = #imageLiteral(resourceName: "bg")

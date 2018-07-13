@@ -23,6 +23,8 @@
 		F08BC15920F8893B0016266B /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC15820F8893B0016266B /* RegisterViewModel.swift */; };
 		F08BC16120F891480016266B /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC15F20F891480016266B /* LeftViewController.swift */; };
 		F08BC16220F891480016266B /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08BC16020F891480016266B /* LeftViewController.xib */; };
+		F08BC16420F8998A0016266B /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BC16320F8998A0016266B /* VideoPlayer.swift */; };
+		F08BC16620F89A2D0016266B /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F08BC16520F89A2C0016266B /* 1.mp4 */; };
 		F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C4520F5CD240086B24A /* AppDelegate.swift */; };
 		F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4C20F5CD250086B24A /* Assets.xcassets */; };
 		F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4E20F5CD250086B24A /* LaunchScreen.storyboard */; };
@@ -89,6 +91,8 @@
 		F08BC15820F8893B0016266B /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		F08BC15F20F891480016266B /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		F08BC16020F891480016266B /* LeftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
+		F08BC16320F8998A0016266B /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		F08BC16520F89A2C0016266B /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
 		F0962C4220F5CD240086B24A /* OrderManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0962C4520F5CD240086B24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0962C4C20F5CD250086B24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			children = (
 				F0AAC5AA20F83BA80057039A /* ServicerTool.swift */,
 				F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */,
+				F08BC16320F8998A0016266B /* VideoPlayer.swift */,
 				F056DB3520F735E0006B8E3E /* DatePickerTool */,
 				F0962C7220F5CE700086B24A /* BaseViewTool */,
 				F05D894820F5DD9600FB9B5A /* KAlertTool */,
@@ -456,6 +461,7 @@
 		F0AAC5B220F86FE80057039A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F08BC16520F89A2C0016266B /* 1.mp4 */,
 				F0AAC5B720F875A00057039A /* StartViewController.swift */,
 				F0AAC5B820F875A00057039A /* StartViewController.xib */,
 				F0AAC5B320F870020057039A /* LoginViewController.swift */,
@@ -531,6 +537,7 @@
 				F0962C4D20F5CD250086B24A /* Assets.xcassets in Resources */,
 				F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */,
 				F0962C9E20F5D94B0086B24A /* RefreshGifTool.xib in Resources */,
+				F08BC16620F89A2D0016266B /* 1.mp4 in Resources */,
 				F0962C9820F5D94B0086B24A /* RefreshTool.xib in Resources */,
 				F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */,
 				F08BC16220F891480016266B /* LeftViewController.xib in Resources */,
@@ -613,6 +620,7 @@
 				F0AAC5BC20F879860057039A /* UIViewController+Ext.swift in Sources */,
 				F0AAC5A320F83B550057039A /* AddViewController.swift in Sources */,
 				F0AAC5C020F87BC90057039A /* LoginModel.swift in Sources */,
+				F08BC16420F8998A0016266B /* VideoPlayer.swift in Sources */,
 				F0962C6D20F5CE5D0086B24A /* String+Ext.swift in Sources */,
 				F056DB3D20F74A96006B8E3E /* UIButton+Ext.swift in Sources */,
 				F056DB3B20F740BA006B8E3E /* SpecialPickerView.swift in Sources */,
