@@ -23,7 +23,7 @@ class OrderHeaderView: UIView {
         tool.frame = CGRect.init(x: 0.0, y: 0.0, width: kWidth, height: height)
         tool.timeL.text = text
         tool.costL.text = "(" + viewModel.allCosts[text]!.k_toString() + "元" + ")"
-
+        
         return tool
     }
     

@@ -324,10 +324,10 @@
 		F0962C5820F5CD6E0086B24A /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				F08BC16B20F8A5890016266B /* Total */,
-				F08BC15A20F891360016266B /* Left */,
 				F0AAC5AE20F86FE80057039A /* Login */,
+				F08BC15A20F891360016266B /* Left */,
 				F0AAC58E20F83B550057039A /* Home */,
+				F08BC16B20F8A5890016266B /* Total */,
 			);
 			path = Sections;
 			sourceTree = "<group>";

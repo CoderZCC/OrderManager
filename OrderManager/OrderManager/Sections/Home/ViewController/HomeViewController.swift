@@ -69,9 +69,10 @@ class HomeViewController: BaseViewController {
     
     //MARK: 点击事件
     @objc func totalAction() {
-        
-        let totalVC = CostTotalViewController()
-        self.navigationController?.pushViewController(totalVC, animated: true)
+
+        PopMenuView.showMenuView()
+//        let totalVC = CostTotalViewController()
+//        self.navigationController?.pushViewController(totalVC, animated: true)
     }
     
     /// 日期选择
