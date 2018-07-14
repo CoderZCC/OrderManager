@@ -16,6 +16,8 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var passwordTf: UITextField!
     /// 注册按钮
     @IBOutlet weak var registerBtn: UIButton!
+    /// 头像
+    @IBOutlet weak var headImgV: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

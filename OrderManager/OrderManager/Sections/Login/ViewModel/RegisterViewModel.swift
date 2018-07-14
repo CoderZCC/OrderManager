@@ -50,7 +50,7 @@ class RegisterViewModel: NSObject {
     func register(callBack: CallBack) {
         
         // 先检查用户是否存在
-        self.showLoading("检查用户中")
+        self.showLoading("检查账号中")
         RegisterViewModel.userIsExit(account: self.loginModel.account) { (isOk, obj) in
             
             if let _ = obj {
@@ -60,17 +60,22 @@ class RegisterViewModel: NSObject {
             } else {
                 
                 // 注册
-                self.showLoading("开始注册")
-                self.addData(callBack: callBack)
+                self.uploadImg(callBack: { (url) in
+                    
+                    self.addData(url: url, callBack: callBack)
+                })
             }
         }
     }
     /// 注册
-    private func addData(callBack: CallBack) {
+    private func addData(url: String, callBack: CallBack) {
         
+        self.showLoading("开始注册")
         let userList = BmobObject.init(className: kUserListName)!
         userList.setObject(self.loginModel.account, forKey: "account")
         userList.setObject(self.loginModel.password, forKey: "password")
+        userList.setObject(url, forKey: "headPicUrl")
+
         userList.saveInBackground(resultBlock: { (isOK, error) in
             
             if let _ = error {
@@ -90,6 +95,31 @@ class RegisterViewModel: NSObject {
                 kSaveDataTool.k_saveOrUpdatePassword(account: self.loginModel.account, password: self.loginModel.password)
                 
             }
+        })
+    }
+    
+    /// 上传头像
+    func uploadImg(callBack: ((String) -> Void)? ) {
+        
+        self.showLoading("图片处理中")
+        let file = BmobFile.init(fileName: "1.png", withFileData: UIImagePNGRepresentation(#imageLiteral(resourceName: "defaultImg"))!)
+        file?.save(inBackground: { (isOK, error) in
+            
+            if isOK {
+                
+                print("isOK:\(file!.url)")
+                callBack?(file!.url)
+                self.hideHUD()
+
+            } else {
+                
+                self.showText("图片上传失败，请重试")
+            }
+            
+        }, withProgressBlock: { (progress) in
+        
+            self.showProgress(progress: progress, text: "图片上传中")
+            print("progress:\(progress)")
         })
     }
     

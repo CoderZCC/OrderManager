@@ -57,7 +57,7 @@ class LoginViewModel: NSObject {
     func login(callBack: CallBack) {
         
         // 先检查用户是否存在
-        self.showLoading("登录中")
+        self.showLoading("检查账号中")
         RegisterViewModel.userIsExit(account: self.loginModel.account) { (isOK, obj) in
             
             if let userObj = obj {

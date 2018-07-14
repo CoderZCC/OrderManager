@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="OrderManager" customModuleProvider="target">
             <connections>
                 <outlet property="accountTf" destination="IL0-zB-kok" id="SgU-oV-jRT"/>
+                <outlet property="headImgV" destination="W9N-sy-LUN" id="08r-cP-V8p"/>
                 <outlet property="passwordTf" destination="63a-wt-Gbg" id="haF-Sg-4eE"/>
                 <outlet property="registerBtn" destination="za5-W8-zui" id="tqg-Yb-Gql"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,8 +31,15 @@
                     <color key="textColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImg" translatesAutoresizingMaskIntoConstraints="NO" id="W9N-sy-LUN">
+                    <rect key="frame" x="153" y="131" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Mxe-Zg-GbI"/>
+                        <constraint firstAttribute="width" secondItem="W9N-sy-LUN" secondAttribute="height" multiplier="1:1" id="a9E-bz-z7z"/>
+                    </constraints>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4u-nA-NKH">
-                    <rect key="frame" x="15" y="141" width="345" height="89"/>
+                    <rect key="frame" x="15" y="216" width="345" height="89"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-pP-yMl">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
@@ -121,7 +130,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za5-W8-zui">
-                    <rect key="frame" x="25" y="450" width="325" height="40"/>
+                    <rect key="frame" x="25" y="525" width="325" height="40"/>
                     <color key="backgroundColor" red="0.82352941180000006" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4OM-uO-0GU"/>
@@ -140,9 +149,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="v4u-nA-NKH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="1qJ-v7-KMH"/>
+                <constraint firstItem="W9N-sy-LUN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8t6-Ib-6lm"/>
                 <constraint firstItem="za5-W8-zui" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OB4-4l-9nE"/>
                 <constraint firstItem="za5-W8-zui" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="ORV-Vc-ZBo"/>
-                <constraint firstItem="v4u-nA-NKH" firstAttribute="top" secondItem="G8v-tf-lQp" secondAttribute="bottom" constant="35" id="Zb2-5S-9GP"/>
+                <constraint firstItem="W9N-sy-LUN" firstAttribute="top" secondItem="G8v-tf-lQp" secondAttribute="bottom" constant="25" id="XIb-Ms-eQy"/>
+                <constraint firstItem="v4u-nA-NKH" firstAttribute="top" secondItem="W9N-sy-LUN" secondAttribute="bottom" constant="15" id="hnI-wO-Qwo"/>
                 <constraint firstItem="G8v-tf-lQp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ijz-fz-cOn"/>
                 <constraint firstItem="v4u-nA-NKH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kPn-dT-kHK"/>
                 <constraint firstItem="za5-W8-zui" firstAttribute="top" secondItem="v4u-nA-NKH" secondAttribute="bottom" constant="220" id="kSc-SM-9cf"/>
@@ -152,4 +163,7 @@
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="defaultImg" width="32" height="32"/>
+    </resources>
 </document>
