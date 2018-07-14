@@ -58,4 +58,7 @@ typealias CallBack = (()->Void)?
 
 /// 账号对应的key
 let kAccountkey: String = "kAccountkey"
+let kUserIdkey: String = "kUserIdkey"
+
+
 

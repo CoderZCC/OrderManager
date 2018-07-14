@@ -46,7 +46,7 @@ class ServicerTool: NSObject {
         
         let queryList = BmobQuery.init(className: kCostListName)!
         queryList.whereKey("costYearMonth", equalTo: queryYM)
-        queryList.whereKey("userId", equalTo: LoginModel.cachesAccount)
+        queryList.whereKey("userId", equalTo: LoginModel.cachesUserId)
         
         queryList.findObjectsInBackground { (dataArr, error) in
             
@@ -134,7 +134,7 @@ class ServicerTool: NSObject {
     /// 设置数据
     private class func setValueTo(costModel: CostModel, object: BmobObject) {
         
-        object.setObject(LoginModel.cachesAccount, forKey: "userId")
+        object.setObject(LoginModel.cachesUserId, forKey: "userId")
         
         object.setObject(costModel.costTime, forKey: "costTime")
         object.setObject(costModel.costType, forKey: "costType")

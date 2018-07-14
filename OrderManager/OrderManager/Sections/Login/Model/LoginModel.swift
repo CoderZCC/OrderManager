@@ -15,6 +15,11 @@ class LoginModel: NSObject {
         return kSaveDataTool.k_checkValueFromUserdefault(key: kAccountkey) ?? ""
     }
     
+    /// 缓存的userId 
+    static var cachesUserId: String {
+        return kSaveDataTool.k_checkValueFromUserdefault(key: kUserIdkey) ?? ""
+    }
+    
     /// 是否已登录
     static var isLogin: Bool {
         
