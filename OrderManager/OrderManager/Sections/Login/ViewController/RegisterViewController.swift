@@ -37,6 +37,21 @@ class RegisterViewController: BaseViewController {
             
             self.registerBtn.isEnabled = isEnabled
         }
+        
+        self.headImgV.k_addTarget { (tap) in
+            
+            self.view.endEditing(true)
+            self.k_showSheets(title: "请选择", subTitles: ["从相册获取", "拍照"], callBack: { (index) in
+                
+                if index == 0 {
+                    
+                    
+                } else {
+                    
+                    
+                }
+            })
+        }
     }
     
     /// 注册事件
