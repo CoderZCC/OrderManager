@@ -75,6 +75,7 @@
 		F0AAC5C020F87BC90057039A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC5BF20F87BC90057039A /* LoginModel.swift */; };
 		F0D562F320FC455500AAE095 /* AuthorityTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D562F220FC455500AAE095 /* AuthorityTool.swift */; };
 		F0D562F520FC748F00AAE095 /* CameraTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D562F420FC748F00AAE095 /* CameraTool.swift */; };
+		F0D562F720FC916E00AAE095 /* UIIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D562F620FC916E00AAE095 /* UIIImageView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +151,7 @@
 		F0AAC5BF20F87BC90057039A /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		F0D562F220FC455500AAE095 /* AuthorityTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityTool.swift; sourceTree = "<group>"; };
 		F0D562F420FC748F00AAE095 /* CameraTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTool.swift; sourceTree = "<group>"; };
+		F0D562F620FC916E00AAE095 /* UIIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIImageView+Ext.swift"; sourceTree = "<group>"; };
 		F69730D83436876766B92E43 /* Pods-OrderManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderManager/Pods-OrderManager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -365,6 +367,7 @@
 				F0962C6920F5CE5D0086B24A /* ExtensionTool.swift */,
 				F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */,
 				F0962C6220F5CE5D0086B24A /* UIImage+Ext.swift */,
+				F0D562F620FC916E00AAE095 /* UIIImageView+Ext.swift */,
 				F0962C6320F5CE5D0086B24A /* UITextView+Ext.swift */,
 				F0962C6420F5CE5D0086B24A /* Date+Ext.swift */,
 				F0962C6520F5CE5D0086B24A /* String+Ext.swift */,
@@ -682,6 +685,7 @@
 				F056DB3B20F740BA006B8E3E /* SpecialPickerView.swift in Sources */,
 				F0AAC5AB20F83BA80057039A /* ServicerTool.swift in Sources */,
 				F0962C9B20F5D94B0086B24A /* RefreshGifFooterTool.swift in Sources */,
+				F0D562F720FC916E00AAE095 /* UIIImageView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

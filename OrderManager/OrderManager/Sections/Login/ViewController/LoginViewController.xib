@@ -14,6 +14,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="OrderManager" customModuleProvider="target">
             <connections>
                 <outlet property="accountTf" destination="ye6-Lg-snm" id="USv-rd-6SH"/>
+                <outlet property="headPic" destination="gtw-fF-r2z" id="SN2-my-72f"/>
                 <outlet property="loginBtn" destination="Jv4-N5-0ph" id="BLc-tp-4ak"/>
                 <outlet property="passwordTf" destination="Ohx-II-of8" id="A55-z4-FJl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

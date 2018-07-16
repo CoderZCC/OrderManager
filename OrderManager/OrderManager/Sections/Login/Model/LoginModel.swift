@@ -26,6 +26,13 @@ class LoginModel: NSObject, NSCoding {
         return model?.userId ?? ""
     }
     
+    /// 缓存的headPic
+    static var cachesHeadPic: String {
+        let model = kSaveDataTool.k_getModel(from: kUserMsgPath)
+        
+        return model?.headPic ?? ""
+    }
+    
     /// 是否已登录
     static var isLogin: Bool {
         

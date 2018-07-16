@@ -17,6 +17,7 @@ class OrderHeaderView: UIView {
     /// 消费金额
     @IBOutlet weak var costL: UILabel!
     
+    
     /// 创建Xib
     class func loadXibView(viewModel: CostViewModel, text: String, height: CGFloat) -> OrderHeaderView {
         let tool = Bundle.main.loadNibNamed("OrderHeaderView", owner: nil, options: nil)?.last as! OrderHeaderView

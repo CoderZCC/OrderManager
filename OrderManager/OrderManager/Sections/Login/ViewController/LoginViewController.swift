@@ -16,6 +16,8 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var passwordTf: UITextField!
     /// 登录按钮
     @IBOutlet weak var loginBtn: UIButton!
+    /// 头像
+    @IBOutlet weak var headPic: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,8 @@ class LoginViewController: BaseViewController {
             
             self.loginBtn.isEnabled = isEnabled
         }
+        self.headPic.k_setCircleImgV()
+        self.headPic.k_setImage(url: LoginModel.cachesHeadPic)
     }
     
     /// 登录按钮点击事件
