@@ -19,47 +19,47 @@ extension NSObject {
         
         DispatchQueue.main.async {
             
+            let note = UILocalNotification.init()
+            // 触发时间
+            note.fireDate = Date.init(timeIntervalSinceReferenceDate: 0.3)
+            // 时区
+            note.timeZone = NSTimeZone.default
+            // 重复间隔
+            note.repeatInterval = NSCalendar.Unit.init(rawValue: 0)
+            // 推送数据
+            note.userInfo = dataDic
+            // 通知内容
+            note.alertTitle = title
+            note.alertBody = content
+            
+            note.soundName = UILocalNotificationDefaultSoundName
+            
+            let shared = UIApplication.shared
+            shared.scheduleLocalNotification(note)
+            
             // 版本适配
-            if #available(iOS 10.0, *) {
-                
-                let localNoteCenter = UNUserNotificationCenter.current()
-                let noteContent = UNMutableNotificationContent.init()
-                noteContent.title = title
-                noteContent.body = content
-                noteContent.sound = UNNotificationSound.default()
-                
-                noteContent.userInfo = dataDic
-                
-                let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 0.1, repeats: false)
-                let request = UNNotificationRequest.init(identifier: "aaa", content: noteContent, trigger: trigger)
-                
-                localNoteCenter.add(request, withCompletionHandler: { (error) in
-                    
-                    print("推送错误信息:\(String(describing: error))")
-                })
-                
-            } else {
-                
-                let note = UILocalNotification.init()
-                // 触发时间
-                note.fireDate = Date.init(timeIntervalSinceReferenceDate: 0.2)
-                // 时区
-                note.timeZone = NSTimeZone.default
-                // 重复间隔
-                note.repeatInterval = NSCalendar.Unit(rawValue: 0)
-                // 推送数据
-                note.userInfo = dataDic
-                // 通知内容
-                note.alertTitle = title
-                note.alertBody = content
-                
-                note.soundName = UILocalNotificationDefaultSoundName
-                
-                let setting = UIUserNotificationSettings.init(types: [UIUserNotificationType.alert, UIUserNotificationType.sound], categories: nil)
-                
-                UIApplication.shared.registerUserNotificationSettings(setting)
-                UIApplication.shared.scheduleLocalNotification(note)
-            }
+//            if #available(iOS 10.0, *) {
+//
+//                let localNoteCenter = UNUserNotificationCenter.current()
+//                let noteContent = UNMutableNotificationContent.init()
+//                noteContent.title = title
+//                noteContent.body = content
+//                noteContent.sound = UNNotificationSound.default()
+//
+//                noteContent.userInfo = dataDic
+//
+//                let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 0.1, repeats: false)
+//                let request = UNNotificationRequest.init(identifier: "aaa", content: noteContent, trigger: trigger)
+//
+//                localNoteCenter.add(request, withCompletionHandler: { (error) in
+//
+//                    print("推送错误信息:\(String(describing: error))")
+//                })
+//
+//            } else {
+//
+//
+//            }
         }
     }
 }

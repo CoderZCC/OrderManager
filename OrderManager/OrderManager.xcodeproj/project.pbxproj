@@ -13,7 +13,7 @@
 		F056DB3920F73603006B8E3E /* MyPickerTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = F056DB3820F73603006B8E3E /* MyPickerTool.xib */; };
 		F056DB3B20F740BA006B8E3E /* SpecialPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB3A20F740BA006B8E3E /* SpecialPickerView.swift */; };
 		F056DB3D20F74A96006B8E3E /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB3C20F74A96006B8E3E /* UIButton+Ext.swift */; };
-		F056DB3F20F75B8E006B8E3E /* AppDelegate+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB3E20F75B8E006B8E3E /* AppDelegate+Ext.swift */; };
+		F056DB3F20F75B8E006B8E3E /* AppDelegate+Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056DB3E20F75B8E006B8E3E /* AppDelegate+Note.swift */; };
 		F05D894720F5DC8500FB9B5A /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */; };
 		F05D894B20F5DD9600FB9B5A /* KAlertTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05D894920F5DD9600FB9B5A /* KAlertTools.swift */; };
 		F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */; };
@@ -83,7 +83,7 @@
 		F056DB3820F73603006B8E3E /* MyPickerTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPickerTool.xib; sourceTree = "<group>"; };
 		F056DB3A20F740BA006B8E3E /* SpecialPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialPickerView.swift; sourceTree = "<group>"; };
 		F056DB3C20F74A96006B8E3E /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
-		F056DB3E20F75B8E006B8E3E /* AppDelegate+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Ext.swift"; sourceTree = "<group>"; };
+		F056DB3E20F75B8E006B8E3E /* AppDelegate+Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Note.swift"; sourceTree = "<group>"; };
 		F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		F05D894920F5DD9600FB9B5A /* KAlertTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAlertTools.swift; sourceTree = "<group>"; };
 		F05D894A20F5DD9600FB9B5A /* KAlertTools.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAlertTools.xib; sourceTree = "<group>"; };
@@ -371,9 +371,9 @@
 				F0962C6820F5CE5D0086B24A /* Number+Ext.swift */,
 				F05D895D20F5EFBF00FB9B5A /* UITableView+Ext.swift */,
 				F056DB3C20F74A96006B8E3E /* UIButton+Ext.swift */,
-				F056DB3E20F75B8E006B8E3E /* AppDelegate+Ext.swift */,
 				F0AAC5AC20F846C00057039A /* UIBarButtonItem+Ext.swift */,
 				F0AAC5BB20F879860057039A /* UIViewController+Ext.swift */,
+				F056DB3E20F75B8E006B8E3E /* AppDelegate+Note.swift */,
 			);
 			path = ExtensionTool;
 			sourceTree = "<group>";
@@ -646,7 +646,7 @@
 				F0962C9A20F5D94B0086B24A /* UIScrollView+Ext.swift in Sources */,
 				F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */,
 				F0962C7120F5CE5D0086B24A /* ExtensionTool.swift in Sources */,
-				F056DB3F20F75B8E006B8E3E /* AppDelegate+Ext.swift in Sources */,
+				F056DB3F20F75B8E006B8E3E /* AppDelegate+Note.swift in Sources */,
 				F0AAC5BE20F87A310057039A /* LoginViewModel.swift in Sources */,
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,
 				F0AAC59E20F83B550057039A /* CostModel.swift in Sources */,
@@ -812,7 +812,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z3J38YFUTH;
+				DEVELOPMENT_TEAM = 8W5UTYMJE7;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OrderManager/PrefixHeader.h";
 				INFOPLIST_FILE = OrderManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -836,7 +836,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z3J38YFUTH;
+				DEVELOPMENT_TEAM = 8W5UTYMJE7;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OrderManager/PrefixHeader.h";
 				INFOPLIST_FILE = OrderManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.loginResult(isSuccess: LoginModel.isLogin)
         
-        self.registerAppNote()
+        self.regitserAppLocalNote()
         self.registerBmob()
         
         UIApplication.shared.isStatusBarHidden = false

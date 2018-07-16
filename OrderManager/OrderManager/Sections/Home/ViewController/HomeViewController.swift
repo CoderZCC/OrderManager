@@ -41,6 +41,8 @@ class HomeViewController: BaseViewController {
         })
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), clickCallBack: {
             
+            //self.k_sendLocalNote(title: "测试", content: "啊啊啊", dataDic: ["a":"a"])
+
             self.showText("敬请期待")
 //            let totalVC = CostTotalViewController()
 //            self.navigationController?.pushViewController(totalVC, animated: true)
@@ -75,8 +77,6 @@ class HomeViewController: BaseViewController {
     //MARK: 点击事件
     /// 日期选择
     @IBAction func selectedAction() {
-        
-        //self.k_sendLocalNote(title: "测试", content: "啊啊啊", dataDic: ["a":"a"])
         
         SpecialPickerView.showPickView(currentTime: self.topBtnText) { (str) in
             
