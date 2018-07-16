@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LeftContentCell" id="gTV-IL-0wX" customClass="LeftContentCell" customModule="OrderManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="185" height="208"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="185" height="208"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主题管理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mb-jc-Afj">
+                        <rect key="frame" x="64" y="142" width="57.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theme" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-A4-Ocu">
+                        <rect key="frame" x="62.5" y="74" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ZQd-A4-Ocu" secondAttribute="height" multiplier="1:1" id="ifu-gN-ZRo"/>
+                            <constraint firstAttribute="height" constant="60" id="wSS-Xf-pB6"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="2Mb-jc-Afj" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="PLa-0p-luo"/>
+                <constraint firstItem="2Mb-jc-Afj" firstAttribute="top" secondItem="ZQd-A4-Ocu" secondAttribute="bottom" constant="8" id="biR-Yb-L4D"/>
+                <constraint firstItem="ZQd-A4-Ocu" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jNB-CG-Y6i"/>
+                <constraint firstItem="ZQd-A4-Ocu" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="l0p-Fq-3AH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="185" height="208"/>
+            <connections>
+                <outlet property="imgV" destination="ZQd-A4-Ocu" id="D0J-JC-oOu"/>
+                <outlet property="textL" destination="2Mb-jc-Afj" id="Ocj-FS-sWF"/>
+            </connections>
+            <point key="canvasLocation" x="-10.5" y="133"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="theme" width="64" height="64"/>
+    </resources>
+</document>

@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeftViewController" customModule="OrderManager" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="fTp-Ff-NtI" id="U9m-di-8tl"/>
+                <outlet property="contentView" destination="t7l-HB-VoK" id="8tY-14-iXN"/>
+                <outlet property="layout" destination="eYF-pH-DlR" id="vpX-Qv-N3E"/>
                 <outlet property="logoutBtn" destination="9lG-9z-qAm" id="KrJ-vU-Tkc"/>
                 <outlet property="rightCons" destination="DyY-pC-FgQ" id="EWy-AQ-A9I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7l-HB-VoK">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7l-HB-VoK" userLabel="leftView">
                     <rect key="frame" x="0.0" y="20" width="279" height="716"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lG-9z-qAm">
@@ -38,11 +41,25 @@
                                 <action selector="logoutAction" destination="-1" eventType="touchUpInside" id="SLC-0x-1qg"/>
                             </connections>
                         </button>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fTp-Ff-NtI">
+                            <rect key="frame" x="0.0" y="0.0" width="279" height="656"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eYF-pH-DlR">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="9lG-9z-qAm" secondAttribute="trailing" constant="10" id="3sy-W1-L6G"/>
                         <constraint firstAttribute="bottom" secondItem="9lG-9z-qAm" secondAttribute="bottom" constant="20" id="Qy7-ti-cVS"/>
+                        <constraint firstItem="9lG-9z-qAm" firstAttribute="top" secondItem="fTp-Ff-NtI" secondAttribute="bottom" id="RBZ-4t-HP0"/>
+                        <constraint firstAttribute="trailing" secondItem="fTp-Ff-NtI" secondAttribute="trailing" id="Vc1-RS-mbg"/>
+                        <constraint firstItem="fTp-Ff-NtI" firstAttribute="top" secondItem="t7l-HB-VoK" secondAttribute="top" id="XEp-Tn-wtH"/>
                         <constraint firstItem="9lG-9z-qAm" firstAttribute="leading" secondItem="t7l-HB-VoK" secondAttribute="leading" constant="10" id="bkT-ma-ho6"/>
+                        <constraint firstItem="fTp-Ff-NtI" firstAttribute="leading" secondItem="t7l-HB-VoK" secondAttribute="leading" id="hII-xY-XNW"/>
                     </constraints>
                 </view>
             </subviews>

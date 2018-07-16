@@ -10,9 +10,15 @@ import UIKit
 
 class LeftViewController: BaseViewController {
 
-    @IBOutlet weak var logoutBtn: UIButton!
     
+    @IBOutlet weak var contentView: UIView!
+    /// 退出登录
+    @IBOutlet weak var logoutBtn: UIButton!
+    /// 距离右侧的约束
     @IBOutlet weak var rightCons: NSLayoutConstraint!
+    /// 集合视图
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var layout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,20 @@ class LeftViewController: BaseViewController {
         
         self.logoutBtn.k_setCornerRadius(kCornerRadius)
         self.rightCons.constant = kWidth - kSliderMaxWidth
+        
+        self.layout.minimumLineSpacing = 1.0
+        self.layout.minimumInteritemSpacing = 1.0
+        self.layout.headerReferenceSize = CGSize.init(width: self.contentView.bounds.width, height: 100.0)
+        
+        self.collectionView.contentInset = UIEdgeInsetsMake(5.0, 15.0, 5.0, 15.0)
+        let itemW: CGFloat = self.viewModel.getItemWidth(columnsNum: 2)
+        self.layout.itemSize = CGSize.init(width: itemW, height: itemW)
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+
+        self.collectionView.register(UINib.init(nibName: "LeftContentCell", bundle: nil), forCellWithReuseIdentifier: "LeftContentCell")
+        self.collectionView.register(UINib.init(nibName: "LeftHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "sectionHeader")
     }
     
     @IBAction func logoutAction() {
@@ -39,5 +59,43 @@ class LeftViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    lazy var viewModel: LeftViewModel = { [unowned self] in
+        let viewModel = LeftViewModel.init(collectionView: self.collectionView)
+        return viewModel
+    }()
+    
+}
+
+extension LeftViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LeftContentCell", for: indexPath) as! LeftContentCell
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionHeader {
+            
+            let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "sectionHeader", for: indexPath)
+            
+            return headView
+        }
+        return UICollectionReusableView()
+    }
+    
+    
     
 }
