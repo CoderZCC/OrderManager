@@ -21,10 +21,6 @@ class AddViewController: BaseViewController {
     @IBOutlet weak var costTypeL: UILabel!
     /// 消费金额
     @IBOutlet weak var costTf: UITextField!
-    /// 未知区域
-    @IBOutlet weak var areaL: UILabel!
-    /// 未知区域文字高度
-    @IBOutlet weak var areaHeightCons: NSLayoutConstraint!
     /// 备注
     @IBOutlet weak var otherInfoTv: UITextView!
     /// 完成按钮
@@ -66,15 +62,6 @@ class AddViewController: BaseViewController {
                 self.finishBtn.isHidden = false
                 self.navigationItem.rightBarButtonItem?.isEnabled = false
             })
-            
-        } else {
-            
-            // 获取定位
-            self.viewModel.startLocation { [unowned self] (address) in
-                
-                self.areaL.text = address
-                self.areaHeightCons.constant = self.viewModel.areaHeight
-            }
         }
         
         // UI设置
@@ -131,7 +118,6 @@ class AddViewController: BaseViewController {
         self.costTf.text = self.viewModel.costModel.costNum
         self.costTimeL.text = self.viewModel.costModel.costTime
         self.costTypeL.text = self.viewModel.costModel.costType
-        self.areaL.text = self.viewModel.costModel.address
         self.otherInfoTv.text = self.viewModel.costModel.costInfo
     }
     
@@ -158,7 +144,6 @@ class AddViewController: BaseViewController {
         self.view.endEditing(true)
         
         self.viewModel.costModel.costType = self.costTypeL.text!
-        self.viewModel.costModel.address = self.areaL.text!
         self.viewModel.costModel.costTime = self.costTimeL.text!
         
         // 金额是否改变
@@ -169,7 +154,7 @@ class AddViewController: BaseViewController {
         // 备注信息是否改变
         if self.viewModel.costModel.costInfo != self.otherInfoTv.text {
             self.viewModel.isChangevalue = true
-            self.viewModel.costModel.costInfo = self.otherInfoTv.text.isEmpty ? ("暂无备注信息") : (self.otherInfoTv.text)
+            self.viewModel.costModel.costInfo = self.otherInfoTv.text.isEmpty ? ("") : (self.otherInfoTv.text)
         }
         if self.isDetail {
             

@@ -32,14 +32,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImg" translatesAutoresizingMaskIntoConstraints="NO" id="W9N-sy-LUN">
-                    <rect key="frame" x="153" y="131" width="70" height="70"/>
+                    <rect key="frame" x="155.5" y="131" width="65" height="65"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="70" id="Mxe-Zg-GbI"/>
+                        <constraint firstAttribute="width" constant="65" id="Mxe-Zg-GbI"/>
                         <constraint firstAttribute="width" secondItem="W9N-sy-LUN" secondAttribute="height" multiplier="1:1" id="a9E-bz-z7z"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4u-nA-NKH">
-                    <rect key="frame" x="15" y="216" width="345" height="89"/>
+                    <rect key="frame" x="15" y="211" width="345" height="89"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-pP-yMl">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
@@ -130,7 +130,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="za5-W8-zui">
-                    <rect key="frame" x="25" y="525" width="325" height="40"/>
+                    <rect key="frame" x="25" y="520" width="325" height="40"/>
                     <color key="backgroundColor" red="0.82352941180000006" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4OM-uO-0GU"/>

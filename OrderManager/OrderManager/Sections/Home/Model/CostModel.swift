@@ -26,10 +26,8 @@ class CostModel: NSObject {
     var costType: String?
     /// 消费金额
     var costNum: String?
-    /// 位置信息
-    var address: String = "未知区域"
     /// 消费备注
-    var costInfo: String = "暂无备注信息"
+    var costInfo: String = ""
     /// 是否展开
     var isOpen: Bool = false
     
@@ -43,7 +41,6 @@ class CostModel: NSObject {
         self.costMD = dataArr[3]
         self.costYM = dataArr[4]
         self.costTime = dataArr[5]
-        self.address = dataArr[6]
     }
 
 }

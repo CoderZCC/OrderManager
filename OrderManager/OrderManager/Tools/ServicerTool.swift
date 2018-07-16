@@ -65,7 +65,6 @@ class ServicerTool: NSObject {
                     model.costTime = dataDic.object(forKey: "costTime") as! String
                     model.costType = dataDic.object(forKey: "costType") as? String
                     model.costNum = dataDic.object(forKey: "costNum") as? String
-                    model.address = dataDic.object(forKey: "costArea") as! String
                     model.costInfo = dataDic.object(forKey: "costInfo") as! String
                     model.costYM = dataDic.object(forKey: "costYearMonth") as! String
                     model.objectId = dataDic.object(forKey: "objectId") as! String
@@ -139,7 +138,6 @@ class ServicerTool: NSObject {
         object.setObject(costModel.costTime, forKey: "costTime")
         object.setObject(costModel.costType, forKey: "costType")
         object.setObject(costModel.costNum!, forKey: "costNum")
-        object.setObject(costModel.address, forKey: "costArea")
         object.setObject(costModel.costInfo, forKey: "costInfo")
         object.setObject(costModel.costYM, forKey: "costYearMonth")
     }

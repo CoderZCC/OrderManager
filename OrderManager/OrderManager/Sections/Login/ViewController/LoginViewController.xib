@@ -31,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNn-pL-877">
-                    <rect key="frame" x="15" y="241" width="345" height="89"/>
+                    <rect key="frame" x="15" y="236" width="345" height="89"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TC3-WY-qVN">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
@@ -122,7 +122,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv4-N5-0ph">
-                    <rect key="frame" x="25" y="510" width="325" height="40"/>
+                    <rect key="frame" x="25" y="505" width="325" height="40"/>
                     <color key="backgroundColor" red="0.82352941180000006" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Rfe-tf-epb"/>
@@ -138,10 +138,10 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImg" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-fF-r2z">
-                    <rect key="frame" x="152.5" y="156" width="70" height="70"/>
+                    <rect key="frame" x="155" y="156" width="65" height="65"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="gtw-fF-r2z" secondAttribute="height" multiplier="1:1" id="M8p-vu-haB"/>
-                        <constraint firstAttribute="width" constant="70" id="Yiw-d3-WUA"/>
+                        <constraint firstAttribute="width" constant="65" id="Yiw-d3-WUA"/>
                     </constraints>
                 </imageView>
             </subviews>
