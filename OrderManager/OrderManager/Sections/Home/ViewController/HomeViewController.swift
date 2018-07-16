@@ -35,13 +35,11 @@ class HomeViewController: BaseViewController {
         let btnTitle = kNowDate.k_toDateStr("yyyy-MM")
         self.selectedTBtn.k_set(image: #imageLiteral(resourceName: "selected"), title: btnTitle, titlePosition: UIViewContentMode.left, additionalSpacing: 4.0, state: .normal)
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "list"), clickCallBack: {
-            
-            (kRootVC as! SliderDrawerViewController).showLeftVC()
-        })
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: self.leftView)
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), clickCallBack: {
                         
-            //self.showText("敬请期待")
+            self.showText("敬请期待")
 //            let totalVC = CostTotalViewController()
 //            self.navigationController?.pushViewController(totalVC, animated: true)
         })
@@ -152,6 +150,21 @@ class HomeViewController: BaseViewController {
         btn.addGestureRecognizer(pan)
         
         return btn
+    }()
+    
+    lazy var leftView: UIView = {
+        let view = UIView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: 40.0, height: 40.0))
+        view.k_addTarget({ (tap) in
+            
+            (kRootVC as! SliderDrawerViewController).showLeftVC()
+        })
+        
+        let imgV = UIImageView.init(frame: view.bounds)
+        imgV.k_setCircleImgV()
+        imgV.k_setImage(url: LoginModel.cachesHeadPic)
+        view.addSubview(imgV)
+        
+        return view
     }()
 }
 
