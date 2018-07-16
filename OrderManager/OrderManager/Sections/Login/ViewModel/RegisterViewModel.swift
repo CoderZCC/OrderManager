@@ -12,6 +12,9 @@ class RegisterViewModel: NSObject {
 
     /// 按钮是否可用
     var registerBtnEnabledBacK: ((Bool)->Void)?
+    /// 头像图片
+    var headPicCallBack: ((UIImage)->Void)?
+    
     /// 账号是否可用
     var isAccountEnabled: Bool {
         
@@ -24,6 +27,13 @@ class RegisterViewModel: NSObject {
     }
     /// 数据模型
     var loginModel: LoginModel = LoginModel()
+    /// 头像
+    var headPic: UIImage = #imageLiteral(resourceName: "defaultImg") {
+        willSet {
+            
+            self.headPicCallBack?(newValue)
+        }
+    }
     
     convenience init(accountTf: UITextField) {
         self.init()
@@ -44,6 +54,27 @@ class RegisterViewModel: NSObject {
         }
     }
     
+    func selectedImg() {
+        
+        self.k_showSheets(title: "请选择", subTitles: ["从相册获取", "拍照"], callBack: { (index) in
+            
+            if index == 0 {
+                
+                CameraTool.takeImage(callBack: { (img) in
+                    
+                    self.headPic = img
+                })
+                
+            } else {
+                
+                CameraTool.takePhoto(callBack: { (img) in
+                    
+                    self.headPic = img
+                })
+            }
+        })
+    }
+    
     /// 注册按钮点击事件
     ///
     /// - Parameter callBack: 回调
@@ -62,19 +93,22 @@ class RegisterViewModel: NSObject {
                 // 注册
                 self.uploadImg(callBack: { (url) in
                     
-                    self.addData(url: url, callBack: callBack)
+                    self.addData(callBack: callBack)
                 })
             }
         }
     }
     /// 注册
-    private func addData(url: String, callBack: CallBack) {
+    private func addData(callBack: CallBack) {
         
         self.showLoading("开始注册")
         let userList = BmobObject.init(className: kUserListName)!
         userList.setObject(self.loginModel.account, forKey: "account")
         userList.setObject(self.loginModel.password, forKey: "password")
-        userList.setObject(url, forKey: "headPicUrl")
+        userList.setObject(self.loginModel.headPic, forKey: "headPicUrl")
+        
+        let userId: String = kNowDate.k_toDateStr("yyyyMMddHHmmss")
+        userList.setObject(userId, forKey: "userId")
 
         userList.saveInBackground(resultBlock: { (isOK, error) in
             
@@ -89,11 +123,10 @@ class RegisterViewModel: NSObject {
                 
                 callBack?()
                 self.showText("欢迎你,\(self.loginModel.account)!")
-                // 保存账号
-                kSaveDataTool.k_addValueToUserdefault(key: kAccountkey, value: self.loginModel.account)
                 // 保存密码
                 kSaveDataTool.k_saveOrUpdatePassword(account: self.loginModel.account, password: self.loginModel.password)
                 
+                kSaveDataTool.k_saveModel(model: self.loginModel, to: kUserMsgPath)
             }
         })
     }
@@ -102,12 +135,14 @@ class RegisterViewModel: NSObject {
     func uploadImg(callBack: ((String) -> Void)? ) {
         
         self.showLoading("图片处理中")
-        let file = BmobFile.init(fileName: "1.png", withFileData: UIImagePNGRepresentation(#imageLiteral(resourceName: "defaultImg"))!)
+        let imgData = self.headPic.k_pressImgSize()
+        let file = BmobFile.init(fileName: "\(kNowDate.k_toDateStr("yyMMddHHmmss")).png", withFileData: imgData)
         file?.save(inBackground: { (isOK, error) in
             
             if isOK {
                 
                 print("isOK:\(file!.url)")
+                self.loginModel.headPic = file!.url
                 callBack?(file!.url)
                 self.hideHUD()
 

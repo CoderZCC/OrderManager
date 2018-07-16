@@ -62,26 +62,26 @@ class LoginViewModel: NSObject {
             
             if let userObj = obj {
                 
-                let account: String = userObj.object(forKey: "account") as! String
-                let password: String = userObj.object(forKey: "password") as! String
-                let objectId: String = userObj.object(forKey: "objectId") as! String
+                let model = LoginModel()
+                
+                model.account = userObj.object(forKey: "account") as! String
+                model.password = userObj.object(forKey: "password") as! String
+                model.userId = userObj.object(forKey: "userId") as! String
+                model.headPic = userObj.object(forKey: "headPicUrl") as! String
 
                 // 检查密码
-                if password == self.loginModel.password {
+                if model.password == self.loginModel.password {
                     
                     // 移除通知
                     NotificationCenter.default.removeObserver(self)
                     
                     callBack?()
-                    self.showText("欢迎你,\(account)!")
-                    // 保存账号
-                    kSaveDataTool.k_addValueToUserdefault(key: kAccountkey, value: account)
+                    self.showText("欢迎你,\(model.account)!")
                     // 保存密码
-                    kSaveDataTool.k_saveOrUpdatePassword(account: account, password: password)
+                    kSaveDataTool.k_saveOrUpdatePassword(account: model.account, password: model.password)
                     
-                    // 保存userId
-                    kSaveDataTool.k_addValueToUserdefault(key: kUserIdkey, value: objectId)
-
+                    kSaveDataTool.k_saveModel(model: model, to: kUserMsgPath)
+                    
                 } else {
                     
                     self.showText("账号或密码错误")

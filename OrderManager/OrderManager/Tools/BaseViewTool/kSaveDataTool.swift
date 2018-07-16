@@ -227,3 +227,18 @@ extension kSaveDataTool {
     }
 }
 
+extension kSaveDataTool {
+    
+    @discardableResult
+    class func k_saveModel(model: NSObject, to path: String) -> Bool {
+        
+        return NSKeyedArchiver.archiveRootObject(model, toFile: path)
+    }
+    class func k_getModel(from path: String) -> LoginModel? {
+        
+        let model = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? LoginModel
+        return model
+    }
+    
+}
+

@@ -32,7 +32,7 @@
 		F0962C5020F5CD250086B24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0962C4E20F5CD250086B24A /* LaunchScreen.storyboard */; };
 		F0962C5C20F5CDD50086B24A /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C5B20F5CDD50086B24A /* BaseNavigationController.swift */; };
 		F0962C5E20F5CDE30086B24A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C5D20F5CDE30086B24A /* BaseViewController.swift */; };
-		F0962C6A20F5CE5D0086B24A /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C6220F5CE5D0086B24A /* UIImageView+Ext.swift */; };
+		F0962C6A20F5CE5D0086B24A /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C6220F5CE5D0086B24A /* UIImage+Ext.swift */; };
 		F0962C6B20F5CE5D0086B24A /* UITextView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C6320F5CE5D0086B24A /* UITextView+Ext.swift */; };
 		F0962C6C20F5CE5D0086B24A /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C6420F5CE5D0086B24A /* Date+Ext.swift */; };
 		F0962C6D20F5CE5D0086B24A /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C6520F5CE5D0086B24A /* String+Ext.swift */; };
@@ -73,6 +73,8 @@
 		F0AAC5BC20F879860057039A /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC5BB20F879860057039A /* UIViewController+Ext.swift */; };
 		F0AAC5BE20F87A310057039A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC5BD20F87A310057039A /* LoginViewModel.swift */; };
 		F0AAC5C020F87BC90057039A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC5BF20F87BC90057039A /* LoginModel.swift */; };
+		F0D562F320FC455500AAE095 /* AuthorityTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D562F220FC455500AAE095 /* AuthorityTool.swift */; };
+		F0D562F520FC748F00AAE095 /* CameraTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D562F420FC748F00AAE095 /* CameraTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +106,7 @@
 		F0962C5120F5CD250086B24A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0962C5B20F5CDD50086B24A /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		F0962C5D20F5CDE30086B24A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		F0962C6220F5CE5D0086B24A /* UIImageView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		F0962C6220F5CE5D0086B24A /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		F0962C6320F5CE5D0086B24A /* UITextView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Ext.swift"; sourceTree = "<group>"; };
 		F0962C6420F5CE5D0086B24A /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		F0962C6520F5CE5D0086B24A /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -146,6 +148,8 @@
 		F0AAC5BB20F879860057039A /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		F0AAC5BD20F87A310057039A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F0AAC5BF20F87BC90057039A /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F0D562F220FC455500AAE095 /* AuthorityTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityTool.swift; sourceTree = "<group>"; };
+		F0D562F420FC748F00AAE095 /* CameraTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTool.swift; sourceTree = "<group>"; };
 		F69730D83436876766B92E43 /* Pods-OrderManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderManager/Pods-OrderManager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,10 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				F0AAC5AA20F83BA80057039A /* ServicerTool.swift */,
-				F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */,
-				F08BC16320F8998A0016266B /* VideoPlayer.swift */,
-				F056DB3520F735E0006B8E3E /* DatePickerTool */,
 				F0962C7220F5CE700086B24A /* BaseViewTool */,
+				F056DB3520F735E0006B8E3E /* DatePickerTool */,
 				F05D894820F5DD9600FB9B5A /* KAlertTool */,
 				F0962C8E20F5D94B0086B24A /* RefreshTool */,
 				F0962C7C20F5CF210086B24A /* LoadingTool */,
@@ -362,7 +364,7 @@
 			children = (
 				F0962C6920F5CE5D0086B24A /* ExtensionTool.swift */,
 				F05D894620F5DC8500FB9B5A /* UIView+Ext.swift */,
-				F0962C6220F5CE5D0086B24A /* UIImageView+Ext.swift */,
+				F0962C6220F5CE5D0086B24A /* UIImage+Ext.swift */,
 				F0962C6320F5CE5D0086B24A /* UITextView+Ext.swift */,
 				F0962C6420F5CE5D0086B24A /* Date+Ext.swift */,
 				F0962C6520F5CE5D0086B24A /* String+Ext.swift */,
@@ -381,6 +383,10 @@
 		F0962C7220F5CE700086B24A /* BaseViewTool */ = {
 			isa = PBXGroup;
 			children = (
+				F0D562F420FC748F00AAE095 /* CameraTool.swift */,
+				F0D562F220FC455500AAE095 /* AuthorityTool.swift */,
+				F08BC16320F8998A0016266B /* VideoPlayer.swift */,
+				F0962C8C20F5D6CB0086B24A /* FalseNavBarView.swift */,
 				F056DB3120F71E3A006B8E3E /* SliderDrawerViewController.swift */,
 				F0962C7320F5CE700086B24A /* kSaveDataTool.swift */,
 				F0962C7420F5CE700086B24A /* CircleImageView.swift */,
@@ -628,6 +634,7 @@
 			files = (
 				F0962C9920F5D94B0086B24A /* RefreshFooterTool.swift in Sources */,
 				F0AAC5A120F83B550057039A /* OrderCell.swift in Sources */,
+				F0D562F520FC748F00AAE095 /* CameraTool.swift in Sources */,
 				F0962C7020F5CE5D0086B24A /* Number+Ext.swift in Sources */,
 				F056DB3220F71E3A006B8E3E /* SliderDrawerViewController.swift in Sources */,
 				F0962C9D20F5D94B0086B24A /* RefreshHeaderTool.swift in Sources */,
@@ -639,7 +646,8 @@
 				F0962C6B20F5CE5D0086B24A /* UITextView+Ext.swift in Sources */,
 				F0AAC59D20F83B550057039A /* CostViewModel.swift in Sources */,
 				F056DB3720F735FC006B8E3E /* DatePickerTool.swift in Sources */,
-				F0962C6A20F5CE5D0086B24A /* UIImageView+Ext.swift in Sources */,
+				F0962C6A20F5CE5D0086B24A /* UIImage+Ext.swift in Sources */,
+				F0D562F320FC455500AAE095 /* AuthorityTool.swift in Sources */,
 				F05D895E20F5EFBF00FB9B5A /* UITableView+Ext.swift in Sources */,
 				F0962C8320F5CFC80086B24A /* DataMacro.swift in Sources */,
 				F08BC15920F8893B0016266B /* RegisterViewModel.swift in Sources */,

@@ -30,33 +30,29 @@ class RegisterViewController: BaseViewController {
         self.registerBtn.k_setCornerRadius(kCornerRadius)
         self.accountTf.k_placeholderColor = kPlaceholderTextcolor
         self.passwordTf.k_placeholderColor = kPlaceholderTextcolor
-        
         self.registerBtn.isEnabled = false
+        self.headImgV.k_setCircleImgV()
         
         self.viewModel.registerBtnEnabledBacK = { [unowned self] isEnabled in
             
             self.registerBtn.isEnabled = isEnabled
         }
+        self.viewModel.headPicCallBack = { img in
+            
+            self.headImgV.image = img
+        }
         
         self.headImgV.k_addTarget { (tap) in
             
             self.view.endEditing(true)
-            self.k_showSheets(title: "请选择", subTitles: ["从相册获取", "拍照"], callBack: { (index) in
-                
-                if index == 0 {
-                    
-                    
-                } else {
-                    
-                    
-                }
-            })
+            self.viewModel.selectedImg()
         }
     }
     
     /// 注册事件
     @IBAction func registerAction() {
         
+        self.viewModel.headPic = self.headImgV.image!
         self.viewModel.register {
             
             kAppDelegate.loginResult(isSuccess: true)

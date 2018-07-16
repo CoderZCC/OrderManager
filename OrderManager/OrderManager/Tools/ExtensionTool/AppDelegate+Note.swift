@@ -25,6 +25,7 @@ extension AppDelegate {
         }
     }
     
+    /*
     // 注册远程推送
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
@@ -41,6 +42,7 @@ extension AppDelegate {
         
         
     }
+     */
 }
 
 //MARK: -iOS10.0之后

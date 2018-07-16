@@ -8,16 +8,22 @@
 
 import UIKit
 
-class LoginModel: NSObject {
+let kUserMsgPath: String = String.k_documentsPath + "userMsg.plist"
+
+class LoginModel: NSObject, NSCoding {
 
     /// 缓存的账号
     static var cachesAccount: String {
-        return kSaveDataTool.k_checkValueFromUserdefault(key: kAccountkey) ?? ""
+        let model = kSaveDataTool.k_getModel(from: kUserMsgPath)
+      
+        return model?.account ?? ""
     }
     
     /// 缓存的userId 
     static var cachesUserId: String {
-        return kSaveDataTool.k_checkValueFromUserdefault(key: kUserIdkey) ?? ""
+        let model = kSaveDataTool.k_getModel(from: kUserMsgPath)
+     
+        return model?.userId ?? ""
     }
     
     /// 是否已登录
@@ -33,6 +39,31 @@ class LoginModel: NSObject {
         return psd != nil
     }
     
+    var userId: String = ""
     var account: String = ""
     var password: String = ""
+    var headPic: String = ""
+    
+    override init() {
+        super.init()
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        
+        aCoder.encode(self.userId, forKey: "userId")
+        aCoder.encode(self.account, forKey: "account")
+        aCoder.encode(self.password, forKey: "password")
+        aCoder.encode(self.headPic, forKey: "headPic")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init()
+        
+        self.userId = aDecoder.decodeObject(forKey: "userId") as! String
+        self.account = aDecoder.decodeObject(forKey: "account") as! String
+        self.password = aDecoder.decodeObject(forKey: "password") as! String
+        self.headPic = aDecoder.decodeObject(forKey: "headPic") as! String
+    }
+    
+  
 }
