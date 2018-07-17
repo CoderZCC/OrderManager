@@ -87,6 +87,7 @@ class HomeViewModel: NSObject {
             
         }) {
             
+            callBack?()
             self.showText("查询列表失败")
         }
     }
@@ -106,6 +107,7 @@ class HomeViewModel: NSObject {
             
         }) {
             
+            callBack?()
             self.showText("删除失败")
         }
     }

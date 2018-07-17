@@ -31,6 +31,17 @@ extension UIView {
         self.clipsToBounds = true
     }
     
+    /// 设置边框
+    ///
+    /// - Parameters:
+    ///   - color: 颜色
+    ///   - width: 宽度
+    func k_setBorder(color: UIColor, width: CGFloat) {
+        
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+    }
+    
     //MARK: 添加点击事件
     /// 添加点击事件
     ///

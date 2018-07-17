@@ -50,7 +50,6 @@ class LeftViewController: BaseViewController {
         
         self.k_showAlert(title: "确定要退出登录吗?") {
             
-            (kRootVC as! SliderDrawerViewController).hiddenLeftVC()
             kSaveDataTool.k_deletePassword(account: LoginModel.cachesAccount)
             kAppDelegate.loginResult(isSuccess: false)
         }

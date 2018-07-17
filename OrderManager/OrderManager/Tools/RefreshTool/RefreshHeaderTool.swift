@@ -71,7 +71,11 @@ class RefreshHeaderTool: UIView {
         tool.originalEdgeInset = scrollView.contentInset
         tool.callBack = callBack
         tool.headerState = .idle
-
+        
+        if let col = scrollView as? UICollectionView {
+            col.alwaysBounceVertical = true
+        }
+        
         tool.timeL.text = "最后更新：" + (UserDefaults.standard.value(forKey: kLastUpdatekey) as? String ?? "无记录")
         
         return tool

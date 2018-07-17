@@ -125,7 +125,7 @@ extension SliderDrawerViewController {
             self.leftVC.view.transform = CGAffineTransform.init(translationX: -self.maxWidth, y: 0.0)
             self.mainVC.view.transform = CGAffineTransform.identity
             
-        }) { [unowned self] (isOK) in
+        }) { (isOK) in
             
             self.rightMaskBtn.removeFromSuperview()
             self.sliderDelegate?.leftViewDisAppear()

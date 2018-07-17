@@ -36,6 +36,7 @@ class AddViewModel: NSObject {
 
         }) {
             
+            callBack?()
             self.showText("保存失败")
         }
     }
@@ -60,6 +61,7 @@ class AddViewModel: NSObject {
             
         }) {
             
+            callBack?()
             self.showText("更新失败")
         }
     }

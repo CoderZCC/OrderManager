@@ -59,6 +59,10 @@
 		F09CA4D820FD8CDF005BA8BE /* EditInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */; };
 		F09CA4DB20FD9430005BA8BE /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4D920FD9430005BA8BE /* ThemeViewController.swift */; };
 		F09CA4DC20FD9430005BA8BE /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09CA4DA20FD9430005BA8BE /* ThemeViewController.xib */; };
+		F09CA4DF20FD9983005BA8BE /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4DD20FD9983005BA8BE /* ThemeCell.swift */; };
+		F09CA4E020FD9983005BA8BE /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09CA4DE20FD9983005BA8BE /* ThemeCell.xib */; };
+		F09CA4E220FD9A93005BA8BE /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E120FD9A93005BA8BE /* ThemeViewModel.swift */; };
+		F09CA4E420FD9D97005BA8BE /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E320FD9D97005BA8BE /* ThemeModel.swift */; };
 		F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59020F83B550057039A /* AddViewModel.swift */; };
 		F0AAC59E20F83B550057039A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59220F83B550057039A /* CostModel.swift */; };
 		F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAC59420F83B550057039A /* OrderCell.xib */; };
@@ -145,6 +149,10 @@
 		F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditInfoViewController.xib; sourceTree = "<group>"; };
 		F09CA4D920FD9430005BA8BE /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		F09CA4DA20FD9430005BA8BE /* ThemeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeViewController.xib; sourceTree = "<group>"; };
+		F09CA4DD20FD9983005BA8BE /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		F09CA4DE20FD9983005BA8BE /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
+		F09CA4E120FD9A93005BA8BE /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
+		F09CA4E320FD9D97005BA8BE /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0AAC59020F83B550057039A /* AddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		F0AAC59220F83B550057039A /* CostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
@@ -239,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				F0D562FC20FCA3D900AAE095 /* LeftViewModel.swift */,
+				F09CA4E120FD9A93005BA8BE /* ThemeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -246,6 +255,7 @@
 		F08BC15C20F891360016266B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F09CA4E320FD9D97005BA8BE /* ThemeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +267,8 @@
 				F0D562F920FC9BF800AAE095 /* LeftHeaderView.xib */,
 				F0D562FE20FCA59400AAE095 /* LeftContentCell.swift */,
 				F0D562FF20FCA59400AAE095 /* LeftContentCell.xib */,
+				F09CA4DD20FD9983005BA8BE /* ThemeCell.swift */,
+				F09CA4DE20FD9983005BA8BE /* ThemeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,10 +278,10 @@
 			children = (
 				F08BC15F20F891480016266B /* LeftViewController.swift */,
 				F08BC16020F891480016266B /* LeftViewController.xib */,
-				F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */,
-				F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */,
 				F09CA4D920FD9430005BA8BE /* ThemeViewController.swift */,
 				F09CA4DA20FD9430005BA8BE /* ThemeViewController.xib */,
+				F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */,
+				F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -638,6 +650,7 @@
 				F0962C9820F5D94B0086B24A /* RefreshTool.xib in Resources */,
 				F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */,
 				F08BC16220F891480016266B /* LeftViewController.xib in Resources */,
+				F09CA4E020FD9983005BA8BE /* ThemeCell.xib in Resources */,
 				F0D562FB20FC9BF800AAE095 /* LeftHeaderView.xib in Resources */,
 				F09CA4D820FD8CDF005BA8BE /* EditInfoViewController.xib in Resources */,
 				F0AAC5A020F83B550057039A /* OrderHeaderView.xib in Resources */,
@@ -694,6 +707,7 @@
 				F0962C6B20F5CE5D0086B24A /* UITextView+Ext.swift in Sources */,
 				F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */,
 				F056DB3720F735FC006B8E3E /* DatePickerTool.swift in Sources */,
+				F09CA4DF20FD9983005BA8BE /* ThemeCell.swift in Sources */,
 				F0D562FA20FC9BF800AAE095 /* LeftHeaderView.swift in Sources */,
 				F0962C6A20F5CE5D0086B24A /* UIImage+Ext.swift in Sources */,
 				F0D562F320FC455500AAE095 /* AuthorityTool.swift in Sources */,
@@ -705,6 +719,7 @@
 				F0962C7120F5CE5D0086B24A /* ExtensionTool.swift in Sources */,
 				F09CA4D420FD7D15005BA8BE /* HomeViewModel.swift in Sources */,
 				F056DB3F20F75B8E006B8E3E /* AppDelegate+Note.swift in Sources */,
+				F09CA4E420FD9D97005BA8BE /* ThemeModel.swift in Sources */,
 				F0AAC5BE20F87A310057039A /* LoginViewModel.swift in Sources */,
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,
 				F0AAC59E20F83B550057039A /* CostModel.swift in Sources */,
@@ -735,6 +750,7 @@
 				F0AAC5AB20F83BA80057039A /* ServicerTool.swift in Sources */,
 				F0D562FD20FCA3D900AAE095 /* LeftViewModel.swift in Sources */,
 				F0962C9B20F5D94B0086B24A /* RefreshGifFooterTool.swift in Sources */,
+				F09CA4E220FD9A93005BA8BE /* ThemeViewModel.swift in Sources */,
 				F0D562F720FC916E00AAE095 /* UIIImageView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
