@@ -55,6 +55,8 @@
 		F0962C9D20F5D94B0086B24A /* RefreshHeaderTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C9520F5D94B0086B24A /* RefreshHeaderTool.swift */; };
 		F0962C9E20F5D94B0086B24A /* RefreshGifTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */; };
 		F09CA4D420FD7D15005BA8BE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4D320FD7D15005BA8BE /* HomeViewModel.swift */; };
+		F09CA4D720FD8CDF005BA8BE /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */; };
+		F09CA4D820FD8CDF005BA8BE /* EditInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */; };
 		F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59020F83B550057039A /* AddViewModel.swift */; };
 		F0AAC59E20F83B550057039A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59220F83B550057039A /* CostModel.swift */; };
 		F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAC59420F83B550057039A /* OrderCell.xib */; };
@@ -137,6 +139,8 @@
 		F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshGifTool.xib; sourceTree = "<group>"; };
 		F09CA4D220FD77B7005BA8BE /* OrderManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderManager.entitlements; sourceTree = "<group>"; };
 		F09CA4D320FD7D15005BA8BE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
+		F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditInfoViewController.xib; sourceTree = "<group>"; };
 		F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0AAC59020F83B550057039A /* AddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		F0AAC59220F83B550057039A /* CostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 			children = (
 				F08BC15F20F891480016266B /* LeftViewController.swift */,
 				F08BC16020F891480016266B /* LeftViewController.xib */,
+				F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */,
+				F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -627,6 +633,7 @@
 				F05D894C20F5DD9600FB9B5A /* KAlertTools.xib in Resources */,
 				F08BC16220F891480016266B /* LeftViewController.xib in Resources */,
 				F0D562FB20FC9BF800AAE095 /* LeftHeaderView.xib in Resources */,
+				F09CA4D820FD8CDF005BA8BE /* EditInfoViewController.xib in Resources */,
 				F0AAC5A020F83B550057039A /* OrderHeaderView.xib in Resources */,
 				F0AAC5B620F870020057039A /* LoginViewController.xib in Resources */,
 				F08BC15720F889060016266B /* RegisterViewController.xib in Resources */,
@@ -673,6 +680,7 @@
 				F0962C9D20F5D94B0086B24A /* RefreshHeaderTool.swift in Sources */,
 				F05D894720F5DC8500FB9B5A /* UIView+Ext.swift in Sources */,
 				F0962C7F20F5CF210086B24A /* HUDViewTool.swift in Sources */,
+				F09CA4D720FD8CDF005BA8BE /* EditInfoViewController.swift in Sources */,
 				F0962C9720F5D94B0086B24A /* RefreshGifHeaderTool.swift in Sources */,
 				F0962C5C20F5CDD50086B24A /* BaseNavigationController.swift in Sources */,
 				F0962C7620F5CE700086B24A /* CircleImageView.swift in Sources */,

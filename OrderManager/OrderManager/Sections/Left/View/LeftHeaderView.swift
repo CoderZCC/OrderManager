@@ -19,6 +19,13 @@ class LeftHeaderView: UICollectionReusableView {
         self.headImgV.k_setCircleImgV()
         self.headImgV.k_setImage(url: LoginModel.cachesHeadPic)
         self.nikeNameL.text = LoginModel.cachesAccount
+        
+        self.headImgV.k_addTarget { (tap) in
+            
+            let editVC = EditInfoViewController()
+            (kRootVC as! SliderDrawerViewController).hiddenLeftVC()
+            self.k_navigationVC()?.pushViewController(editVC, animated: true)
+        }
     }
     
 }
