@@ -133,5 +133,19 @@ extension HomeViewModel {
         }
         return dic
     }
+    
+    func showTotalMoney() {
+        
+        var total: CGFloat = 0.00
+        for num in self.allCosts.values {
+            
+            total += num
+        }
+        let title = "您本月一共消费了\(total.k_toCGFloatString())元"
+        self.k_showAlert(title: title) {
+            
+        }
+    }
+    
 }
 

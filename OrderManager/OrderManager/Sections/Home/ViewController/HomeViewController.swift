@@ -45,9 +45,8 @@ class HomeViewController: BaseViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: self.leftView)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), clickCallBack: {
-                        
-            let totalVC = CostTotalViewController()
-            self.navigationController?.pushViewController(totalVC, animated: true)
+            
+            self.viewModel.showTotalMoney()
         })
         
         self.view.addSubview(self.addBtn)
