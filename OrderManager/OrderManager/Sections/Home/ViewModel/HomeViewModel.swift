@@ -66,7 +66,6 @@ class HomeViewModel: NSObject {
     ///   - callBack: 回调
     func getOrderList(searchT: String, callBack: CallBack) {
         
-        self.dataList.removeAll()
         ServicerTool.getCostMsg(queryYM: searchT, success: { (modelArr) in
             
             // 以日分组
