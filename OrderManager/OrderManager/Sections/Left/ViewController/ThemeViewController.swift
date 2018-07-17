@@ -37,9 +37,13 @@ class ThemeViewController: BaseViewController {
             
             self.initData()
         }
-        self.collectionView.k_headerBeginRefreshing()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.collectionView.k_headerBeginRefreshing()
+    }
     func initData() {
         
         self.viewModel.getThemeList { [unowned self] in
