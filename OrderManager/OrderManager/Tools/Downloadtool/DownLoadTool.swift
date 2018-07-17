@@ -45,7 +45,7 @@ class DownLoadTool: NSObject {
             
             let suggestedFilename = response.suggestedFilename!
             let fileType = suggestedFilename.components(separatedBy: ".").last ?? ".png"
-            let fileName = Date().k_toDateStr("yyyyMMddHHmmss") + ".\(fileType)"
+            let fileName = kNowDate.k_toDateStr("yyyyMMddHHmmss") + ".\(fileType)"
             // 文件下载地址
             let fileURL = URL.init(fileURLWithPath: kDownloadFile.appendingFormat("%@/",fileName))
             // 文件名称

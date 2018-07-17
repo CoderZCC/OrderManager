@@ -141,10 +141,8 @@ extension HomeViewModel {
             
             total += num
         }
-        let title = "您本月一共消费了\(total.k_toCGFloatString())元"
-        self.k_showAlert(title: title) {
-            
-        }
+        let title = "截止到\(kNowDate.k_toDateStr("MM月dd日")),您本月一共消费了\(total.k_toCGFloatString())元"
+        self.k_showAlert(title: title) { }
     }
     
 }

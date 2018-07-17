@@ -34,8 +34,9 @@ let kCostTypeStr: [String] = ["早饭", "午饭", "晚饭", "网购", "话费", 
 let kCachesPath: String = String.k_documentsPath + "costDetail.plist"
 
 /// 现在的时间
-let kNowDate: Date = Date()
-
+var kNowDate: Date {
+    return Date()
+}
 /// 加号按钮的大小
 let kAddBtnWH: CGFloat = 65.0
 /// 保存到本地点位置

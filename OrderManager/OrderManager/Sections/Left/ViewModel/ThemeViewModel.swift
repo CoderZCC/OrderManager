@@ -83,7 +83,7 @@ class ThemeViewModel: NSObject {
             
             let themeList = BmobObject.init(className: kThemeListName)!
             themeList.setObject(path, forKey: "themeImgUrl")
-            themeList.setObject(Date().k_toDateStr("yyyyMMddHHmmss"), forKey: "themeId")
+            themeList.setObject(kNowDate.k_toDateStr("yyyyMMddHHmmss"), forKey: "themeId")
 
             themeList.saveInBackground { (isOK, error) in
                 
