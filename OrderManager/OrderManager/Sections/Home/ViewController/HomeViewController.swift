@@ -22,9 +22,16 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.initView()
         self.tableView.k_headerBeginRefreshing()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        /// 头像更新
+        let imgV = self.leftView.viewWithTag(101) as! UIImageView
+        imgV.k_setImage(url: LoginModel.cachesHeadPic)
     }
     
     func initView() {
@@ -39,9 +46,8 @@ class HomeViewController: BaseViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "total"), clickCallBack: {
                         
-            self.showText("敬请期待")
-//            let totalVC = CostTotalViewController()
-//            self.navigationController?.pushViewController(totalVC, animated: true)
+            let totalVC = CostTotalViewController()
+            self.navigationController?.pushViewController(totalVC, animated: true)
         })
         
         self.view.addSubview(self.addBtn)
@@ -111,7 +117,7 @@ class HomeViewController: BaseViewController {
                 
                 self.addBtn.center = CGPoint.init(x: kWidth - kAddBtnWH / 2.0, y: locationPoint.y)
             }
-            let str = locationPoint.x.k_toIntString() + ";" + locationPoint.y.k_toIntString()
+            let str = self.addBtn.center.x.k_toCGFloatString() + ";" + self.addBtn.center.y.k_toCGFloatString()
             kSaveDataTool.k_addValueToUserdefault(key: kAddBtnLocationKey, value: str)
             
         default:
@@ -124,8 +130,8 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: 懒加载
-    lazy var viewModel: CostViewModel = {
-        let viewModel = CostViewModel()
+    lazy var viewModel: HomeViewModel = {
+        let viewModel = HomeViewModel()
         
         return viewModel
     }()
@@ -135,7 +141,7 @@ class HomeViewController: BaseViewController {
         btn.frame = CGRect.init(origin: CGPoint.zero, size: CGSize(width: kAddBtnWH, height: kAddBtnWH))
         btn.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         btn.center = self.viewModel.addBtnLocation
-        
+
         btn.k_addTarget({ [unowned self] tap in
             
             let addVC = AddViewController()
@@ -161,7 +167,7 @@ class HomeViewController: BaseViewController {
         
         let imgV = UIImageView.init(frame: view.bounds)
         imgV.k_setCircleImgV()
-        imgV.k_setImage(url: LoginModel.cachesHeadPic)
+        imgV.tag = 101
         view.addSubview(imgV)
         
         return view

@@ -19,11 +19,11 @@ class OrderHeaderView: UIView {
     
     
     /// 创建Xib
-    class func loadXibView(viewModel: CostViewModel, text: String, height: CGFloat) -> OrderHeaderView {
+    class func loadXibView(viewModel: HomeViewModel, text: String, height: CGFloat) -> OrderHeaderView {
         let tool = Bundle.main.loadNibNamed("OrderHeaderView", owner: nil, options: nil)?.last as! OrderHeaderView
         tool.frame = CGRect.init(x: 0.0, y: 0.0, width: kWidth, height: height)
         tool.timeL.text = text
-        tool.costL.text = "(" + viewModel.allCosts[text]!.k_toString() + "元" + ")"
+        tool.costL.text = "(" + viewModel.allCosts[text]!.k_toCGFloatString() + "元" + ")"
         
         return tool
     }

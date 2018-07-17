@@ -54,7 +54,8 @@
 		F0962C9C20F5D94B0086B24A /* RefreshCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C9420F5D94B0086B24A /* RefreshCommon.swift */; };
 		F0962C9D20F5D94B0086B24A /* RefreshHeaderTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0962C9520F5D94B0086B24A /* RefreshHeaderTool.swift */; };
 		F0962C9E20F5D94B0086B24A /* RefreshGifTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */; };
-		F0AAC59D20F83B550057039A /* CostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59020F83B550057039A /* CostViewModel.swift */; };
+		F09CA4D420FD7D15005BA8BE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4D320FD7D15005BA8BE /* HomeViewModel.swift */; };
+		F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59020F83B550057039A /* AddViewModel.swift */; };
 		F0AAC59E20F83B550057039A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59220F83B550057039A /* CostModel.swift */; };
 		F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAC59420F83B550057039A /* OrderCell.xib */; };
 		F0AAC5A020F83B550057039A /* OrderHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAC59520F83B550057039A /* OrderHeaderView.xib */; };
@@ -135,8 +136,9 @@
 		F0962C9520F5D94B0086B24A /* RefreshHeaderTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshHeaderTool.swift; sourceTree = "<group>"; };
 		F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshGifTool.xib; sourceTree = "<group>"; };
 		F09CA4D220FD77B7005BA8BE /* OrderManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderManager.entitlements; sourceTree = "<group>"; };
+		F09CA4D320FD7D15005BA8BE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderManager-Bridging-Header.h"; sourceTree = "<group>"; };
-		F0AAC59020F83B550057039A /* CostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostViewModel.swift; sourceTree = "<group>"; };
+		F0AAC59020F83B550057039A /* AddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		F0AAC59220F83B550057039A /* CostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
 		F0AAC59420F83B550057039A /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		F0AAC59520F83B550057039A /* OrderHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderHeaderView.xib; sourceTree = "<group>"; };
@@ -460,7 +462,8 @@
 		F0AAC58F20F83B550057039A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F0AAC59020F83B550057039A /* CostViewModel.swift */,
+				F09CA4D320FD7D15005BA8BE /* HomeViewModel.swift */,
+				F0AAC59020F83B550057039A /* AddViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -674,7 +677,7 @@
 				F0962C5C20F5CDD50086B24A /* BaseNavigationController.swift in Sources */,
 				F0962C7620F5CE700086B24A /* CircleImageView.swift in Sources */,
 				F0962C6B20F5CE5D0086B24A /* UITextView+Ext.swift in Sources */,
-				F0AAC59D20F83B550057039A /* CostViewModel.swift in Sources */,
+				F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */,
 				F056DB3720F735FC006B8E3E /* DatePickerTool.swift in Sources */,
 				F0D562FA20FC9BF800AAE095 /* LeftHeaderView.swift in Sources */,
 				F0962C6A20F5CE5D0086B24A /* UIImage+Ext.swift in Sources */,
@@ -685,6 +688,7 @@
 				F0962C9A20F5D94B0086B24A /* UIScrollView+Ext.swift in Sources */,
 				F0962C4620F5CD240086B24A /* AppDelegate.swift in Sources */,
 				F0962C7120F5CE5D0086B24A /* ExtensionTool.swift in Sources */,
+				F09CA4D420FD7D15005BA8BE /* HomeViewModel.swift in Sources */,
 				F056DB3F20F75B8E006B8E3E /* AppDelegate+Note.swift in Sources */,
 				F0AAC5BE20F87A310057039A /* LoginViewModel.swift in Sources */,
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,

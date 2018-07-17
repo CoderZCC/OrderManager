@@ -181,8 +181,8 @@ class AddViewController: BaseViewController {
     }
     
     //MARK: 懒加载
-    lazy var viewModel: CostViewModel = {
-        let model = CostViewModel()
+    lazy var viewModel: AddViewModel = {
+        let model = AddViewModel()
         return model
     }()
 }

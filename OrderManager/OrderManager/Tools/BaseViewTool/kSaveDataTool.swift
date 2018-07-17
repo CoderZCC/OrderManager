@@ -266,8 +266,8 @@ extension kSaveDataTool {
         return NSKeyedArchiver.archiveRootObject(model, toFile: path)
     }
     class func k_getModel(from path: String) -> LoginModel? {
-        
         let model = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? LoginModel
+        
         return model
     }
     

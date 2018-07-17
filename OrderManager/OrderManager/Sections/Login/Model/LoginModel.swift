@@ -29,7 +29,7 @@ class LoginModel: NSObject, NSCoding {
     /// 缓存的headPic
     static var cachesHeadPic: String {
         let model = kSaveDataTool.k_getModel(from: kUserMsgPath)
-        
+
         return model?.headPic ?? ""
     }
     

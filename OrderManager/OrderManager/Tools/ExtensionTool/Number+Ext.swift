@@ -34,7 +34,7 @@ extension CGFloat {
     /// 转为字符串 保留两位小数
     ///
     /// - Returns: "2.00"
-    func k_toString() -> String {
+    func k_toCGFloatString() -> String {
         
         return String.init(format: "%.2f", self)
     }
