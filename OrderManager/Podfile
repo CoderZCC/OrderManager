@@ -4,6 +4,7 @@ use_frameworks!
 
 target :'OrderManager' do
 pod 'BmobSDK'
+pod 'Alamofire'
 
 end
 

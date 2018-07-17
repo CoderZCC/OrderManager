@@ -63,6 +63,7 @@
 		F09CA4E020FD9983005BA8BE /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09CA4DE20FD9983005BA8BE /* ThemeCell.xib */; };
 		F09CA4E220FD9A93005BA8BE /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E120FD9A93005BA8BE /* ThemeViewModel.swift */; };
 		F09CA4E420FD9D97005BA8BE /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E320FD9D97005BA8BE /* ThemeModel.swift */; };
+		F09CA4E720FDB168005BA8BE /* DownLoadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E620FDB168005BA8BE /* DownLoadTool.swift */; };
 		F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59020F83B550057039A /* AddViewModel.swift */; };
 		F0AAC59E20F83B550057039A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59220F83B550057039A /* CostModel.swift */; };
 		F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAC59420F83B550057039A /* OrderCell.xib */; };
@@ -153,6 +154,7 @@
 		F09CA4DE20FD9983005BA8BE /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
 		F09CA4E120FD9A93005BA8BE /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		F09CA4E320FD9D97005BA8BE /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
+		F09CA4E620FDB168005BA8BE /* DownLoadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownLoadTool.swift; sourceTree = "<group>"; };
 		F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0AAC59020F83B550057039A /* AddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		F0AAC59220F83B550057039A /* CostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				F0AAC5AA20F83BA80057039A /* ServicerTool.swift */,
+				F09CA4E520FDB168005BA8BE /* Downloadtool */,
 				F0962C7220F5CE700086B24A /* BaseViewTool */,
 				F056DB3520F735E0006B8E3E /* DatePickerTool */,
 				F05D894820F5DD9600FB9B5A /* KAlertTool */,
@@ -470,6 +473,14 @@
 				F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */,
 			);
 			path = RefreshTool;
+			sourceTree = "<group>";
+		};
+		F09CA4E520FDB168005BA8BE /* Downloadtool */ = {
+			isa = PBXGroup;
+			children = (
+				F09CA4E620FDB168005BA8BE /* DownLoadTool.swift */,
+			);
+			path = Downloadtool;
 			sourceTree = "<group>";
 		};
 		F0AAC58E20F83B550057039A /* Home */ = {
@@ -582,6 +593,7 @@
 				F0962C3E20F5CD240086B24A /* Sources */,
 				F0962C3F20F5CD240086B24A /* Frameworks */,
 				F0962C4020F5CD240086B24A /* Resources */,
+				5BB6BF4FEF725DBC4668D8EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -667,6 +679,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5BB6BF4FEF725DBC4668D8EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OrderManager/Pods-OrderManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrderManager/Pods-OrderManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		689C7014095E5E8FE0E317A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -709,6 +739,7 @@
 				F056DB3720F735FC006B8E3E /* DatePickerTool.swift in Sources */,
 				F09CA4DF20FD9983005BA8BE /* ThemeCell.swift in Sources */,
 				F0D562FA20FC9BF800AAE095 /* LeftHeaderView.swift in Sources */,
+				F09CA4E720FDB168005BA8BE /* DownLoadTool.swift in Sources */,
 				F0962C6A20F5CE5D0086B24A /* UIImage+Ext.swift in Sources */,
 				F0D562F320FC455500AAE095 /* AuthorityTool.swift in Sources */,
 				F05D895E20F5EFBF00FB9B5A /* UITableView+Ext.swift in Sources */,

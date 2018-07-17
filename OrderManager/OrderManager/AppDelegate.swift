@@ -82,5 +82,6 @@ extension AppDelegate {
     func registerBmob() {
         
         Bmob.register(withAppKey: kBombID)
+        Bmob.setBmobRequestTimeOut(10.0)
     }
 }
