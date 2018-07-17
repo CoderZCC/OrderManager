@@ -70,6 +70,9 @@ extension ThemeViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let cell = collectionView.cellForItem(at: indexPath) as! ThemeCell
+        
+        PhotoBrowerTool.showPhotoBrower(imgArrs: self.viewModel.dataList, currentIndex: indexPath.row, baseView: collectionView, currentImg: cell.imgV.image, originalFrame: collectionView.convert(cell.frame, to: self.view))
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

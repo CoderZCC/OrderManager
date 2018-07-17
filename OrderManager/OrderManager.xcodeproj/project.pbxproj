@@ -64,6 +64,8 @@
 		F09CA4E220FD9A93005BA8BE /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E120FD9A93005BA8BE /* ThemeViewModel.swift */; };
 		F09CA4E420FD9D97005BA8BE /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E320FD9D97005BA8BE /* ThemeModel.swift */; };
 		F09CA4E720FDB168005BA8BE /* DownLoadTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E620FDB168005BA8BE /* DownLoadTool.swift */; };
+		F09CA4EB20FDD545005BA8BE /* PhotoBrowerTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4E920FDD545005BA8BE /* PhotoBrowerTool.swift */; };
+		F09CA4EC20FDD545005BA8BE /* DownLoadViewTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4EA20FDD545005BA8BE /* DownLoadViewTool.swift */; };
 		F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59020F83B550057039A /* AddViewModel.swift */; };
 		F0AAC59E20F83B550057039A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59220F83B550057039A /* CostModel.swift */; };
 		F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAC59420F83B550057039A /* OrderCell.xib */; };
@@ -155,6 +157,8 @@
 		F09CA4E120FD9A93005BA8BE /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		F09CA4E320FD9D97005BA8BE /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		F09CA4E620FDB168005BA8BE /* DownLoadTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownLoadTool.swift; sourceTree = "<group>"; };
+		F09CA4E920FDD545005BA8BE /* PhotoBrowerTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowerTool.swift; sourceTree = "<group>"; };
+		F09CA4EA20FDD545005BA8BE /* DownLoadViewTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownLoadViewTool.swift; sourceTree = "<group>"; };
 		F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0AAC59020F83B550057039A /* AddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		F0AAC59220F83B550057039A /* CostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				F0AAC5AA20F83BA80057039A /* ServicerTool.swift */,
+				F09CA4E820FDD545005BA8BE /* PhotoBrowerTool */,
 				F09CA4E520FDB168005BA8BE /* Downloadtool */,
 				F0962C7220F5CE700086B24A /* BaseViewTool */,
 				F056DB3520F735E0006B8E3E /* DatePickerTool */,
@@ -481,6 +486,15 @@
 				F09CA4E620FDB168005BA8BE /* DownLoadTool.swift */,
 			);
 			path = Downloadtool;
+			sourceTree = "<group>";
+		};
+		F09CA4E820FDD545005BA8BE /* PhotoBrowerTool */ = {
+			isa = PBXGroup;
+			children = (
+				F09CA4E920FDD545005BA8BE /* PhotoBrowerTool.swift */,
+				F09CA4EA20FDD545005BA8BE /* DownLoadViewTool.swift */,
+			);
+			path = PhotoBrowerTool;
 			sourceTree = "<group>";
 		};
 		F0AAC58E20F83B550057039A /* Home */ = {
@@ -733,6 +747,7 @@
 				F09CA4D720FD8CDF005BA8BE /* EditInfoViewController.swift in Sources */,
 				F0962C9720F5D94B0086B24A /* RefreshGifHeaderTool.swift in Sources */,
 				F0962C5C20F5CDD50086B24A /* BaseNavigationController.swift in Sources */,
+				F09CA4EB20FDD545005BA8BE /* PhotoBrowerTool.swift in Sources */,
 				F0962C7620F5CE700086B24A /* CircleImageView.swift in Sources */,
 				F0962C6B20F5CE5D0086B24A /* UITextView+Ext.swift in Sources */,
 				F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */,
@@ -751,6 +766,7 @@
 				F09CA4D420FD7D15005BA8BE /* HomeViewModel.swift in Sources */,
 				F056DB3F20F75B8E006B8E3E /* AppDelegate+Note.swift in Sources */,
 				F09CA4E420FD9D97005BA8BE /* ThemeModel.swift in Sources */,
+				F09CA4EC20FDD545005BA8BE /* DownLoadViewTool.swift in Sources */,
 				F0AAC5BE20F87A310057039A /* LoginViewModel.swift in Sources */,
 				F0962C7520F5CE700086B24A /* kSaveDataTool.swift in Sources */,
 				F0AAC59E20F83B550057039A /* CostModel.swift in Sources */,
