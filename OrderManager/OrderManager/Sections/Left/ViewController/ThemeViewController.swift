@@ -37,13 +37,14 @@ class ThemeViewController: BaseViewController {
             
             self.initData()
         }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "上传", clickCallBack: {
+            
+            self.viewModel.selectedImg()
+        })
         self.collectionView.k_headerBeginRefreshing()
     }
+
     func initData() {
         
         self.viewModel.getThemeList { [unowned self] in
@@ -59,6 +60,7 @@ class ThemeViewController: BaseViewController {
 
     lazy var viewModel: ThemeViewModel = {
         let model = ThemeViewModel()
+        model.collectionView = self.collectionView
         
         return model
     }()

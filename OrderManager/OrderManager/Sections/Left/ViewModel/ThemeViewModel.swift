@@ -12,6 +12,7 @@ let kThemeListName: String = "ThemeList"
 
 class ThemeViewModel: NSObject {
 
+    var collectionView: UICollectionView!
     var dataList: [ThemeModel] = []
     
     func getItemSize(collectionView: UICollectionView) -> CGSize {
@@ -22,6 +23,28 @@ class ThemeViewModel: NSObject {
         let height: CGFloat = width * 1.5
         
         return CGSize.init(width: width, height: height)
+    }
+    
+    /// 选择照片事件
+    func selectedImg() {
+        
+        self.k_showSheets(title: "请选择", subTitles: ["从相册获取", "拍照"], callBack: { (index) in
+            
+            if index == 0 {
+                
+                CameraTool.takeImage(callBack: { (img) in
+                    
+                    self.addThemeToServer(img: img)
+                })
+                
+            } else {
+                
+                CameraTool.takePhoto(callBack: { (img) in
+                   
+                    self.addThemeToServer(img: img)
+                })
+            }
+        })
     }
     
     /// 获取主题列表
@@ -49,7 +72,38 @@ class ThemeViewModel: NSObject {
         }
     }
     
-    func saveToServer(callBack: (() -> Void)?) {
+    /// 添加主题到云端
+    ///
+    /// - Parameters:
+    ///   - img: 图片
+    ///   - callBack: 回调
+    func addThemeToServer(img: UIImage) {
+        
+        ServicerTool.uploadImg(img: img) { (path) in
+            
+            let themeList = BmobObject.init(className: kThemeListName)!
+            themeList.setObject(path, forKey: "themeImgUrl")
+            themeList.setObject(Date().k_toDateStr("yyyyMMddHHmmss"), forKey: "themeId")
+
+            themeList.saveInBackground { (isOK, error) in
+                
+                if isOK {
+                    
+                    self.showText("主题上传成功")
+                    self.collectionView.k_headerBeginRefreshing()
+                    
+                } else {
+                    
+                    self.showText("主题上传失败")
+                }
+            }
+        }
+    }
+    
+    /// 保存主题到云端
+    ///
+    /// - Parameter callBack: 回调
+    func saveToServer(callBack: ((Bool)->Void)?) {
         
         let queryList = BmobQuery.init(className: kThemeListName)!
         queryList.whereKey("userId", equalTo: LoginModel.cachesUserId)
@@ -70,12 +124,12 @@ class ThemeViewModel: NSObject {
                 
                 newObj.updateInBackground(resultBlock: { (isOK, error) in
                     
-                    isOK ? (callBack?()): (callBack?())
+                    callBack?(isOK)
                 })
                 
             } else {
                 
-                callBack?()
+                callBack?(false)
             }
         }
     }

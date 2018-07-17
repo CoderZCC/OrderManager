@@ -82,10 +82,7 @@ class ThemeCell: UICollectionViewCell {
         if isOk {
             
             NotificationCenter.default.post(name: NSNotification.Name.init(kThemeChangeNoteKey), object: nil)
-            self.callBack?()
-            
-            
-            
+            self.callBack?() 
         }
     }
     
