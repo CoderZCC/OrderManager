@@ -23,8 +23,7 @@ class LeftHeaderView: UICollectionReusableView {
         self.headImgV.k_addTarget { (tap) in
             
             let editVC = EditInfoViewController()
-            (kRootVC as! SliderDrawerViewController).hiddenLeftVC()
-            self.k_navigationVC()?.pushViewController(editVC, animated: true)
+            self.k_navigationVC?.pushViewController(editVC, animated: true)
         }
     }
     

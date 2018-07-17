@@ -14,7 +14,7 @@ let kNavBarHeight: CGFloat = kHeight > 736.0 ? (88.0) : (64.0)
 let kWindow = UIApplication.shared.keyWindow
 var kRootVC: UIViewController {
     
-    return UIApplication.shared.keyWindow!.rootViewController!
+    return UIApplication.shared.keyWindow?.rootViewController ?? UIViewController()
 }
 
 let kBottomSpace: CGFloat = kHeight > 736.0 ? (34.0) : (0.0)

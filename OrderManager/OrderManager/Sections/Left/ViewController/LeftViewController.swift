@@ -71,6 +71,8 @@ extension LeftViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let themeVC = ThemeViewController()
+        self.k_navigationVC?.pushViewController(themeVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

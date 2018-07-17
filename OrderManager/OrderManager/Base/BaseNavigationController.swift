@@ -15,6 +15,15 @@ class BaseNavigationController: UINavigationController {
 
     }
 
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: true)
+        
+        if let sliderVC = kRootVC as? SliderDrawerViewController, sliderVC.isNeedHidden {
+            
+            sliderVC.hiddenLeftVC()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

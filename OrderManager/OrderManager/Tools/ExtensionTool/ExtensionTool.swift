@@ -13,11 +13,19 @@ typealias k_noArgumentCallBack = (()->Void)?
 typealias k_gestureCallBack = ((UIGestureRecognizer)->Void)?
 
 extension NSObject {
-    
+
+    /// 当前活跃的导航栏
+    var k_navigationVC: BaseNavigationController? {
+        return self.navigationVC()
+    }
+    /// 当前活跃的控制器
+    var k_currentVC: BaseViewController {
+        return self.currentVC() as! BaseViewController
+    }
     /// 当前活跃的导航栏
     ///
     /// - Returns: 导航栏
-    func k_navigationVC(checkVC: UIViewController? = nil) -> BaseNavigationController? {
+    private func navigationVC(checkVC: UIViewController? = nil) -> BaseNavigationController? {
         
         let rootVC = checkVC == nil ? (kRootVC) : (checkVC)
         if let tabBarVC = rootVC as? UITabBarController {
@@ -34,7 +42,7 @@ extension NSObject {
             
             // 侧滑
             let main = sliderVC.mainVC
-            return self.k_navigationVC(checkVC: main!)
+            return self.navigationVC(checkVC: main!)
         }
         return nil
     }
@@ -42,7 +50,7 @@ extension NSObject {
     /// 当前活跃的控制器
     ///
     /// - Returns: 控制器
-    func k_currentVC() -> UIViewController {
+    private func currentVC() -> UIViewController {
         
         return self.getCurrentVC()
     }

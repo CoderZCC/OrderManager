@@ -57,6 +57,8 @@
 		F09CA4D420FD7D15005BA8BE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4D320FD7D15005BA8BE /* HomeViewModel.swift */; };
 		F09CA4D720FD8CDF005BA8BE /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */; };
 		F09CA4D820FD8CDF005BA8BE /* EditInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */; };
+		F09CA4DB20FD9430005BA8BE /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09CA4D920FD9430005BA8BE /* ThemeViewController.swift */; };
+		F09CA4DC20FD9430005BA8BE /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09CA4DA20FD9430005BA8BE /* ThemeViewController.xib */; };
 		F0AAC59D20F83B550057039A /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59020F83B550057039A /* AddViewModel.swift */; };
 		F0AAC59E20F83B550057039A /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AAC59220F83B550057039A /* CostModel.swift */; };
 		F0AAC59F20F83B550057039A /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AAC59420F83B550057039A /* OrderCell.xib */; };
@@ -141,6 +143,8 @@
 		F09CA4D320FD7D15005BA8BE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
 		F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditInfoViewController.xib; sourceTree = "<group>"; };
+		F09CA4D920FD9430005BA8BE /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		F09CA4DA20FD9430005BA8BE /* ThemeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeViewController.xib; sourceTree = "<group>"; };
 		F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0AAC59020F83B550057039A /* AddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
 		F0AAC59220F83B550057039A /* CostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 				F08BC16020F891480016266B /* LeftViewController.xib */,
 				F09CA4D520FD8CDF005BA8BE /* EditInfoViewController.swift */,
 				F09CA4D620FD8CDF005BA8BE /* EditInfoViewController.xib */,
+				F09CA4D920FD9430005BA8BE /* ThemeViewController.swift */,
+				F09CA4DA20FD9430005BA8BE /* ThemeViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -639,6 +645,7 @@
 				F08BC15720F889060016266B /* RegisterViewController.xib in Resources */,
 				F0AAC5A420F83B550057039A /* HomeViewController.xib in Resources */,
 				F056DB3920F73603006B8E3E /* MyPickerTool.xib in Resources */,
+				F09CA4DC20FD9430005BA8BE /* ThemeViewController.xib in Resources */,
 				F0AAC5BA20F875A00057039A /* StartViewController.xib in Resources */,
 				F0962C8020F5CF210086B24A /* HUDViewTool.xib in Resources */,
 			);
@@ -723,6 +730,7 @@
 				F08BC16420F8998A0016266B /* VideoPlayer.swift in Sources */,
 				F0962C6D20F5CE5D0086B24A /* String+Ext.swift in Sources */,
 				F056DB3D20F74A96006B8E3E /* UIButton+Ext.swift in Sources */,
+				F09CA4DB20FD9430005BA8BE /* ThemeViewController.swift in Sources */,
 				F056DB3B20F740BA006B8E3E /* SpecialPickerView.swift in Sources */,
 				F0AAC5AB20F83BA80057039A /* ServicerTool.swift in Sources */,
 				F0D562FD20FCA3D900AAE095 /* LeftViewModel.swift in Sources */,

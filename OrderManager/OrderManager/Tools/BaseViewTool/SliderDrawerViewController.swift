@@ -18,6 +18,8 @@ protocol SliderDrawerDelegate: NSObjectProtocol {
 
 class SliderDrawerViewController: UIViewController {
 
+    /// 是否需要收起
+    var isNeedHidden: Bool = false
     /// 代理
     var sliderDelegate: SliderDrawerDelegate?
     /// 主控制器
@@ -60,7 +62,7 @@ class SliderDrawerViewController: UIViewController {
     }
     
     //MARK: -灰色背景按钮
-    private lazy var rightMaskBtn: UIButton = {
+    private lazy var rightMaskBtn: UIButton = { [unowned self] in
         
         let btn = UIButton(frame: self.mainVC.view.bounds)
         btn.backgroundColor = UIColor.clear
@@ -102,31 +104,33 @@ extension SliderDrawerViewController {
     //MARK: -展示侧边栏
     func showLeftVC() {
         
-        UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+        self.isNeedHidden = true
+        UIView.animate(withDuration: 0.25, animations: { [unowned self] in
             
             self.leftVC.view.transform = CGAffineTransform.identity
             self.mainVC.view.transform = CGAffineTransform(translationX: self.maxWidth, y: 0)
             
-        }, completion: { (finish: Bool) -> () in
+        }) { [unowned self] (isOK) in
             
             self.mainVC.view.addSubview(self.rightMaskBtn)
             self.sliderDelegate?.leftViewAppear()
-        })
+        }
     }
     
     //MARK: -隐藏侧边栏
     @objc func hiddenLeftVC() {
         
-        UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+        UIView.animate(withDuration: 0.25, animations: { [unowned self] in
             
             self.leftVC.view.transform = CGAffineTransform.init(translationX: -self.maxWidth, y: 0.0)
             self.mainVC.view.transform = CGAffineTransform.identity
             
-        }, completion: { (finish: Bool) -> () in
+        }) { [unowned self] (isOK) in
             
             self.rightMaskBtn.removeFromSuperview()
             self.sliderDelegate?.leftViewDisAppear()
-        })
+            self.isNeedHidden = false
+        }
     }
     
     //MARK: - 遮盖按钮手势
