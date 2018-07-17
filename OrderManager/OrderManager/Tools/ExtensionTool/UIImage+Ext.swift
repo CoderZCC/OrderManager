@@ -12,16 +12,18 @@ extension UIImage {
     
     static func k_setImage(url: String) -> UIImage {
         
+        // 缓存
         if let imgData = kCachesImgDic[url] {
             
             return UIImage.init(data: imgData) ?? #imageLiteral(resourceName: "defaultImg")
         }
+        // 磁盘
         let dic = kSaveDataTool.k_getData(from: kCachesImgDicPath)
         if let imgData = dic[url] as? Data {
             
             kCachesImgDic[url] = imgData
             return UIImage.init(data: imgData) ?? #imageLiteral(resourceName: "defaultImg")
-        }
+        }      
         return #imageLiteral(resourceName: "defaultImg")
     }
     

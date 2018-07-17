@@ -27,17 +27,22 @@ class LoginViewController: BaseViewController {
     
     func initView() {
         
-        self.loginBtn.k_setCornerRadius(kCornerRadius)
+        // 输入框设置
         self.accountTf.k_placeholderColor = kPlaceholderTextcolor
         self.passwordTf.k_placeholderColor = kPlaceholderTextcolor
         
+        // 登录按钮设置
+        self.loginBtn.k_setCornerRadius(kCornerRadius)
         self.loginBtn.isEnabled = false
         self.viewModel.loginBtnEnabledBacK = { [unowned self] isEnabled in
-            
             self.loginBtn.isEnabled = isEnabled
         }
+        // 头像设置
         self.headPic.k_setCircleImgV()
         self.headPic.k_setImage(url: LoginModel.cachesHeadPic)
+        self.viewModel.headImgVChange = { [unowned self] imgUrl in
+            self.headPic.k_setImage(url: imgUrl)
+        }
     }
     
     /// 登录按钮点击事件
@@ -55,6 +60,7 @@ class LoginViewController: BaseViewController {
     
     deinit {
         
+        self.viewModel.headImgVChange = nil
         self.viewModel.loginBtnEnabledBacK = nil
     }
     

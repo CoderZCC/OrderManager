@@ -27,21 +27,22 @@ class RegisterViewController: BaseViewController {
 
     func initView() {
         
-        self.registerBtn.k_setCornerRadius(kCornerRadius)
+        // 输入框设置
         self.accountTf.k_placeholderColor = kPlaceholderTextcolor
         self.passwordTf.k_placeholderColor = kPlaceholderTextcolor
+        // 注册按钮设置
+        self.registerBtn.k_setCornerRadius(kCornerRadius)
         self.registerBtn.isEnabled = false
-        self.headImgV.k_setCircleImgV()
-        
         self.viewModel.registerBtnEnabledBacK = { [unowned self] isEnabled in
             
             self.registerBtn.isEnabled = isEnabled
         }
+        // 头像设置
+        self.headImgV.k_setCircleImgV()
         self.viewModel.headPicCallBack = { img in
             
             self.headImgV.image = img
         }
-        
         self.headImgV.k_addTarget { (tap) in
             
             self.view.endEditing(true)
@@ -65,6 +66,7 @@ class RegisterViewController: BaseViewController {
     
     deinit {
         
+        self.viewModel.headPicCallBack = nil
         self.viewModel.registerBtnEnabledBacK = nil
     }
     

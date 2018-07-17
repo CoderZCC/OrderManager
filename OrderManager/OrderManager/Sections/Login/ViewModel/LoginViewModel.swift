@@ -15,6 +15,8 @@ class LoginViewModel: NSObject {
     
     /// 按钮是否可用
     var loginBtnEnabledBacK: ((Bool)->Void)?
+    /// 头像更新
+    var headImgVChange: ((String)->Void)?
     /// 账号是否可用
     var isAccountEnabled: Bool {
         
@@ -27,6 +29,15 @@ class LoginViewModel: NSObject {
     }
     /// 数据模型
     var loginModel: LoginModel = LoginModel()
+    /// 头像地址更改
+    private var headPicUrl: String = "" {
+        willSet {
+            
+            self.headImgVChange?(newValue)
+        }
+    }
+    /// 头像地址
+    private var userHeadPicDic: [String: String] = [LoginModel.cachesAccount: LoginModel.cachesHeadPic]
     
     convenience init(accountTf: UITextField) {
         self.init()
@@ -35,6 +46,7 @@ class LoginViewModel: NSObject {
         if let cachesAcount = accountTf.text {
             self.loginModel.account = cachesAcount
         }
+
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (note) in
             
             let currentTf = note.object as! UITextField
@@ -42,10 +54,29 @@ class LoginViewModel: NSObject {
             if accountTf == currentTf {
                 
                 self.loginModel.account = currentTf.text!
+                if self.loginModel.account.isEmpty {
+                    
+                    self.headPicUrl = ""
+                }
                 
             } else {
                 
                 self.loginModel.password = currentTf.text!
+                // 检查账号头像是否在本地
+                if let pic = self.userHeadPicDic[self.loginModel.account] {
+                    
+                    self.headPicUrl = pic
+                    
+                } else {
+                    
+                    ServicerTool.userIsExit(account: self.loginModel.account, callback: { (isOK, obj) in
+                        
+                        if let obj = obj {
+                            
+                            self.headPicUrl = obj.object(forKey: "headPicUrl") as! String
+                        }
+                    })
+                }
             }
             self.loginBtnEnabledBacK?(self.isAccountEnabled && self.isPasswordEnabled)
         }
@@ -58,7 +89,7 @@ class LoginViewModel: NSObject {
         
         // 先检查用户是否存在
         self.showLoading("检查账号中")
-        RegisterViewModel.userIsExit(account: self.loginModel.account) { (isOK, obj) in
+        ServicerTool.userIsExit(account: self.loginModel.account) { (isOK, obj) in
             
             if let userObj = obj {
                 

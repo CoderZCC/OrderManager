@@ -16,7 +16,60 @@ typealias SuccessDataBlock = (([CostModel])->Void)?
 typealias FailBlock = (()->Void)?
 
 class ServicerTool: NSObject {
+    
+    /// 上传头像
+    ///
+    /// - Parameters:
+    ///   - img: 头像
+    ///   - callBack: 回调
+    class func uploadImg(img: UIImage, callBack: ((String) -> Void)?) {
+        
+        kWindow?.showLoading("图片处理中")
+        let imgData = img.k_pressImgSize()
+        let file = BmobFile.init(fileName: "\(kNowDate.k_toDateStr("yyMMddHHmmss")).png", withFileData: imgData)
+        file?.save(inBackground: { (isOK, error) in
+            
+            if isOK {
+                
+                print("isOK:\(file!.url)")
+                callBack?(file!.url)
+                kWindow?.hideHUD()
+                
+            } else {
+                
+                kWindow?.showText("图片上传失败，请重试")
+            }
+            
+        }, withProgressBlock: { (progress) in
+            
+            kWindow?.showProgress(progress: progress, text: "图片上传中")
+        })
+    }
+    
+    /// 检查账号是否存在
+    ///
+    /// - Parameters:
+    ///   - account: 账号
+    ///   - callback: 回调
+    class func userIsExit(account: String, callback: ((Bool, BmobObject?) -> Void)? ) {
+        
+        let queryList = BmobQuery.init(className: kUserListName)!
+        queryList.whereKey("account", equalTo: account)
 
+        queryList.findObjectsInBackground { (dataArr, error) in
+            
+            if let dataArr = dataArr as? [BmobObject], !dataArr.isEmpty {
+                
+                let userObj = dataArr.first!
+                callback?(true, userObj)
+                
+            } else {
+                
+                callback?(false, nil)
+            }
+        }
+    }
+    
     //MARK: 添加消费数据
     /// 添加消费数据
     ///

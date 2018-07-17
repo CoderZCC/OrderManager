@@ -54,6 +54,7 @@ class RegisterViewModel: NSObject {
         }
     }
     
+    /// 选择照片事件
     func selectedImg() {
         
         self.k_showSheets(title: "请选择", subTitles: ["从相册获取", "拍照"], callBack: { (index) in
@@ -82,7 +83,7 @@ class RegisterViewModel: NSObject {
         
         // 先检查用户是否存在
         self.showLoading("检查账号中")
-        RegisterViewModel.userIsExit(account: self.loginModel.account) { (isOk, obj) in
+        ServicerTool.userIsExit(account: self.loginModel.account) { (isOk, obj) in
             
             if let _ = obj {
                 
@@ -90,15 +91,17 @@ class RegisterViewModel: NSObject {
                 
             } else {
                 
-                // 注册
-                self.uploadImg(callBack: { (url) in
+                // 上传头像
+                ServicerTool.uploadImg(img: self.headPic, callBack: { (str) in
                     
+                    self.loginModel.headPic = str
+                    // 保存信息
                     self.addData(callBack: callBack)
                 })
             }
         }
     }
-    /// 注册
+    /// 设置注册信息
     private func addData(callBack: CallBack) {
         
         self.showLoading("开始注册")
@@ -130,55 +133,4 @@ class RegisterViewModel: NSObject {
             }
         })
     }
-    
-    /// 上传头像
-    func uploadImg(callBack: ((String) -> Void)? ) {
-        
-        self.showLoading("图片处理中")
-        let imgData = self.headPic.k_pressImgSize()
-        let file = BmobFile.init(fileName: "\(kNowDate.k_toDateStr("yyMMddHHmmss")).png", withFileData: imgData)
-        file?.save(inBackground: { (isOK, error) in
-            
-            if isOK {
-                
-                print("isOK:\(file!.url)")
-                self.loginModel.headPic = file!.url
-                callBack?(file!.url)
-                self.hideHUD()
-
-            } else {
-                
-                self.showText("图片上传失败，请重试")
-            }
-            
-        }, withProgressBlock: { (progress) in
-        
-            self.showProgress(progress: progress, text: "图片上传中")
-            print("progress:\(progress)")
-        })
-    }
-    
-    /// 账号是否存在
-    ///
-    /// - Parameters:
-    ///   - account: 账号
-    ///   - callback: 回调
-    class func userIsExit(account: String, callback: ((Bool, BmobObject?) -> Void)? ) {
-        
-        let queryList = BmobQuery.init(className: kUserListName)!
-        queryList.whereKey("account", equalTo: account)
-        queryList.findObjectsInBackground { (dataArr, error) in
-            
-            if let dataArr = dataArr as? [BmobObject], !dataArr.isEmpty {
-                
-                let userObj = dataArr.first!
-                callback?(true, userObj)
-                
-            } else {
-                
-                callback?(false, nil)
-            }
-        }
-    }
-    
 }
