@@ -76,6 +76,10 @@ extension ThemeViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCell", for: indexPath) as! ThemeCell
         let model = self.viewModel.dataList[indexPath.row]
         cell.themeModel = model
+        cell.callBack = {
+            
+            collectionView.k_headerBeginRefreshing()
+        }
         
         return cell
     }

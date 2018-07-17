@@ -49,4 +49,35 @@ class ThemeViewModel: NSObject {
         }
     }
     
+    func saveToServer(callBack: (() -> Void)?) {
+        
+        let queryList = BmobQuery.init(className: kThemeListName)!
+        queryList.whereKey("userId", equalTo: LoginModel.cachesUserId)
+        queryList.findObjectsInBackground { (dataArr, error) in
+            
+            if let dataArr = dataArr as? [BmobObject], !dataArr.isEmpty {
+                
+                let userObj = dataArr.first!
+                let newObj = BmobObject.init(outDataWithClassName: userObj.className, objectId: userObj.objectId)!
+                if let dic = kSaveDataTool.K_getData(from: kThemeSavePath) as? [String: Data] {
+                    
+                    newObj.setObject(dic.keys.first!, forKey: "themeId")
+                    
+                } else {
+                    
+                    newObj.setObject("0", forKey: "themeId")
+                }
+                
+                newObj.updateInBackground(resultBlock: { (isOK, error) in
+                    
+                    isOK ? (callBack?()): (callBack?())
+                })
+                
+            } else {
+                
+                callBack?()
+            }
+        }
+    }
+    
 }

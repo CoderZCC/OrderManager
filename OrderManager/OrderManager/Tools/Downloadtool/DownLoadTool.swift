@@ -30,10 +30,12 @@ class DownLoadTool: NSObject {
     private var progress: Progress!
     /// 下载地址
     private var downloadUrl: String!
-
+    /// 下载完成时赋值的元组
+    var finishTuple: (result:DownloadResult, savePath:String?, resumeData:Data?, progress:String?, progressNum:Float?)!
+    
     //MARK: -开始下载
     @discardableResult
-    class func download(downloadUrl:String) -> DownLoadTool {
+    class func download(downloadUrl: String) -> DownLoadTool {
         
         let tool = DownLoadTool()
         tool.downloadUrl = downloadUrl
@@ -41,10 +43,13 @@ class DownLoadTool: NSObject {
         /// 文件下载地址
         let destination:DownloadRequest.DownloadFileDestination! = { _, response in
             
+            let suggestedFilename = response.suggestedFilename!
+            let fileType = suggestedFilename.components(separatedBy: ".").last ?? ".png"
+            let fileName = Date().k_toDateStr("yyyyMMddHHmmss") + ".\(fileType)"
             // 文件下载地址
-            let fileURL = URL.init(fileURLWithPath: kDownloadFile.appendingFormat("%@/", response.suggestedFilename!))
+            let fileURL = URL.init(fileURLWithPath: kDownloadFile.appendingFormat("%@/",fileName))
             // 文件名称
-            tool.fileName = "\(response.suggestedFilename!)"
+            tool.fileName = "\(fileName)"
             
             return (fileURL, [.createIntermediateDirectories, .removePreviousFile])
         }
@@ -55,22 +60,34 @@ class DownLoadTool: NSObject {
             /// 继续下载
             tool.downloadRequest = Alamofire.download(resumingWith: tuple.resumeData!, to: destination)
             
-        } else {
+        } else if tuple.result == DownloadResult.noDownload {
             
             /// 下载任务
             tool.downloadRequest = Alamofire.download(downloadUrl, to: destination)
+            
+        } else {
+            
+            tool.finishTuple = tuple
+            print("已缓存完成:\(tuple.savePath!)")
         }
         return tool
     }
     
     @discardableResult
-    func downloadProgress(progress:((Progress)->Void)?) -> DownLoadTool {
+    func downloadProgress(progress:((CGFloat)->Void)?) -> DownLoadTool {
         
-        self.downloadRequest.downloadProgress { (data) in
+        if let downloadRequest = self.downloadRequest {
             
-            self.progress = data
-            progress?(data)
-            print("当前进度：\(data.fractionCompleted*100)%")
+            downloadRequest.downloadProgress { (data) in
+                
+                self.progress = data
+                progress?(CGFloat(data.fractionCompleted))
+                print("当前进度：\(data.fractionCompleted)")
+            }
+            
+        } else {
+         
+            progress?(CGFloat(1.0))
         }
         return self
     }
@@ -78,6 +95,11 @@ class DownLoadTool: NSObject {
     @discardableResult
     func downloadResult(result:((DownloadResult, String?)->Void)?) -> DownLoadTool {
     
+        if self.downloadRequest == nil {
+            
+            result?(DownloadResult.success, self.finishTuple.savePath)
+            return self
+        }
         self.downloadRequest.responseData { (data) in
          
             let response:DownloadResponse = data
@@ -174,7 +196,7 @@ extension DownLoadTool {
                     
                     // 下载完成
                     return (DownloadResult.finish, kDownloadFile + savePath, nil, nil, nil)
-                
+                    
                 } else {
                     
                     // 未下载完

@@ -12,6 +12,23 @@ class ThemeModel: NSObject {
 
     var themeId: String = ""
     var themeImgUrl: String = ""
+    /// 缓存路径
+    lazy var cachesPath: String? = {
+        let tuple = DownLoadTool.getDownloadResult(downloadUrl: self.themeImgUrl)
+
+        return tuple.savePath
+    }()
+    /// 是否正在使用
+    lazy var isUse: Bool = {
+        
+        if let dic = kSaveDataTool.K_getData(from: kThemeSavePath) as? [String: Data] {
+            
+            let id = dic.keys.first!
+            return self.themeId == id
+        }
+        return false
+    }()
+    
     
     convenience init(obj: BmobObject) {
         self.init()

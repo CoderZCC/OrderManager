@@ -10,6 +10,17 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    /// 当前的主题图片
+    var kThemeImageData: Data? {
+        
+        // id: data
+        if let dic = kSaveDataTool.K_getData(from: kThemeSavePath) as? [String: Data] {
+            
+            return dic.values.first!
+        }
+        return nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,18 +42,32 @@ class BaseViewController: UIViewController {
 
         self.view.insertSubview(self.bgImgV, at: 0)
         self.view.k_tapDismissKeyboard()
+        
+        self.themeChangeNote()
+        NotificationCenter.default.addObserver(self, selector: #selector(themeChangeNote), name: NSNotification.Name.init(kThemeChangeNoteKey), object: nil)
+    }
+    
+    @objc func themeChangeNote() {
+        
+        if let imgData = kThemeImageData {
+            
+            self.bgImgV.image = UIImage.init(data: imgData)
+
+        } else {
+            
+            self.bgImgV.image = #imageLiteral(resourceName: "bg")
+        }
     }
 
     private lazy var bgImgV: UIImageView = {
         let imgV = UIImageView.init(frame: UIScreen.main.bounds)
         imgV.contentMode = .scaleAspectFill
-        imgV.image = #imageLiteral(resourceName: "bg")
         imgV.clipsToBounds = true
         
-        let blur = UIBlurEffect.init(style: UIBlurEffectStyle.dark)
-        let maskView = UIVisualEffectView.init(effect: blur)
-        maskView.alpha = 1.0
-        maskView.frame = imgV.bounds
+        let maskView = UIView.init(frame: imgV.bounds)
+        maskView.backgroundColor = UIColor.black
+        maskView.alpha = 0.1
+        
         imgV.addSubview(maskView)
         
         return imgV

@@ -20,6 +20,11 @@ var kRootVC: UIViewController {
 let kBottomSpace: CGFloat = kHeight > 736.0 ? (34.0) : (0.0)
 let kAppDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
+/// 主题切换
+let kThemeChangeNoteKey: String = "kThemeChangeNoteKey"
+/// 主题文件保存的地址
+let kThemeSavePath: String = String.k_documentsPath + "theme.plist"
+
 /// 导航栏颜色
 let kNavbarColor: UIColor = UIColor.k_colorWith(r: 214.0, g: 34.0, b: 34.0)
 /// 消费类型 Str
