@@ -134,6 +134,7 @@
 		F0962C9420F5D94B0086B24A /* RefreshCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshCommon.swift; sourceTree = "<group>"; };
 		F0962C9520F5D94B0086B24A /* RefreshHeaderTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshHeaderTool.swift; sourceTree = "<group>"; };
 		F0962C9620F5D94B0086B24A /* RefreshGifTool.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshGifTool.xib; sourceTree = "<group>"; };
+		F09CA4D220FD77B7005BA8BE /* OrderManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderManager.entitlements; sourceTree = "<group>"; };
 		F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OrderManager-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0AAC59020F83B550057039A /* CostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostViewModel.swift; sourceTree = "<group>"; };
 		F0AAC59220F83B550057039A /* CostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
@@ -321,6 +322,7 @@
 		F0962C4420F5CD240086B24A /* OrderManager */ = {
 			isa = PBXGroup;
 			children = (
+				F09CA4D220FD77B7005BA8BE /* OrderManager.entitlements */,
 				F0962C4520F5CD240086B24A /* AppDelegate.swift */,
 				F0AAC58A20F838600057039A /* OrderManager-Bridging-Header.h */,
 				F0962C8120F5CF8D0086B24A /* Macro */,
@@ -576,6 +578,14 @@
 					F0962C4120F5CD240086B24A = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

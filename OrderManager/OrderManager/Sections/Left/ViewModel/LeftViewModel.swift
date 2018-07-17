@@ -31,7 +31,7 @@ class LeftViewModel: NSObject {
         let leftMargin = self.collectionView.contentInset.left
         let rightMargin = self.collectionView.contentInset.left
         
-        return (self.collectionView.bounds.width - lineSpace * (CGFloat(columnsNum) - 1.0) - leftMargin - rightMargin) / CGFloat(columnsNum)
+        return (kSliderMaxWidth - lineSpace * (CGFloat(columnsNum) - 1.0) - leftMargin - rightMargin) / CGFloat(columnsNum)
     }
     
 }

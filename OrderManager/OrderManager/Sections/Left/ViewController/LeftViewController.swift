@@ -10,7 +10,7 @@ import UIKit
 
 class LeftViewController: BaseViewController {
 
-    
+    /// 内容试图
     @IBOutlet weak var contentView: UIView!
     /// 退出登录
     @IBOutlet weak var logoutBtn: UIButton!
