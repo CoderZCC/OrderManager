@@ -35,6 +35,20 @@ extension NSObject {
             rightAction()
         }
     }
+    
+    /// 输入框
+    ///
+    /// - Parameters:
+    ///   - title: 标题
+    ///   - placeholder: 占位文字
+    ///   - callBack: 回调
+    func k_showAlert(title: String, placeholder: String?, callBack:((String)->Void)?)  {
+        
+        KAlertTools.showAlertTextFieldView(title: title, placeholder: placeholder, leftAction: nil) { (text) in
+            
+            callBack?(text)
+        }
+    }
 }
 
 class KAlertTools: UIView {
@@ -64,7 +78,7 @@ class KAlertTools: UIView {
     }()
     
     ///输入框
-    class func showAlertTextFieldView (title:String? , placeholder:String? ,leftBtn:String? = "取消" ,rightBtn:String? = "确定" ,leftAction:@escaping ()->Void ,rightAction:@escaping (String)->Void)
+    class func showAlertTextFieldView (title:String? , placeholder:String? ,leftBtn:String? = "取消" ,rightBtn:String? = "确定" ,leftAction: (()->Void)?, rightAction:@escaping (String)->Void)
     {
         let tool = KAlertTools.sharedManager
         if tool.isRunning {
@@ -100,7 +114,7 @@ class KAlertTools: UIView {
         }
         
         tool.finishInput = rightAction
-        tool.leftAction = leftAction
+        tool.leftAction = leftAction ?? {}
         
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
             

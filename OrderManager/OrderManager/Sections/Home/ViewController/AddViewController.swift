@@ -95,9 +95,20 @@ class AddViewController: BaseViewController {
             self.view.endEditing(true)
             self.k_showSheets(title: "消费类型", subTitles: kCostTypeStr, callBack: { [unowned self] (index) in
                 
-                if self.costTypeL.text! != kCostTypeStr[index] {
-                    self.viewModel.isChangevalue = true
-                    self.costTypeL.text = kCostTypeStr[index]
+                if index == kCostTypeStr.count - 1 {
+                    
+                    self.k_showAlert(title: "请输入类型", placeholder: "消费类型", callBack: { (str) in
+                        
+                        self.viewModel.isChangevalue = true
+                        self.costTypeL.text = str
+                    })
+                    
+                } else {
+                    
+                    if self.costTypeL.text! != kCostTypeStr[index] {
+                        self.viewModel.isChangevalue = true
+                        self.costTypeL.text = kCostTypeStr[index]
+                    }
                 }
             })
         }

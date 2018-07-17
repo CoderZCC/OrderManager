@@ -74,6 +74,10 @@ class LoginViewModel: NSObject {
                         if let obj = obj {
                             
                             self.headPicUrl = obj.object(forKey: "headPicUrl") as! String
+                            
+                        } else {
+                            
+                            self.headPicUrl = ""
                         }
                     })
                 }
