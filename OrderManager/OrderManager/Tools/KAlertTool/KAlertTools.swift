@@ -54,7 +54,7 @@ class KAlertTools: UIView {
     var isRunning:Bool  = false
     
     ///单例
-    static let sharedManager:KAlertTools = {
+    static let sharedManager: KAlertTools = {
         
         let tool = Bundle.main.loadNibNamed("KAlertTools", owner: nil, options: nil)?.last as! KAlertTools
         tool.frame = CGRect(x:0 , y: 0 ,width: kWidth ,height: kHeight)
@@ -235,7 +235,7 @@ class kAlertSheetTools: UIView {
         
         let tool = kAlertSheetTools()
         tool.frame = CGRect(x:0 , y: 0 ,width: kWidth ,height: kHeight)
-        tool.backgroundColor = UIColor.lightGray.withAlphaComponent(0.6)
+        tool.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         tool.alpha = 0.0
 
         return tool

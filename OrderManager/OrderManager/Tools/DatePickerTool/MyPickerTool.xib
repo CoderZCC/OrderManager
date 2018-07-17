@@ -98,7 +98,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29930971746575341" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Fp1-KR-d3j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="l8U-I7-I6U"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Fp1-KR-d3j" secondAttribute="bottom" constant="-34" id="mIm-lm-Juj"/>
@@ -193,7 +193,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2967947345890411" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="RTI-ag-Myh" firstAttribute="leading" secondItem="YMb-WD-Bzg" secondAttribute="leading" id="ApH-QB-zra"/>
                 <constraint firstItem="YMb-WD-Bzg" firstAttribute="trailing" secondItem="RTI-ag-Myh" secondAttribute="trailing" id="iWh-Vv-qDN"/>
