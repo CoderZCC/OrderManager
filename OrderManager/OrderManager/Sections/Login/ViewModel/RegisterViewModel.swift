@@ -111,7 +111,8 @@ class RegisterViewModel: NSObject {
         userList.setObject(self.loginModel.headPic, forKey: "headPicUrl")
         
         let userId: String = kNowDate.k_toDateStr("yyyyMMddHHmmss")
-        userList.setObject(userId, forKey: "userId")
+        self.loginModel.userId = userId
+        userList.setObject(self.loginModel.userId, forKey: "userId")
 
         userList.saveInBackground(resultBlock: { (isOK, error) in
             
