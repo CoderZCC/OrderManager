@@ -12,8 +12,8 @@ enum PlaceholderEnum {
     case noData, netWorkError, serverError
 }
 
-var UIScrollViewPlacholderTextKey: UInt8 = 0
-var UIScrollViewPlacholderImgKey: UInt8 = 1
+var UIScrollViewPlacholderTextKey: UInt = 0
+var UIScrollViewPlacholderImgKey: UInt = 1
 
 var kScrollViewHeaderViewKey: Int = 2
 var kScrollViewFooterViewKey: Int = 3
@@ -250,6 +250,4 @@ class PlaceHolderView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
