@@ -39,11 +39,11 @@ class RegisterViewController: BaseViewController {
         }
         // 头像设置
         self.headImgV.k_setCircleImgV()
-        self.viewModel.headPicCallBack = { img in
+        self.viewModel.headPicCallBack = { [unowned self] img in
             
             self.headImgV.image = img
         }
-        self.headImgV.k_addTarget { (tap) in
+        self.headImgV.k_addTarget { [unowned self] (tap) in
             
             self.view.endEditing(true)
             self.viewModel.selectedImg()

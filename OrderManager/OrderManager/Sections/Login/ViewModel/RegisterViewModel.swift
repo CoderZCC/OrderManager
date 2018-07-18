@@ -38,7 +38,7 @@ class RegisterViewModel: NSObject {
     convenience init(accountTf: UITextField) {
         self.init()
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (note) in
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { [unowned self] (note) in
             
             let currentTf = note.object as! UITextField
             
@@ -57,18 +57,18 @@ class RegisterViewModel: NSObject {
     /// 选择照片事件
     func selectedImg() {
         
-        self.k_showSheets(title: "请选择", subTitles: ["从相册获取", "拍照"], callBack: { (index) in
+        self.k_showSheets(title: "请选择", subTitles: ["从相册获取", "拍照"], callBack: { [unowned self] (index) in
             
             if index == 0 {
                 
-                CameraTool.takeImage(callBack: { (img) in
+                CameraTool.takeImage(callBack: { [unowned self] (img) in
                     
                     self.headPic = img
                 })
                 
             } else {
                 
-                CameraTool.takePhoto(callBack: { (img) in
+                CameraTool.takePhoto(callBack: { [unowned self] (img) in
                     
                     self.headPic = img
                 })
@@ -83,7 +83,7 @@ class RegisterViewModel: NSObject {
         
         // 先检查用户是否存在
         self.showLoading("检查账号中")
-        ServicerTool.userIsExit(account: self.loginModel.account) { (isOk, obj) in
+        ServicerTool.userIsExit(account: self.loginModel.account) { [unowned self] (isOk, obj) in
             
             if let _ = obj {
                 
@@ -92,7 +92,7 @@ class RegisterViewModel: NSObject {
             } else {
                 
                 // 上传头像
-                ServicerTool.uploadImg(img: self.headPic, callBack: { (str) in
+                ServicerTool.uploadImg(img: self.headPic, callBack: { [unowned self] (str) in
                     
                     self.loginModel.headPic = str
                     // 保存信息
@@ -114,7 +114,7 @@ class RegisterViewModel: NSObject {
         self.loginModel.userId = userId
         userList.setObject(self.loginModel.userId, forKey: "userId")
 
-        userList.saveInBackground(resultBlock: { (isOK, error) in
+        userList.saveInBackground(resultBlock: { [unowned self] (isOK, error) in
             
             if let _ = error {
                 

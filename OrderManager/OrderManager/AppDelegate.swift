@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let transition = CATransition.init()
         transition.type = "rippleEffect"
         transition.duration = 0.5
-        kWindow?.layer.add(transition, forKey: "transition")
+        kWindow.layer.add(transition, forKey: "transition")
         
         if !isSuccess {
             
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootVC = SliderDrawerViewController.init(mainVC: mainVC, leftVC: leftVC, leftWidth: kSliderMaxWidth)
         
-        kWindow?.rootViewController = rootVC
+        kWindow.rootViewController = rootVC
         self.setNavigation(vc: homeVC)
     }
     

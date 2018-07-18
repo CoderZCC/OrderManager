@@ -56,7 +56,7 @@ extension NSObject {
     }
     private func getCurrentVC(checkVC: UIViewController? = nil) -> UIViewController {
         
-        var rVC: UIViewController = checkVC == nil ? (kRootVC) : (checkVC!)
+        var rVC: UIViewController = checkVC == nil ? (kRootVC!) : (checkVC!)
         var currentVC: UIViewController!
        
         // 弹出试图判断

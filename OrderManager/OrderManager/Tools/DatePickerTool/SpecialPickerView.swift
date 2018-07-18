@@ -26,7 +26,7 @@ class SpecialPickerView: UIView {
         if tool.isAnimating { return }
         tool.isAnimating = true
         
-        kWindow?.addSubview(tool)
+        kWindow.addSubview(tool)
         tool.showView.transform = CGAffineTransform.init(translationX: 0.0, y: kHeight)
         tool.callback = callback
         tool.viewModel.scrollTo(pickView: tool.pickerView, time: currentTime)

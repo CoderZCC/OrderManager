@@ -33,12 +33,12 @@ class ThemeViewController: BaseViewController {
         self.collectionView.delegate = self
         self.collectionView.register(UINib.init(nibName: "ThemeCell", bundle: nil), forCellWithReuseIdentifier: "ThemeCell")
         
-        self.collectionView.k_addHeaderRefresh {
+        self.collectionView.k_addHeaderRefresh { [unowned self] in
             
             self.initData()
         }
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "上传", clickCallBack: {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "上传", clickCallBack: { [unowned self] in
             
             self.viewModel.selectedImg()
         })
@@ -58,7 +58,7 @@ class ThemeViewController: BaseViewController {
         super.didReceiveMemoryWarning()
     }
 
-    lazy var viewModel: ThemeViewModel = {
+    lazy var viewModel: ThemeViewModel = { [unowned self] in
         let model = ThemeViewModel()
         model.collectionView = self.collectionView
         

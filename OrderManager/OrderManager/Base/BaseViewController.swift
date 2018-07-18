@@ -76,4 +76,8 @@ class BaseViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    deinit {
+        print("----\(self)销毁了----\n")
+    }
 }

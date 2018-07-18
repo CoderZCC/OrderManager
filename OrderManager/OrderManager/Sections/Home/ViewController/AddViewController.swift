@@ -56,7 +56,7 @@ class AddViewController: BaseViewController {
             self.setUserInteraction(isEnable: false)
             
             // 设置导航栏右侧按钮
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "修改", clickCallBack: {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "修改", clickCallBack: { [unowned self] in
                 
                 self.setUserInteraction(isEnable: true)
                 self.finishBtn.isHidden = false
@@ -97,7 +97,7 @@ class AddViewController: BaseViewController {
                 
                 if index == kCostTypeStr.count - 1 {
                     
-                    self.k_showAlert(title: "请输入类型", placeholder: "消费类型", callBack: { (str) in
+                    self.k_showAlert(title: "请输入类型", placeholder: "消费类型", callBack: { [unowned self] (str) in
                         
                         self.viewModel.isChangevalue = true
                         self.costTypeL.text = str

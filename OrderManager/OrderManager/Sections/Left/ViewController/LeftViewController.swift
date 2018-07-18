@@ -95,8 +95,5 @@ extension LeftViewController: UICollectionViewDataSource, UICollectionViewDelega
             return headView
         }
         return UICollectionReusableView()
-    }
-    
-    
-    
+    } 
 }

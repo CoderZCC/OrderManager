@@ -29,7 +29,7 @@ class DatePickerTool: UIView {
         if tool.isAnimating { return }
         tool.isAnimating = true
         
-        kWindow?.addSubview(tool)
+        kWindow.addSubview(tool)
         tool.showView.transform = CGAffineTransform.init(translationX: 0.0, y: kHeight)
         
         if let currentTime = currentTime {

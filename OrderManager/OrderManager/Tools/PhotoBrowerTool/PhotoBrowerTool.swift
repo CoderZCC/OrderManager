@@ -59,11 +59,11 @@ class PhotoBrowerTool: UIView {
             tool.falseImgV.frame = originalFrame
             tool.falseImgV.alpha = 1.0
             tool.falseImgV.image = currentImg
-            kWindow?.addSubview(tool.falseImgV)
+            kWindow.addSubview(tool.falseImgV)
             
             // 添加最终展示的View
             tool.alpha = 0.0
-            kWindow?.addSubview(tool)
+            kWindow.addSubview(tool)
             
             // 执行放大动画
             UIView.animate(withDuration: 0.2, animations: {
@@ -84,7 +84,7 @@ class PhotoBrowerTool: UIView {
             tool.isAnimating = true
             
             tool.transform = CGAffineTransform.init(scaleX: 0.001, y: 0.001)
-            kWindow?.addSubview(tool)
+            kWindow.addSubview(tool)
             UIView.animate(withDuration: 0.3, animations: {
                 
                 tool.transform = CGAffineTransform.identity

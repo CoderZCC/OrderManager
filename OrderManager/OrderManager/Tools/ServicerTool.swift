@@ -24,7 +24,7 @@ class ServicerTool: NSObject {
     ///   - callBack: 回调
     class func uploadImg(img: UIImage, callBack: ((String) -> Void)?) {
         
-        kWindow?.showLoading("图片处理中")
+        kWindow.showLoading("图片处理中")
         let imgData = img.k_pressImgSize()
         let file = BmobFile.init(fileName: "\(kNowDate.k_toDateStr("yyMMddHHmmss")).png", withFileData: imgData)
         file?.save(inBackground: { (isOK, error) in
@@ -33,16 +33,16 @@ class ServicerTool: NSObject {
                 
                 print("isOK:\(file!.url)")
                 callBack?(file!.url)
-                kWindow?.hideHUD()
+                kWindow.hideHUD()
                 
             } else {
                 
-                kWindow?.showText("图片上传失败，请重试")
+                kWindow.showText("图片上传失败，请重试")
             }
             
         }, withProgressBlock: { (progress) in
             
-            kWindow?.showProgress(progress: progress, text: "图片上传中")
+            kWindow.showProgress(progress: progress, text: "图片上传中")
         })
     }
     
