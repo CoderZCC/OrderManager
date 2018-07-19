@@ -211,7 +211,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let text = self.viewModel.getKeyStr(section)
         let modelArr = self.viewModel.getValueModel(section)
         let model = modelArr.first!
-        let weekDay = model.costTime.k_toDate(formatter: "yyyy MM-dd HH:mm").k_weekDay()
+        let weekDay = model.costTime.k_toDate(formatter: "yyyy MM-dd HH:mm").k_addingHours(-8).k_weekDay()
         
         let headView = OrderHeaderView.loadXibView(viewModel: self.viewModel, text: text + " " + weekDay, height: tableView.sectionHeaderHeight)
         
