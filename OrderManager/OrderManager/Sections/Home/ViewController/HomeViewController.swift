@@ -213,7 +213,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let model = modelArr.first!
         let weekDay = model.costTime.k_toDate(formatter: "yyyy MM-dd HH:mm").k_weekDay()
         
-        let headView = OrderHeaderView.loadXibView(viewModel: self.viewModel, text: text + weekDay, height: tableView.sectionHeaderHeight)
+        let headView = OrderHeaderView.loadXibView(viewModel: self.viewModel, text: text + " " + weekDay, height: tableView.sectionHeaderHeight)
         
         headView.showAnimaton(isOpen: modelArr.first!.isOpen)
         
