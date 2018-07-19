@@ -23,7 +23,7 @@ class OrderHeaderView: UIView {
         let tool = Bundle.main.loadNibNamed("OrderHeaderView", owner: nil, options: nil)?.last as! OrderHeaderView
         tool.frame = CGRect.init(x: 0.0, y: 0.0, width: kWidth, height: height)
         tool.timeL.text = text
-        tool.costL.text = "(" + viewModel.allCosts[text]!.k_toCGFloatString() + "元" + ")"
+        tool.costL.text = "(" + viewModel.allCosts[text.k_subText(to: 4)]!.k_toCGFloatString() + "元" + ")"
         
         return tool
     }

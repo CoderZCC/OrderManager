@@ -209,9 +209,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let text = self.viewModel.getKeyStr(section)
-        let headView = OrderHeaderView.loadXibView(viewModel: self.viewModel, text: text, height: tableView.sectionHeaderHeight)
-        
         let modelArr = self.viewModel.getValueModel(section)
+        let model = modelArr.first!
+        let weekDay = model.costTime.k_toDate(formatter: "yyyy MM-dd HH:mm").k_weekDay()
+        
+        let headView = OrderHeaderView.loadXibView(viewModel: self.viewModel, text: text + weekDay, height: tableView.sectionHeaderHeight)
+        
         headView.showAnimaton(isOpen: modelArr.first!.isOpen)
         
         headView.k_addTarget { tap in
