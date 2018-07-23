@@ -69,9 +69,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             self.countTime()
         }
-        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-        self.preferredContentSize = CGSize.init(width: self.view.frame.width, height: 110.0)
-        
+        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded        
         self.snowAnimation()
     }
     
@@ -83,7 +81,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
      
         self.snowEmitter.removeFromSuperlayer()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -93,7 +91,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if activeDisplayMode == .compact {
             
             self.preferredContentSize = CGSize.init(width: self.view.frame.width, height: 110.0)
-
+            
         } else {
             
             self.preferredContentSize = CGSize.init(width: self.view.frame.width, height: 200.0)
