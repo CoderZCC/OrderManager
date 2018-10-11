@@ -31,7 +31,7 @@ class ServicerTool: NSObject {
             
             if isOK {
                 
-                print("isOK:\(file!.url)")
+                print("isOK:\(String(describing: file!.url))")
                 callBack?(file!.url)
                 kWindow.hideHUD()
                 
