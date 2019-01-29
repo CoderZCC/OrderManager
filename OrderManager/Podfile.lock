@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.7.3)
+  - Alamofire (4.8.1)
   - BmobSDK (2.3.1)
 
 DEPENDENCIES:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - BmobSDK
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
 
 PODFILE CHECKSUM: 7bb1934cd618959b6d2e41683c7b0c8cc3c983e9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2
