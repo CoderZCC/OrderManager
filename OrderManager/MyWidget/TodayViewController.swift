@@ -14,14 +14,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var timeL: UILabel!
     
+    @IBOutlet weak var textL1: UILabel!
+    
+    
     var timer: Timer?
     let snowEmitter: CAEmitterLayer = CAEmitterLayer.init()
     let yanhuaEmitter: CAEmitterLayer = CAEmitterLayer.init()
     let yanhuaImg = UIImage(named: "fire.png")?.cgImage
+    let motionMgr = CMMotionManager.init()
+    var animator: UIDynamicAnimator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.addGravityAnimation()
+        self.textL1.textColor = UIColor.white
+        self.timeL.textColor = self.textL1.textColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,13 +75,31 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let secondDuration = (minuDuration - Double(minu) * 60.0)
         let second: Int = Int(secondDuration)
         
-        self.timeL.text = "\(day)天\(hour)时\(minu)分\(second)秒"
+        self.timeL.text = "\(day)天\(hour)时\(minu)分\(second)秒了"
     }
     
     lazy var fat: DateFormatter = {
         let fat = DateFormatter.init()
         fat.dateFormat = "yyyy MM-dd"
         return fat
+    }()
+    
+    lazy var gravityView: UIView = {
+        let gravityView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width - 15.0, height: 200.0))
+        
+        let imgV1 = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0))
+        imgV1.image = UIImage.init(named: "1")
+        imgV1.layer.cornerRadius = 20.0
+        imgV1.layer.masksToBounds = true
+        let imgV2 = UIImageView(frame: CGRect(x: 40.0, y: 0.0, width: 40.0, height: 40.0))
+        imgV2.image = UIImage.init(named: "2")
+        imgV2.layer.cornerRadius = 20.0
+        imgV2.layer.masksToBounds = true
+        gravityView.addSubview(imgV1)
+        gravityView.addSubview(imgV2)
+        
+        self.view.addSubview(gravityView)
+        return gravityView
     }()
     
     override func didReceiveMemoryWarning() {
@@ -270,4 +296,37 @@ extension TodayViewController {
 //
 //        return image!
 //    }
+}
+
+extension TodayViewController {
+    
+    func addGravityAnimation() {
+        
+        animator = UIDynamicAnimator.init(referenceView: self.gravityView)
+        
+        let gravity = UIGravityBehavior.init(items: self.gravityView.subviews)
+        animator.addBehavior(gravity)
+        
+        let collision = UICollisionBehavior.init(items: self.gravityView.subviews)
+        collision.addBoundary(withIdentifier: "view" as NSCopying, for: UIBezierPath.init(rect: self.gravityView.bounds))
+        animator.addBehavior(collision)
+        
+        let dynamic = UIDynamicItemBehavior.init(items: self.gravityView.subviews)
+        // 弹性系数
+        dynamic.elasticity = 0.8
+    
+        dynamic.allowsRotation = true
+        animator.addBehavior(dynamic)
+        
+        if motionMgr.isDeviceMotionAvailable {
+            let queue = OperationQueue.init()
+            motionMgr.startDeviceMotionUpdates(to: queue) { (motion, error) in
+                if let motion = motion {
+                    DispatchQueue.main.async {
+                        gravity.gravityDirection = CGVector.init(dx: motion.gravity.x, dy: -motion.gravity.y)
+                    }
+                }
+            }
+        }
+    }
 }

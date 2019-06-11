@@ -108,12 +108,13 @@ extension UITextView {
 extension UITextField {
     
     /// 占位文字颜色
-    var k_placeholderColor: UIColor? {
-        
+    public var k_placeholderColor: UIColor? {
         set {
-
-            self.setValue(newValue, forKeyPath: "_placeholderLabel.textColor")
-        }
+            if let color = newValue, let placeholder = self.placeholder, self.attributedPlaceholder == nil {
+                let defaultFont = self.font ?? UIFont.systemFont(ofSize: 14.0)
+                let attributeStr = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : color, .font: defaultFont])
+                self.attributedPlaceholder = attributeStr
+            }        }
         get { return nil }
     }
     

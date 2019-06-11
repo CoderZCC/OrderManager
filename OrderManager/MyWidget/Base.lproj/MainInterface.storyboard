@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4j6-ew-yc2" userLabel="蒙版">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.15116652397260275" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg2" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-BS-Nm5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                             </imageView>
@@ -38,16 +36,12 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="m0w-Hx-kRM" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="03J-nr-H8K"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="4j6-ew-yc2" secondAttribute="trailing" id="28z-8g-5xr"/>
                             <constraint firstItem="m0w-Hx-kRM" firstAttribute="top" secondItem="zCf-9h-DRe" secondAttribute="bottom" constant="8" id="D7i-vb-VUF"/>
                             <constraint firstItem="PvP-BS-Nm5" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="DE7-hT-cUi"/>
                             <constraint firstItem="zCf-9h-DRe" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="20" id="G0x-sW-L9f"/>
-                            <constraint firstItem="4j6-ew-yc2" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="HRA-yz-wm7"/>
-                            <constraint firstItem="4j6-ew-yc2" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="Qg2-bn-D27"/>
                             <constraint firstItem="zCf-9h-DRe" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="UkX-eq-qBz"/>
                             <constraint firstItem="PvP-BS-Nm5" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="eam-Ha-iuO"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="PvP-BS-Nm5" secondAttribute="bottom" id="j5h-Dh-m0s"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="4j6-ew-yc2" secondAttribute="bottom" id="laa-ki-WfF"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="PvP-BS-Nm5" secondAttribute="trailing" id="op3-Us-DZl"/>
                             <constraint firstItem="m0w-Hx-kRM" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="40" id="yl9-cm-5aN"/>
                         </constraints>
@@ -57,6 +51,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="200"/>
                     <connections>
+                        <outlet property="textL1" destination="zCf-9h-DRe" id="kRf-Db-qEI"/>
                         <outlet property="timeL" destination="m0w-Hx-kRM" id="o0m-TQ-lh0"/>
                     </connections>
                 </viewController>
