@@ -31,6 +31,14 @@ class BaseNavigationController: UINavigationController {
 
 extension UINavigationController {
     
+    override open var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return self.topViewController?.preferredStatusBarStyle ?? .lightContent
+    }
+    
     open override var childForStatusBarStyle: UIViewController? {
         return self.viewControllers.last
     }
