@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController {
         
         /// 2018-07
         let btnTitle = kNowDate.k_toDateStr("yyyy-MM")
-        self.selectedTBtn.k_set(image: #imageLiteral(resourceName: "selected"), title: btnTitle, titlePosition: UIViewContentMode.left, additionalSpacing: 4.0, state: .normal)
+        self.selectedTBtn.k_set(image: #imageLiteral(resourceName: "selected"), title: btnTitle, titlePosition: UIView.ContentMode.left, additionalSpacing: 4.0, state: .normal)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: self.leftView)
         

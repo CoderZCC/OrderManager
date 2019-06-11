@@ -38,7 +38,7 @@ class RefreshFooterTool: UIView {
     /// 头视图
     private var headerView: RefreshHeaderTool {
         
-        return objc_getAssociatedObject(self.scrollView, &kScrollViewHeaderViewKey) as! RefreshHeaderTool
+        return objc_getAssociatedObject(self.scrollView!, &kScrollViewHeaderViewKey) as! RefreshHeaderTool
     }
     /// 展示状态的Label
     @IBOutlet weak var stateL: UILabel!

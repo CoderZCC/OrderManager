@@ -20,7 +20,7 @@ extension UIButton {
     ///   - additionalSpacing: 文字和图片的间隔
     ///   - state: 按钮对应的状态
     func k_set(image anImage: UIImage?, title: String,
-             titlePosition: UIViewContentMode, additionalSpacing: CGFloat, state: UIControlState) {
+             titlePosition: UIView.ContentMode, additionalSpacing: CGFloat, state: UIControl.State) {
         
         self.imageView?.contentMode = .center
         self.setImage(anImage, for: state)
@@ -31,10 +31,10 @@ extension UIButton {
         self.setTitle(title, for: state)
     }
     
-    private func positionLabelRespectToImage(title: String, position: UIViewContentMode, spacing: CGFloat) {
+    private func positionLabelRespectToImage(title: String, position: UIView.ContentMode, spacing: CGFloat) {
         let imageSize = self.imageRect(forContentRect: self.frame)
         let titleFont = self.titleLabel?.font!
-        let titleSize = title.size(withAttributes: [NSAttributedStringKey.font: titleFont!])
+        let titleSize = title.size(withAttributes: [NSAttributedString.Key.font: titleFont!])
         
         var titleInsets: UIEdgeInsets
         var imageInsets: UIEdgeInsets

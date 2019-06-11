@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //self.regitserAppLocalNote()
         self.registerBmob()
-        
-        UIApplication.shared.isStatusBarHidden = false
         
         return true
     }
@@ -36,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 转场动画
         let transition = CATransition.init()
-        transition.type = "rippleEffect"
+        transition.type = convertToCATransitionType("rippleEffect")
         transition.duration = 0.5
         kWindow.layer.add(transition, forKey: "transition")
         
@@ -67,7 +65,7 @@ extension AppDelegate {
         
         let navbar = UINavigationBar.appearance()
         // 设置标题文字颜色
-        navbar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navbar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         // 设置导航栏的背景颜色
         navbar.barTintColor = kNavbarColor
         // 设置导航栏是否透明
@@ -84,4 +82,9 @@ extension AppDelegate {
         Bmob.register(withAppKey: kBombID)
         Bmob.setBmobRequestTimeOut(10.0)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCATransitionType(_ input: String) -> CATransitionType {
+	return CATransitionType(rawValue: input)
 }

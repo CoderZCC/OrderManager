@@ -124,8 +124,8 @@ extension TodayViewController {
         
         snowEmitter.position = CGPoint.init(x: self.view.frame.width / 2.0, y: 0.0)
         snowEmitter.emitterSize = CGSize.init(width: self.view.frame.width, height: 0.0)
-        snowEmitter.emitterShape = kCAEmitterLayerLine
-        snowEmitter.emitterMode = kCAEmitterLayerOutline
+        snowEmitter.emitterShape = CAEmitterLayerEmitterShape.line
+        snowEmitter.emitterMode = CAEmitterLayerEmitterMode.outline
         
         snowEmitter.emitterCells = [cell]
         self.view.layer.addSublayer(snowEmitter)

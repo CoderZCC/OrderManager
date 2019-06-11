@@ -43,8 +43,8 @@ class StartViewController: BaseViewController {
         self.videoPlayer.volume = 0.0
         self.videoPlayer.isRunPlay = true
         self.view.layer.addSublayer(self.videoPlayer.playerLayer)
-        self.view.bringSubview(toFront: self.registerBtn)
-        self.view.bringSubview(toFront: self.loginBtn)
+        self.view.bringSubviewToFront(self.registerBtn)
+        self.view.bringSubviewToFront(self.loginBtn)
     }
     
     func initView() {

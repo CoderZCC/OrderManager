@@ -28,3 +28,13 @@ class BaseNavigationController: UINavigationController {
         super.didReceiveMemoryWarning()
     }
 }
+
+extension UINavigationController {
+    
+    open override var childForStatusBarStyle: UIViewController? {
+        return self.viewControllers.last
+    }
+    open override var childForStatusBarHidden: UIViewController? {
+        return self.viewControllers.last
+    }
+}

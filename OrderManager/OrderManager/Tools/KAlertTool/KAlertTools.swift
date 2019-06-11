@@ -106,17 +106,17 @@ class KAlertTools: UIView {
         
         if let leftBtn = leftBtn {
             
-            tool.leftBtn.setTitle(leftBtn, for: UIControlState.normal)
+            tool.leftBtn.setTitle(leftBtn, for: UIControl.State.normal)
         }
         if let rightBtn = rightBtn {
             
-            tool.rightBtn.setTitle(rightBtn, for: UIControlState.normal)
+            tool.rightBtn.setTitle(rightBtn, for: UIControl.State.normal)
         }
         
         tool.finishInput = rightAction
         tool.leftAction = leftAction ?? {}
         
-        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIView.AnimationOptions.allowAnimatedContent, animations: {
             
             tool.alpha = 1.0
             tool.contentView.transform = CGAffineTransform.identity
@@ -155,17 +155,17 @@ class KAlertTools: UIView {
         }
         if let leftBtn = leftBtn {
             
-            tool.leftBtn.setTitle(leftBtn, for: UIControlState.normal)
+            tool.leftBtn.setTitle(leftBtn, for: UIControl.State.normal)
         }
         if let rightBtn = rightBtn {
             
-            tool.rightBtn.setTitle(rightBtn, for: UIControlState.normal)
+            tool.rightBtn.setTitle(rightBtn, for: UIControl.State.normal)
         }
         
         tool.rightAction = rightBtnAction ?? {}
         tool.leftAction = leftBtnAction ?? {}
 
-        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIView.AnimationOptions.allowAnimatedContent, animations: {
             
             tool.alpha = 1.0
             tool.contentView.transform = CGAffineTransform.identity
@@ -286,7 +286,7 @@ class kAlertSheetTools: UIView {
         tool.tableView!.reloadData()
         
         //展示View
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.0, options: UIView.AnimationOptions.allowAnimatedContent, animations: {
             
             tool.alpha = 1.0
             tool.tableView!.transform = CGAffineTransform.identity
@@ -350,7 +350,7 @@ class kAlertSheetTools: UIView {
             height += 49.0
         }
         
-        let tableView = UITableView.init(frame: CGRect(x:0.0 , y: Double(kHeight - height) ,width: Double(kWidth) , height: Double(height)), style: UITableViewStyle.plain)
+        let tableView = UITableView.init(frame: CGRect(x:0.0 , y: Double(kHeight - height) ,width: Double(kWidth) , height: Double(height)), style: UITableView.Style.plain)
         
         tableView.transform = CGAffineTransform.init(translationX: 0, y: kHeight)
         
@@ -387,12 +387,12 @@ class kAlertSheetTools: UIView {
         let footView:UIView = UIView.init(frame: CGRect(x:0.0 , y: 0.0 ,width:Double(kWidth) ,height : Double(footHeight)))
         footView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         
-        let footBtn = UIButton(type: UIButtonType.custom)
+        let footBtn = UIButton(type: UIButton.ButtonType.custom)
         footBtn.frame = CGRect(x: 0.0 , y: 6.0 , width: Double(kWidth) ,height: Double(footHeight))
         footBtn.backgroundColor = UIColor.white
-        footBtn.setTitle("取消", for: UIControlState.normal)
-        footBtn.addTarget(self, action: #selector(kAlertSheetTools.clickAction), for: UIControlEvents.touchUpInside)
-        footBtn.setTitleColor(UIColor.black, for: UIControlState.normal)
+        footBtn.setTitle("取消", for: UIControl.State.normal)
+        footBtn.addTarget(self, action: #selector(kAlertSheetTools.clickAction), for: UIControl.Event.touchUpInside)
+        footBtn.setTitleColor(UIColor.black, for: UIControl.State.normal)
         
         footView.addSubview(footBtn)
         tableView.tableFooterView = footView
@@ -422,9 +422,9 @@ extension kAlertSheetTools :UITableViewDataSource,UITableViewDelegate
         var cell = tableView.dequeueReusableCell(withIdentifier: kAlertSheetTools.identifier)
         if cell == nil {
             
-            cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: kAlertSheetTools.identifier)
+            cell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: kAlertSheetTools.identifier)
             cell?.textLabel?.textAlignment = NSTextAlignment.center
-            cell?.selectionStyle = UITableViewCellSelectionStyle.none
+            cell?.selectionStyle = UITableViewCell.SelectionStyle.none
         }
         cell?.textLabel?.text = subTitleArr[indexPath.row]
         

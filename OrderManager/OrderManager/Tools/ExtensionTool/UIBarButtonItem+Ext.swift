@@ -31,7 +31,7 @@ extension UIBarButtonItem {
     ///   - style: 类型 默认 plain
     ///   - clickCallBack: 点击回调
     /// - Returns: UIBarButtonItem
-    convenience init(image: UIImage?, style: UIBarButtonItemStyle = .plain, clickCallBack: (()->Void)?) {
+    convenience init(image: UIImage?, style: UIBarButtonItem.Style = .plain, clickCallBack: (()->Void)?) {
         
         self.init(image: image, style: style, target: nil, action: #selector(k_clickAction))
         self.k_barItemCallBack = clickCallBack
@@ -43,7 +43,7 @@ extension UIBarButtonItem {
     ///   - style: 类型 默认 plain
     ///   - clickCallBack: 点击回调
     /// - Returns: UIBarButtonItem
-    convenience init(title: String?, style: UIBarButtonItemStyle = .plain, clickCallBack: (()->Void)?) {
+    convenience init(title: String?, style: UIBarButtonItem.Style = .plain, clickCallBack: (()->Void)?) {
         
         self.init(title: title, style: style, target: nil, action: #selector(k_clickAction))
         self.k_barItemCallBack = clickCallBack

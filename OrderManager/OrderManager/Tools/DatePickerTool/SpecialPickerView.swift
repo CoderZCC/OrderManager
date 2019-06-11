@@ -202,8 +202,8 @@ class SpecialViewModel: NSObject {
         let year = arr.first!
         let month = arr.last!
         
-        let yearIndex = self.yearArr.index(of: year) ?? 0
-        let monthIndex = self.monthArr.index(of: month) ?? 0
+        let yearIndex = self.yearArr.firstIndex(of: year) ?? 0
+        let monthIndex = self.monthArr.firstIndex(of: month) ?? 0
         
         pickView.selectRow(yearIndex, inComponent: 0, animated: true)
         pickView.selectRow(monthIndex, inComponent: 1, animated: true)

@@ -35,7 +35,7 @@ class LeftViewController: BaseViewController {
         self.layout.minimumInteritemSpacing = 1.0
         self.layout.headerReferenceSize = CGSize.init(width: self.contentView.bounds.width, height: 100.0)
         
-        self.collectionView.contentInset = UIEdgeInsetsMake(5.0, 15.0, 5.0, 15.0)
+        self.collectionView.contentInset = UIEdgeInsets.init(top: 5.0, left: 15.0, bottom: 5.0, right: 15.0)
         let itemW: CGFloat = self.viewModel.getItemWidth(columnsNum: 2)
         self.layout.itemSize = CGSize.init(width: itemW, height: itemW)
         
@@ -43,7 +43,7 @@ class LeftViewController: BaseViewController {
         self.collectionView.dataSource = self
 
         self.collectionView.register(UINib.init(nibName: "LeftContentCell", bundle: nil), forCellWithReuseIdentifier: "LeftContentCell")
-        self.collectionView.register(UINib.init(nibName: "LeftHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "sectionHeader")
+        self.collectionView.register(UINib.init(nibName: "LeftHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "sectionHeader")
     }
     
     @IBAction func logoutAction() {
@@ -88,9 +88,9 @@ extension LeftViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             
-            let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "sectionHeader", for: indexPath)
+            let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "sectionHeader", for: indexPath)
             
             return headView
         }

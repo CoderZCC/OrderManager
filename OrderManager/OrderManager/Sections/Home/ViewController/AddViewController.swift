@@ -80,7 +80,7 @@ class AddViewController: BaseViewController {
             
             if !self.costTf.isUserInteractionEnabled { return }
             self.view.endEditing(true)
-            DatePickerTool.showDatePickView(showModel: UIDatePickerMode.dateAndTime) { [unowned self] (timeStr) in
+            DatePickerTool.showDatePickView(showModel: UIDatePicker.Mode.dateAndTime) { [unowned self] (timeStr) in
                 
                 if self.costTimeL.text! != timeStr {
                     self.viewModel.isChangevalue = true

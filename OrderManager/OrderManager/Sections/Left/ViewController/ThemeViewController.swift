@@ -26,7 +26,7 @@ class ThemeViewController: BaseViewController {
 
         self.layout.minimumLineSpacing = 5.0
         self.layout.minimumInteritemSpacing = 5.0
-        self.collectionView.contentInset = UIEdgeInsetsMake(0.0, 8.0, 5.0, 8.0)
+        self.collectionView.contentInset = UIEdgeInsets.init(top: 0.0, left: 8.0, bottom: 5.0, right: 8.0)
         
         self.layout.itemSize = self.viewModel.getItemSize(collectionView: self.collectionView)
         self.collectionView.dataSource = self

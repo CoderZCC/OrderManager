@@ -42,7 +42,7 @@ extension UITextView {
             
             objc_setAssociatedObject(self, &k_TextViewPlaceholderKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             // 接收通知
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextViewTextDidChange, object: nil, queue: OperationQueue.main) { (note) in
+            NotificationCenter.default.addObserver(forName: UITextView.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (note) in
                 
                 if let length = self.k_limitTextLength { self.k_limitTextLength = length }
                 
@@ -73,7 +73,7 @@ extension UITextView {
 
             } else {
                 
-                NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextViewTextDidChange, object: nil, queue: OperationQueue.main) { (note) in
+                NotificationCenter.default.addObserver(forName: UITextView.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (note) in
                     
                     if self.text.count >= newValue! { self.text = self.text.k_subText(to: newValue! - 1) }
                 }
@@ -122,7 +122,7 @@ extension UITextField {
         
         set {
             
-            NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (note) in
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (note) in
                 
                 if let text = self.text {
                     

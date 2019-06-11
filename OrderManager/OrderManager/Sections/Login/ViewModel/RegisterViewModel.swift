@@ -38,7 +38,7 @@ class RegisterViewModel: NSObject {
     convenience init(accountTf: UITextField) {
         self.init()
         
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: nil, queue: OperationQueue.main) { (note) in
+        NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: nil, queue: OperationQueue.main) { (note) in
             
             let currentTf = note.object as! UITextField
             

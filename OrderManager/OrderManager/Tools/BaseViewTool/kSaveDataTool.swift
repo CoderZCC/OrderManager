@@ -50,7 +50,7 @@ class kSaveDataTool: NSObject {
     static func k_deletePassword(account: String) -> Bool {
         
         let dic = self.getQueryDic(account: account)
-        dic.setObject(kCFBooleanTrue, forKey: kSecReturnData as! NSCopying)
+        dic.setObject(kCFBooleanTrue!, forKey: kSecReturnData as! NSCopying)
         
         return SecItemDelete(dic) == errSecSuccess
     }
@@ -63,7 +63,7 @@ class kSaveDataTool: NSObject {
     static func k_getPassword(account: String) -> String? {
         
         let dic = self.getQueryDic(account: account)
-        dic.setObject(kCFBooleanTrue, forKey: kSecReturnData as! NSCopying)
+        dic.setObject(kCFBooleanTrue!, forKey: kSecReturnData as! NSCopying)
         
         var result: CFTypeRef? = nil
         let state: OSStatus = SecItemCopyMatching(dic, &result)
@@ -168,7 +168,7 @@ extension kSaveDataTool {
             
         } else {
             
-            let index = arr.index(of: str)!
+            let index = arr.firstIndex(of: str)!
             arr.remove(at: index)
             arr.insert(str, at: 0)
         }

@@ -324,7 +324,7 @@ class HUDViewTool: UIView {
         
         let window = UIWindow.init(frame: UIScreen.main.bounds)
         window.backgroundColor = UIColor.white.withAlphaComponent(0.01)
-        window.windowLevel = UIWindowLevelAlert
+        window.windowLevel = UIWindow.Level.alert
         window.isHidden = false
         HUDViewTool.windows.append(window)
         
@@ -409,7 +409,7 @@ extension String {
     func getTextSize(maxSize:CGSize ,font:UIFont) -> CGSize {
         
         let str = self as NSString
-        let rect = str.boundingRect(with: maxSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font:font], context: nil)
+        let rect = str.boundingRect(with: maxSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:font], context: nil)
         
         return rect.size
     }

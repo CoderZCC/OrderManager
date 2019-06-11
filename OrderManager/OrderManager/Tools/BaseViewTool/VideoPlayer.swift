@@ -44,14 +44,14 @@ class VideoPlayer: AVPlayer {
         
         let playerLayer = AVPlayerLayer.init(player: self)
         playerLayer.frame = frame
-        playerLayer.videoGravity = .resizeAspect
+        playerLayer.videoGravity = .resizeAspectFill
         self.playerLayer = playerLayer
         
         self.volume = 0.5
         
         // 添加通知
-        NotificationCenter.default.addObserver(self, selector: #selector(resumePlay), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(pausePlay), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resumePlay), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pausePlay), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     override func play() {

@@ -150,7 +150,7 @@ class PhotoBrowerTool: UIView {
         self.init(frame: CGRect.init(x: 0.0, y: 0.0, width: kWidth, height: kHeight))
         
         self.frameChangeNoteAction()
-        NotificationCenter.default.addObserver(self, selector: #selector(frameChangeNoteAction), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(frameChangeNoteAction), name: UIDevice.orientationDidChangeNotification, object: nil)
         
         self.originalFrame = original
         self.currentIndex = currentIndex
@@ -282,7 +282,7 @@ class PhotoBrowerTool: UIView {
     }()
     /// 保存到相册
     lazy var saveBtn: UIButton = {
-        let btn = UIButton.init(type: UIButtonType.custom)
+        let btn = UIButton.init(type: UIButton.ButtonType.custom)
         btn.frame = CGRect.init(x: (kWidth - 60.0) / 2.0, y: kHeight - 30.0 - 30.0, width: 60.0, height: 30.0)
         btn.setTitle("保存", for: .normal)
         btn.layer.cornerRadius = 4
